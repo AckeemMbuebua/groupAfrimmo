@@ -1,0 +1,54 @@
+<section
+  id="approche"
+  class="scroll-mt-28 border-t border-gray-100 bg-warm px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+>
+  <div class="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2 lg:gap-16 lg:items-start">
+    <div appReveal class="relative">
+      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">
+        Notre approche
+      </p>
+      <h2
+        class="text-balance text-3xl font-extrabold uppercase leading-tight tracking-tight sm:text-4xl"
+      >
+        Piloter un chantier comme un système coordonné.
+      </h2>
+      <p class="mt-6 text-base leading-8 text-steel">
+        Le Groupe Afrimmo S.A. applique une méthode de travail exigeante avant même le premier
+        acte sur le terrain&nbsp;: clarté des objectifs, planification réaliste et suivi jusqu’aux
+        livrables.
+      </p>
+      <ul class="mt-8 space-y-4 text-sm font-bold uppercase tracking-[.06em] text-dark-cmt">
+        @for (line of approachItems; track line) {
+          <li class="flex gap-3">
+            <i class="fa-solid fa-circle-check mt-1 shrink-0 text-red-cmt"></i>
+            {{ line }}
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div appReveal class="border border-black/10 bg-white p-8 shadow-soft sm:p-10">
+      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">
+        Nos atouts
+      </p>
+      <h2 class="text-3xl font-extrabold uppercase leading-tight tracking-tight sm:text-4xl">
+        Une capacité projet à plusieurs échelles.
+      </h2>
+      <p class="mt-6 text-base leading-8 text-steel">
+        Nous combinons présence régionale et standards internationaux pour sécuriser coûts,
+        délais et qualité d’exécution, qu’il s’agisse de logements, d’infra critiques ou de flux
+        industriels.
+      </p>
+      <ul class="mt-8 space-y-4">
+        @for (line of strengthItems; track line) {
+          <li
+            class="flex items-start gap-3 border-l-4 border-red-cmt bg-gray-50 py-4 pr-4 pl-5 text-sm font-semibold uppercase leading-relaxed tracking-wide text-dark-cmt"
+          >
+            <span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-cmt"></span>
+            {{ line }}
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

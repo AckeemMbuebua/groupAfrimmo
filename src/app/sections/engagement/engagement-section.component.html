@@ -1,0 +1,66 @@
+<section
+  id="engagement"
+  class="scroll-mt-28 border-t border-gray-200 bg-white px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+>
+  <div class="mx-auto max-w-7xl">
+    <div appReveal class="mx-auto max-w-3xl text-center">
+      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">
+        Partenaires & écosystème
+      </p>
+      <p class="text-base leading-8 text-steel">
+        {{ partnersLead }}
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-10 lg:grid-cols-2 lg:gap-12">
+      <article
+        appReveal
+        class="flex flex-col border border-gray-200 bg-gray-50 p-8 sm:p-10"
+      >
+        <p class="text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">Innovation</p>
+        <h2 class="mt-4 text-2xl font-extrabold uppercase leading-tight tracking-tight sm:text-3xl">
+          Maîtriser la qualité par la méthode et les outils.
+        </h2>
+        <p class="mt-6 text-sm leading-7 text-steel">
+          {{ innovationIntro }}
+        </p>
+        <p class="mt-4 text-xs font-extrabold uppercase tracking-widest text-dark-cmt">
+          Le groupe s’appuie notamment sur :
+        </p>
+        <ul class="mt-4 space-y-3 text-sm font-semibold leading-7 text-dark-cmt">
+          @for (item of innovationPillars; track item) {
+            <li class="flex gap-2">
+              <span class="text-red-cmt">—</span>
+              {{ item }}
+            </li>
+          }
+        </ul>
+        <p class="mt-6 text-sm leading-7 text-steel">
+          {{ innovationOutro }}
+        </p>
+      </article>
+
+      <article appReveal class="flex flex-col border border-gray-200 bg-white p-8 sm:p-10">
+        <p class="text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">
+          Responsabilité sociale
+        </p>
+        <h2 class="mt-4 text-2xl font-extrabold uppercase leading-tight tracking-tight sm:text-3xl">
+          Ancrer les chantiers dans la société et le milieu naturel.
+        </h2>
+        <p class="mt-6 text-sm leading-7 text-steel">
+          {{ csrIntro }}
+        </p>
+        <ul class="mt-6 space-y-4">
+          @for (item of csrPillars; track item) {
+            <li class="flex items-start gap-3 border-l-4 border-dark-cmt py-3 pl-4">
+              <i class="fa-solid fa-hand-holding-heart mt-0.5 text-red-cmt"></i>
+              <span class="text-sm font-extrabold uppercase tracking-wide text-dark-cmt">{{
+                item
+              }}</span>
+            </li>
+          }
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
