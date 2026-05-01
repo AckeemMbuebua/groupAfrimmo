@@ -8,8 +8,6 @@
   --color-steel: #717985;
   --color-warm: #f4efe7;
 
-  --shadow-soft: 0 24px 80px rgb(10 10 10 / 0.12);
-  --shadow-red: 0 20px 60px rgb(227 30 36 / 0.28);
 }
 
 :root {
@@ -20,6 +18,16 @@
 body {
   overflow-x: hidden;
   text-rendering: geometricPrecision;
+}
+
+/**
+ * Titres : graisse forte uniquement sur les headings (corps en font-light sur body).
+ */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 800;
 }
 
 .noise::before {
@@ -60,14 +68,13 @@ body {
 
 .magnetic-card {
   transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
+    transform 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .magnetic-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 26px 80px rgb(10 10 10 / 0.15);
+  transform: translateY(-4px);
+  border-color: rgb(227 30 36 / 0.45);
 }
 
 .reveal {
@@ -114,11 +121,6 @@ body {
 .hero-echo-cta {
   animation: heroEchoIn 0.52s cubic-bezier(0.2, 0.75, 0.25, 1) backwards;
   animation-delay: 0.46s;
-}
-
-.hero-echo-metrics {
-  animation: heroEchoIn 0.52s cubic-bezier(0.2, 0.75, 0.25, 1) backwards;
-  animation-delay: 0.58s;
 }
 
 .marquee-track {
@@ -170,8 +172,7 @@ body {
   .hero-echo-chip,
   .hero-echo-heading,
   .hero-echo-copy,
-  .hero-echo-cta,
-  .hero-echo-metrics {
+  .hero-echo-cta {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
@@ -197,7 +198,6 @@ body {
 
   .magnetic-card:hover {
     transform: none !important;
-    box-shadow: none !important;
   }
 
   .project-card img {

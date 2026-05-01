@@ -1,75 +1,55 @@
-<section id="profil" class="scroll-mt-28 bg-white px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-  <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.94fr_1.06fr] lg:items-center lg:gap-16">
-    <div class="relative">
-      <!-- Image toujours visible : pas appReveal sur le wrapper (réversible si IO bloque) -->
-      <div
-        class="absolute bottom-[-1.25rem] right-[-1.25rem] -z-0 hidden h-40 w-40 border-8 border-red-cmt md:block"
-        aria-hidden="true"
-      ></div>
-
+<section id="profil" class="scroll-mt-28 border-t border-gray-100 bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+  <div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-14">
+    <div class="border border-gray-200 bg-gray-50">
       <img
-        [src]="mainImageSrc"
+        [src]="mainImageUrl()"
         [alt]="mainImageAlt"
         width="1400"
         height="1050"
         loading="eager"
         decoding="async"
         fetchpriority="high"
-        class="relative z-10 h-[390px] w-full bg-gray-100 object-cover shadow-soft sm:h-[520px]"
+        referrerpolicy="no-referrer"
+        class="aspect-[4/5] h-auto w-full object-cover sm:aspect-auto sm:min-h-[440px] sm:max-h-[560px]"
+        (error)="onMainImageError()"
       />
-
-      <div
-        appReveal
-        class="relative z-20 -mt-16 ml-auto max-w-[260px] border border-black/10 bg-white p-6 shadow-soft sm:-mt-20 sm:ml-8"
-      >
-        <span class="block text-4xl font-extrabold italic text-red-cmt">24/7</span>
-        <p
-          class="mt-2 text-xs font-extrabold uppercase leading-5 tracking-widest text-dark-cmt"
-        >
-          Suivi projet, urgence chantier et coordination terrain.
-        </p>
-      </div>
     </div>
 
-    <div appReveal>
-      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">
+    <div appReveal class="max-w-xl lg:max-w-none">
+      <p class="text-xs font-extrabold uppercase tracking-[0.22em] text-red-cmt">
         Profil de l'entreprise
       </p>
       <h2
-        class="text-balance text-4xl font-extrabold uppercase leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+        class="mt-4 text-balance text-3xl font-extrabold uppercase leading-[1.12] tracking-tight text-dark-cmt sm:text-4xl"
       >
-        Une exécution carrée pour des projets ambitieux.
+        Groupe Afrimmo S.A. — excellence en génie civil.
       </h2>
-      <p class="mt-7 max-w-2xl text-base leading-8 text-steel">
-        Le <strong class="font-extrabold text-dark-cmt">Groupe Afrimmo S.A.</strong> intervient
-        comme partenaire opérationnel sur les chantiers où la qualité, les délais et la
-        coordination des corps de métier ne tolèrent aucune approximation.
+      <p class="mt-6 text-base font-light leading-relaxed text-steel">
+        Opérations du Groupe Afrimmo S.A. sur les chantiers lourds et les programmes multi-lots :
+        coordination technique, délais et conformité. Une même exigence sur la RDC, l’Afrique
+        centrale &amp; de l’Est, et les missions internationales pilotées depuis nos équipes.
       </p>
 
-      <div class="mt-9 grid gap-4 sm:grid-cols-2">
-        @for (item of pillars; track item.title) {
-          <div
-            class="border-l-4 bg-gray-50 p-5 shadow-sm ring-1 ring-black/[0.04]"
-            [class.border-red-cmt]="item.borderClass === 'border-red-cmt'"
-            [class.border-dark-cmt]="item.borderClass === 'border-dark-cmt'"
-          >
-            <h3 class="text-sm font-extrabold uppercase">{{ item.title }}</h3>
-            <p class="mt-3 text-sm leading-7 text-steel">{{ item.body }}</p>
-          </div>
-        }
-      </div>
-
-      <p class="mb-4 mt-10 text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">
+      <p class="mt-8 text-[10px] font-extrabold uppercase tracking-[0.24em] text-dark-cmt/45">
         Valeurs
       </p>
-      <div class="grid gap-3 sm:grid-cols-2">
-        @for (v of values; track v.title) {
-          <div class="border border-gray-200 bg-white p-5 shadow-sm">
-            <h3 class="text-sm font-extrabold uppercase text-dark-cmt">{{ v.title }}</h3>
-            <p class="mt-2 text-sm leading-7 text-steel">{{ v.body }}</p>
-          </div>
+      <ul class="mt-4 grid grid-cols-2 gap-3">
+        @for (v of valueIcons; track v.title) {
+          <li
+            class="flex items-center gap-3 border border-gray-200 bg-white px-3 py-3 sm:px-4"
+          >
+            <span
+              class="grid h-9 w-9 shrink-0 place-items-center border border-gray-100 text-red-cmt"
+              aria-hidden="true"
+            >
+              <i [class]="v.iconClass + ' text-sm'"></i>
+            </span>
+            <span class="text-xs font-extrabold uppercase tracking-wide text-dark-cmt">{{
+              v.title
+            }}</span>
+          </li>
         }
-      </div>
+      </ul>
     </div>
   </div>
 </section>

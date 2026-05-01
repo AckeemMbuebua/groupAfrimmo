@@ -10,10 +10,21 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
       'Résidence de luxe Al Saad Apartments à Chukwani, île de Unguja — Zanzibar',
     category: 'Résidentiel · Zanzibar',
     title: 'Al Saad Apartments',
-    description:
-      '28 unités luxe avec whirlpool et terrasse vue mer, plage ; réalisation Chukwani (Unguja).',
+    description: '28 unités · front de mer · Chukwani, Zanzibar.',
     statusLabel: 'Livré · 2022',
     wide: true,
+  },
+  {
+    id: 'hospitaux-znz',
+    imageUrl:
+      'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=900&auto=format&fit=crop',
+    imageAlt: 'Infrastructure hospitalière de district',
+    category: 'Santé · Zanzibar',
+    title: '10 hôpitaux de districts',
+    description: 'Programme public — lots techniques & coord. MEP.',
+    statusLabel: 'Livré · 2025',
+    wide: false,
+    transitionDelaySeconds: 0.06,
   },
   {
     id: 'kiwengwa-hotel',
@@ -26,7 +37,7 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
       'Complexe boutique 14 villas indépendantes, piscines, restaurant front de mer.',
     statusLabel: 'En cours',
     wide: false,
-    transitionDelaySeconds: 0.06,
+    transitionDelaySeconds: 0.12,
   },
   {
     id: 'kisraa-godowns',
@@ -39,7 +50,7 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
       'Première phase : 2 godowns sur un programme global de 8, zone industrielle Kisarawe II.',
     statusLabel: 'Phase 1 · 2024',
     wide: false,
-    transitionDelaySeconds: 0.12,
+    transitionDelaySeconds: 0.18,
   },
   {
     id: 'mbweni-jkt',
@@ -52,7 +63,7 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
       'Conception jusqu’aux finitions — boucle livrée en huit mois pour un parti architectural exigeant.',
     statusLabel: 'Livré · 2025',
     wide: false,
-    transitionDelaySeconds: 0.18,
+    transitionDelaySeconds: 0.24,
   },
   {
     id: 'lake-energies',
@@ -64,19 +75,6 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     description:
       'Lake Oil rebranded Lake Energies : coordination équipe créative et exécution chantier (neuf mois).',
     statusLabel: 'Livré · 2024',
-    wide: false,
-    transitionDelaySeconds: 0.24,
-  },
-  {
-    id: 'hospitaux-znz',
-    imageUrl:
-      'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=900&auto=format&fit=crop',
-    imageAlt: 'Infrastructure hospitalière de district',
-    category: 'Santé · Zanzibar',
-    title: '10 hôpitaux de districts',
-    description:
-      'Programme gouvernemental 2024 : appui expert notamment bureau MEP sur la mise en œuvre.',
-    statusLabel: 'Livré · 2025',
     wide: false,
     transitionDelaySeconds: 0.3,
   },

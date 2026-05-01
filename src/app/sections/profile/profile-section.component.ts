@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
-import type {
-  ProfileHighlight,
-  ValuePillar,
-} from '../../shared/landing/landing.models';
+
+export interface ProfileValueIcon {
+  readonly title: string;
+  readonly iconClass: string;
+}
 
 @Component({
   selector: 'app-profile-section',
@@ -13,40 +14,28 @@ import type {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfileSectionComponent {
-  /** même host Unsplash déjà utilisé côté réalisations (meilleure fiabilité hotlink que l’URL précédente). */
   protected readonly mainImageSrc =
     'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=82';
   protected readonly mainImageAlt =
-    'Chantier avec grues et ouvrages — coordination exécution et sécurité opérationnelle';
+    'Chantier — génie civil, coordination et sécurité opérationnelle';
 
-  protected readonly pillars: readonly ProfileHighlight[] = [
-    {
-      title: 'Mission',
-      body:
-        'Fournir des produits et des services de haute qualité, tout en favorisant le développement économique et social dans toutes les régions où nous opérons. Viser à être un partenaire de confiance pour nos clients, avec des solutions intégrées et personnalisées.',
-      borderClass: 'border-red-cmt',
-    },
-    {
-      title: 'Vision',
-      body:
-        "Devenir un leader incontournable dans les secteurs de l'import-export, des technologies de l'information et de la construction, et au-delà. Être reconnus pour l'excellence, la fiabilité et une capacité d'innovation constante au service des besoins clients.",
-      borderClass: 'border-dark-cmt',
-    },
-  ];
+  private readonly mainImageBroken = signal(false);
 
-  protected readonly values: readonly ValuePillar[] = [
-    { title: 'Qualité', body: 'Respect des standards élevés.' },
-    {
-      title: 'Innovation',
-      body: 'Solutions modernes et efficaces.',
-    },
-    {
-      title: 'Engagement',
-      body: 'Satisfaction client prioritaire.',
-    },
-    {
-      title: 'Fiabilité',
-      body: 'Respect des délais et des engagements.',
-    },
+  protected readonly fallbackMainImage = '/images/fallback-card.jpg';
+
+  protected mainImageUrl(): string {
+    return this.mainImageBroken() ? this.fallbackMainImage : this.mainImageSrc;
+  }
+
+  protected onMainImageError(): void {
+    this.mainImageBroken.set(true);
+  }
+
+  /** Références visuelles compactes (sans sous-texte). */
+  protected readonly valueIcons: readonly ProfileValueIcon[] = [
+    { title: 'Qualité', iconClass: 'fa-solid fa-award' },
+    { title: 'Innovation', iconClass: 'fa-solid fa-lightbulb' },
+    { title: 'Engagement', iconClass: 'fa-solid fa-handshake' },
+    { title: 'Fiabilité', iconClass: 'fa-solid fa-shield-halved' },
   ];
 }

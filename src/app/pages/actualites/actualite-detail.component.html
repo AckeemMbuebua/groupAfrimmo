@@ -29,9 +29,13 @@
 
       <div class="relative mt-10 aspect-[16/9] overflow-hidden bg-dark-cmt">
         <img
-          [src]="article.coverUrl"
+          [src]="coverSrc(article)"
           [alt]="article.coverAlt"
           class="h-full w-full object-cover"
+          referrerpolicy="no-referrer"
+          loading="eager"
+          decoding="async"
+          (error)="onCoverError()"
         />
       </div>
 

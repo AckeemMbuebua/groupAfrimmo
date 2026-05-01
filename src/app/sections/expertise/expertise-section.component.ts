@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  inject,
+} from '@angular/core';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 import type { ExpertiseCard } from '../../shared/landing/landing.models';
 
@@ -10,6 +15,12 @@ import type { ExpertiseCard } from '../../shared/landing/landing.models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExpertiseSectionComponent {
+  private readonly cdr = inject(ChangeDetectorRef);
+
+  private readonly brokenImages = new Set<string>();
+
+  protected readonly fallbackImage = '/images/fallback-card.jpg';
+
   protected readonly cards: readonly ExpertiseCard[] = [
     {
       imageUrl:
@@ -41,4 +52,17 @@ export class ExpertiseSectionComponent {
       transitionDelaySeconds: 0.16,
     },
   ];
+
+  protected cardImageSrc(card: ExpertiseCard): string {
+    return this.brokenImages.has(card.numberLabel)
+      ? this.fallbackImage
+      : card.imageUrl;
+  }
+
+  protected onCardImageError(label: string): void {
+    if (!this.brokenImages.has(label)) {
+      this.brokenImages.add(label);
+      this.cdr.markForCheck();
+    }
+  }
 }

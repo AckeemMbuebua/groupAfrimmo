@@ -1,5 +1,6 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   inject,
   type OnInit,
@@ -10,6 +11,7 @@ import {
   formatArticleDate,
   INSIGHT_ARTICLES,
 } from '../../shared/content/actualites.data';
+import type { InsightArticle } from '../../shared/content/content.models';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 
 @Component({
@@ -22,11 +24,29 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
 export class ActualitesIndexComponent implements OnInit {
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
+  private readonly cdr = inject(ChangeDetectorRef);
+
+  private readonly brokenCovers = new Set<string>();
+
+  protected readonly fallbackCover = '/images/fallback-card.jpg';
 
   protected readonly articles = INSIGHT_ARTICLES;
 
   protected formatDate(iso: string): string {
     return formatArticleDate(iso);
+  }
+
+  protected coverSrc(article: InsightArticle): string {
+    return this.brokenCovers.has(article.slug)
+      ? this.fallbackCover
+      : article.coverUrl;
+  }
+
+  protected onCoverError(slug: string): void {
+    if (!this.brokenCovers.has(slug)) {
+      this.brokenCovers.add(slug);
+      this.cdr.markForCheck();
+    }
   }
 
   ngOnInit(): void {

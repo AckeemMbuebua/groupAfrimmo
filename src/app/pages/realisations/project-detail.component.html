@@ -16,9 +16,13 @@
 
       <div class="relative aspect-[21/10] overflow-hidden bg-dark-cmt md:aspect-[21/9]">
         <img
-          [src]="project.imageUrl"
+          [src]="heroImageSrc(project)"
           [alt]="project.imageAlt"
           class="h-full w-full object-cover"
+          referrerpolicy="no-referrer"
+          loading="eager"
+          decoding="async"
+          (error)="onHeroImageError()"
         />
         <div
           class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"

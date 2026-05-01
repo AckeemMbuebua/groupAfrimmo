@@ -12,9 +12,13 @@
           [style.transition-delay.s]="project.transitionDelaySeconds ?? undefined"
         >
           <img
-            [src]="project.imageUrl"
+            [src]="cardImageSrc(project)"
             [alt]="project.imageAlt"
             class="h-full w-full object-cover grayscale transition duration-700 group-hover:scale-[1.02] group-hover:grayscale-0"
+            referrerpolicy="no-referrer"
+            loading="lazy"
+            decoding="async"
+            (error)="onCardImageError(project.id)"
           />
           <div
             class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"
@@ -54,9 +58,13 @@
         [style.transition-delay.s]="project.transitionDelaySeconds ?? undefined"
       >
         <img
-          [src]="project.imageUrl"
+          [src]="cardImageSrc(project)"
           [alt]="project.imageAlt"
           class="h-full w-full object-cover grayscale"
+          referrerpolicy="no-referrer"
+          loading="lazy"
+          decoding="async"
+          (error)="onCardImageError(project.id)"
         />
         <div
           class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"

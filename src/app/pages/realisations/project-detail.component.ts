@@ -4,6 +4,7 @@ import {
   effect,
   inject,
   input,
+  signal,
 } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
@@ -25,9 +26,13 @@ export class ProjectDetailComponent {
   /** Lié automatiquement à la route `:id` via `withComponentInputBinding()`. */
   readonly id = input.required<string>();
 
+  /** Si l’image distante (Unsplash) échoue, affiche le JPG local `public/images/fallback-card.jpg`. */
+  protected readonly heroImageBroken = signal(false);
+
   constructor() {
     effect(() => {
       const slug = this.id();
+      this.heroImageBroken.set(false);
       const row = getProjectCase(slug);
       if (!row) {
         void this.router.navigate(['/realisations']);
@@ -39,6 +44,14 @@ export class ProjectDetailComponent {
 
   protected snapshot(): ResolvedProjectCase | undefined {
     return getProjectCase(this.id());
+  }
+
+  protected heroImageSrc(project: ResolvedProjectCase): string {
+    return this.heroImageBroken() ? '/images/fallback-card.jpg' : project.imageUrl;
+  }
+
+  protected onHeroImageError(): void {
+    this.heroImageBroken.set(true);
   }
 
   private applyMeta(row: ResolvedProjectCase): void {

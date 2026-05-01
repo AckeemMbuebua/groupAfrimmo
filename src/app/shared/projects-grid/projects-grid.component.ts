@@ -1,5 +1,11 @@
 import { NgClass } from '@angular/common';
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  inject,
+  input,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { RevealDirective } from '../directives/reveal.directive';
 import type { ProjectCard } from '../landing/landing.models';
@@ -12,6 +18,12 @@ import type { ProjectCard } from '../landing/landing.models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsGridComponent {
+  private readonly cdr = inject(ChangeDetectorRef);
+
+  private readonly brokenCardImages = new Set<string>();
+
+  protected readonly fallbackCardImage = '/images/fallback-card.jpg';
+
   readonly projects = input.required<readonly ProjectCard[]>();
 
   /** Ex. `'realisations'` pour lier vers `/realisations/:id`. */
@@ -24,4 +36,17 @@ export class ProjectsGridComponent {
   readonly contactFragment = input<string>('contact');
 
   readonly showExpertCta = input(false);
+
+  protected cardImageSrc(project: ProjectCard): string {
+    return this.brokenCardImages.has(project.id)
+      ? this.fallbackCardImage
+      : project.imageUrl;
+  }
+
+  protected onCardImageError(projectId: string): void {
+    if (!this.brokenCardImages.has(projectId)) {
+      this.brokenCardImages.add(projectId);
+      this.cdr.markForCheck();
+    }
+  }
 }

@@ -33,9 +33,13 @@
           <a [routerLink]="['/actualites', article.slug]" class="block focus:outline-none">
             <div class="aspect-[16/10] overflow-hidden bg-dark-cmt">
               <img
-                [src]="article.coverUrl"
+                [src]="coverSrc(article)"
                 [alt]="article.coverAlt"
                 class="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                referrerpolicy="no-referrer"
+                loading="lazy"
+                decoding="async"
+                (error)="onCoverError(article.slug)"
               />
             </div>
             <div class="flex flex-1 flex-col p-6 md:p-8">

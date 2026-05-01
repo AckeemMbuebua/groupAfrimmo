@@ -32,8 +32,8 @@
           <div class="relative h-[360px] md:h-[300px]">
             @for (t of testimonials(); track t.id; let idx = $index) {
               <div
-                class="absolute inset-0 overflow-hidden rounded-lg border border-black/10 bg-white text-dark-cmt shadow-sm transition-all duration-500"
-                [class.shadow-lg]="idx === activeIndex()"
+                class="absolute inset-0 overflow-hidden border border-gray-200 bg-white text-dark-cmt transition-all duration-500"
+                [class.border-red-cmt]="idx === activeIndex()"
                 [class.z-10]="idx === activeIndex()"
                 [class.z-0]="idx !== activeIndex()"
                 [style.opacity]="idx === activeIndex() ? 1 : 0"

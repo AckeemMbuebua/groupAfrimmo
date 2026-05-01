@@ -9,7 +9,7 @@
       >
         Des solutions intégrées, du plan au terrain.
       </h2>
-      <p class="mt-6 max-w-2xl text-base leading-8 text-steel">
+      <p class="mt-6 max-w-2xl text-base font-light leading-relaxed text-steel">
         Le Groupe Afrimmo S.A. structure son offre autour de trois domaines stratégiques
         couvrant l’œuvre lourde, les flux industriels et le commerce international.
       </p>
@@ -24,16 +24,22 @@
         >
           <article class="magnetic-card h-full border border-gray-200 bg-white">
             <img
-              [src]="card.imageUrl"
+              [src]="cardImageSrc(card)"
               [alt]="card.imageAlt"
               class="h-56 w-full object-cover grayscale"
+              referrerpolicy="no-referrer"
+              loading="lazy"
+              decoding="async"
+              (error)="onCardImageError(card.numberLabel)"
             />
             <div class="p-7">
               <span class="text-5xl font-extrabold text-gray-100">{{
                 card.numberLabel
               }}</span>
               <h3 class="mt-4 text-xl font-extrabold uppercase">{{ card.title }}</h3>
-              <p class="mt-4 text-sm leading-7 text-steel">{{ card.description }}</p>
+              <p class="mt-4 text-sm font-light leading-relaxed text-steel">
+                {{ card.description }}
+              </p>
             </div>
           </article>
         </div>
