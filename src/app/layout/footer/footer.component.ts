@@ -22,6 +22,8 @@ export class FooterComponent {
       { label: 'Méthode', href: '#methode' },
       { label: 'Réalisations', href: '#realisations' },
       { label: 'Engagement', href: '#engagement' },
+      { label: 'Témoignages', href: '#temoignages' },
+      { label: 'FAQ', href: '#faq' },
     ],
   };
 
