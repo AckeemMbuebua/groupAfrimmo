@@ -1,0 +1,60 @@
+<section id="profil" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+  <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.92fr_1.08fr] lg:items-center">
+    <div appReveal class="relative">
+      <div
+        class="absolute -bottom-5 -right-5 hidden h-40 w-40 border-8 border-red-cmt md:block"
+      ></div>
+      <img
+        [src]="mainImageSrc"
+        [alt]="mainImageAlt"
+        class="relative z-10 h-[390px] w-full object-cover shadow-soft sm:h-[520px]"
+      />
+      <div class="relative z-20 -mt-20 ml-4 max-w-[260px] bg-white p-6 shadow-soft sm:ml-8">
+        <span class="block text-4xl font-extrabold italic text-red-cmt">24/7</span>
+        <p
+          class="mt-2 text-xs font-extrabold uppercase leading-5 tracking-widest text-dark-cmt"
+        >
+          Suivi projet, urgence chantier et coordination terrain.
+        </p>
+      </div>
+    </div>
+
+    <div appReveal>
+      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">
+        Profil de l'entreprise
+      </p>
+      <h2
+        class="text-4xl font-extrabold uppercase leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+      >
+        Une exécution carrée pour des projets ambitieux.
+      </h2>
+      <p class="mt-7 max-w-2xl text-base leading-8 text-steel">
+        Afrimmo intervient comme partenaire opérationnel sur des projets où la
+        qualité, les délais et la coordination des corps de métier ne peuvent pas
+        être approximatifs.
+      </p>
+
+      <div class="mt-9 grid gap-4 sm:grid-cols-2">
+        @for (item of pillars; track item.title) {
+          <div
+            class="border-l-4 bg-gray-50 p-5"
+            [class.border-red-cmt]="item.borderClass === 'border-red-cmt'"
+            [class.border-dark-cmt]="item.borderClass === 'border-dark-cmt'"
+          >
+            <h3 class="text-sm font-extrabold uppercase">{{ item.title }}</h3>
+            <p class="mt-3 text-sm leading-7 text-steel">{{ item.body }}</p>
+          </div>
+        }
+      </div>
+
+      <div class="mt-8 grid gap-3 text-sm font-bold text-dark-cmt sm:grid-cols-2">
+        @for (line of commitments; track line) {
+          <span class="flex items-center gap-3">
+            <i class="fa-solid fa-circle-check text-red-cmt"></i>
+            {{ line }}
+          </span>
+        }
+      </div>
+    </div>
+  </div>
+</section>
