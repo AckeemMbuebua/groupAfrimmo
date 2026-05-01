@@ -16,6 +16,17 @@ export interface ProfileHighlight {
   readonly borderClass: 'border-red-cmt' | 'border-dark-cmt';
 }
 
+/** Valeurs de marque (piliers). */
+export interface ValuePillar {
+  readonly title: string;
+  readonly body: string;
+}
+
+/** Intitulé d’une ligne de services proposés. */
+export interface OfferedServiceLine {
+  readonly summary: string;
+}
+
 export interface ExpertiseCard {
   readonly imageUrl: string;
   readonly imageAlt: string;
@@ -32,11 +43,14 @@ export interface MethodPhase {
 }
 
 export interface ProjectCard {
+  readonly id: string;
   readonly imageUrl: string;
   readonly imageAlt: string;
   readonly category: string;
   readonly title: string;
-  readonly description?: string;
+  readonly description: string;
+  /** Ex. « Livré 2025 », « En cours », « Phase 1 — 2024 ». */
+  readonly statusLabel: string;
   readonly wide: boolean;
   readonly transitionDelaySeconds?: number;
 }
