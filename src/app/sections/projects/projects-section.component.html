@@ -11,8 +11,11 @@
         <h2
           class="text-4xl font-extrabold uppercase leading-tight tracking-tight sm:text-5xl"
         >
-          Des projets pensés pour durer.
+          Des projets exigeants, du diagnostic à la mise en œuvre.
         </h2>
+        <p class="mt-4 max-w-2xl text-sm leading-7 text-steel">
+          Aperçu de références terrain du Groupe Afrimmo S.A. (statuts et années indicatifs selon mandat client).
+        </p>
       </div>
       <a
         href="#contact"
@@ -24,11 +27,12 @@
     </div>
 
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-      @for (project of projects; track project.title) {
+      @for (project of projects; track project.id) {
         <article
           appReveal
-          class="project-card group relative h-[360px] overflow-hidden bg-dark-cmt"
+          class="project-card group relative h-[340px] overflow-hidden bg-dark-cmt lg:h-[360px]"
           [ngClass]="{ 'md:col-span-2': project.wide }"
+          [style.transition-delay.s]="project.transitionDelaySeconds ?? undefined"
         >
           <img
             [src]="project.imageUrl"
@@ -38,20 +42,26 @@
           <div
             class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"
           ></div>
-          <div class="absolute bottom-0 left-0 right-0 p-7 text-white">
+          <div
+            class="absolute top-6 right-6 rounded-sm bg-black/55 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.16em] text-white backdrop-blur-sm"
+          >
+            {{ project.statusLabel }}
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white md:p-7">
             <span
               class="text-[10px] font-extrabold uppercase tracking-[.24em] text-red-cmt"
               >{{ project.category }}</span
             >
-            @if (project.description) {
-              <h3
-                class="mt-3 text-2xl font-extrabold uppercase"
-              >
+            @if (project.wide) {
+              <h3 class="mt-3 text-2xl font-extrabold uppercase leading-snug tracking-tight">
                 {{ project.title }}
               </h3>
-              <p class="mt-2 text-sm text-white/65">{{ project.description }}</p>
+              <p class="mt-2 text-sm leading-6 text-white/70">{{ project.description }}</p>
             } @else {
-              <h3 class="mt-3 text-xl font-extrabold uppercase">{{ project.title }}</h3>
+              <h3 class="mt-3 text-xl font-extrabold uppercase leading-snug tracking-tight">
+                {{ project.title }}
+              </h3>
+              <p class="mt-2 text-sm leading-6 text-white/65">{{ project.description }}</p>
             }
           </div>
         </article>
