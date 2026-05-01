@@ -18,25 +18,44 @@ export class CounterDirective implements AfterViewInit, OnDestroy {
   private readonly el = inject(ElementRef<HTMLElement>);
   private observer?: IntersectionObserver;
   private rafId = 0;
+  private hasStarted = false;
 
   ngAfterViewInit(): void {
+    requestAnimationFrame(() => this.armCounterObserver());
+  }
+
+  private armCounterObserver(): void {
     const host = this.el.nativeElement;
     const suffix = this.suffix();
     host.textContent = `0${suffix}`;
     host.classList.add('counter');
 
+    const start = (): void => {
+      if (this.hasStarted) return;
+      this.hasStarted = true;
+      this.observer?.unobserve(host);
+      this.runAnimation(host);
+    };
+
     this.observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (!entry.isIntersecting) continue;
-          const counterEl = entry.target as HTMLElement;
-          this.observer?.unobserve(counterEl);
-          this.runAnimation(counterEl);
+          start();
         }
       },
-      { threshold: 0.55 },
+      { threshold: 0, rootMargin: '0px 0px 96px 0px' },
     );
     this.observer.observe(host);
+
+    requestAnimationFrame(() => {
+      const root = document.documentElement;
+      const vh = root.clientHeight || window.innerHeight;
+      const r = host.getBoundingClientRect();
+      if (r.top < vh + 120 && r.bottom > -120) {
+        start();
+      }
+    });
   }
 
   private runAnimation(el: HTMLElement): void {
