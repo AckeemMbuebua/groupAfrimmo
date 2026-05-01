@@ -29,9 +29,9 @@
         Une exécution carrée pour des projets ambitieux.
       </h2>
       <p class="mt-7 max-w-2xl text-base leading-8 text-steel">
-        Afrimmo intervient comme partenaire opérationnel sur des projets où la
-        qualité, les délais et la coordination des corps de métier ne peuvent pas
-        être approximatifs.
+        Le <strong class="font-extrabold text-dark-cmt">Groupe Afrimmo S.A.</strong> intervient
+        comme partenaire opérationnel sur les chantiers où la qualité, les délais et la
+        coordination des corps de métier ne tolèrent aucune approximation.
       </p>
 
       <div class="mt-9 grid gap-4 sm:grid-cols-2">
@@ -47,12 +47,15 @@
         }
       </div>
 
-      <div class="mt-8 grid gap-3 text-sm font-bold text-dark-cmt sm:grid-cols-2">
-        @for (line of commitments; track line) {
-          <span class="flex items-center gap-3">
-            <i class="fa-solid fa-circle-check text-red-cmt"></i>
-            {{ line }}
-          </span>
+      <p class="mb-4 mt-10 text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">
+        Valeurs
+      </p>
+      <div class="grid gap-3 sm:grid-cols-2">
+        @for (v of values; track v.title) {
+          <div class="border border-gray-200 bg-white p-5">
+            <h3 class="text-sm font-extrabold uppercase text-dark-cmt">{{ v.title }}</h3>
+            <p class="mt-2 text-sm leading-7 text-steel">{{ v.body }}</p>
+          </div>
         }
       </div>
     </div>

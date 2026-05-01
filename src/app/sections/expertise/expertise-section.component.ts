@@ -14,30 +14,30 @@ export class ExpertiseSectionComponent {
     {
       imageUrl:
         'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1000&auto=format&fit=crop',
-      imageAlt: 'Engin de chantier sur un site de construction',
+      imageAlt: 'Engins et ouvrages de génie civil',
       numberLabel: '01',
       title: 'Construction & génie civil',
       description:
-        'Bâtiments, infrastructures routières, ouvrages techniques et coordination des travaux complexes.',
+        'Bâtiments publics et privés, infrastructures routières, projets industriels et miniers.',
     },
     {
       imageUrl:
         'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop',
-      imageAlt: 'Entrepôt logistique industriel',
+      imageAlt: 'Logistique et transport de marchandises',
       numberLabel: '02',
-      title: 'Logistique industrielle',
+      title: 'Logistique & transport',
       description:
-        'Transport, approvisionnement, coordination de flux et disponibilité des ressources critiques.',
+        'Transport de marchandises, logistique industrielle et coordination des approvisionnements.',
       transitionDelaySeconds: 0.08,
     },
     {
       imageUrl:
         'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1000&auto=format&fit=crop',
-      imageAlt: 'Containers et commerce international',
+      imageAlt: 'Commerce international et matériaux',
       numberLabel: '03',
-      title: 'Import - export',
+      title: 'Import – export',
       description:
-        'Ciment, fer à béton, bois, agrégats et fournitures techniques pour projets publics et privés.',
+        'Fourniture de matériaux, matières premières et développement du commerce international.',
       transitionDelaySeconds: 0.16,
     },
   ];

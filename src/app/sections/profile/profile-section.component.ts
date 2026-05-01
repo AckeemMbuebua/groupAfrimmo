@@ -1,6 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
-import type { ProfileHighlight } from '../../shared/landing/landing.models';
+import type {
+  ProfileHighlight,
+  ValuePillar,
+} from '../../shared/landing/landing.models';
 
 @Component({
   selector: 'app-profile-section',
@@ -12,27 +15,36 @@ import type { ProfileHighlight } from '../../shared/landing/landing.models';
 export class ProfileSectionComponent {
   protected readonly mainImageSrc =
     'https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=1400&auto=format&fit=crop';
-  protected readonly mainImageAlt = 'Équipe de construction sur un chantier';
+  protected readonly mainImageAlt = 'Chantier et équipes en coordination terrain';
 
   protected readonly pillars: readonly ProfileHighlight[] = [
     {
       title: 'Mission',
       body:
-        'Fournir des solutions fiables, personnalisées et adaptées aux contraintes du terrain.',
+        'Fournir des produits et des services de haute qualité, tout en favorisant le développement économique et social dans toutes les régions où nous opérons. Viser à être un partenaire de confiance pour nos clients, avec des solutions intégrées et personnalisées.',
       borderClass: 'border-red-cmt',
     },
     {
       title: 'Vision',
       body:
-        'Devenir une référence en construction, import-export et logistique industrielle.',
+        "Devenir un leader incontournable dans les secteurs de l'import-export, des technologies de l'information et de la construction, et au-delà. Être reconnus pour l'excellence, la fiabilité et une capacité d'innovation constante au service des besoins clients.",
       borderClass: 'border-dark-cmt',
     },
   ];
 
-  protected readonly commitments: readonly string[] = [
-    'Matériaux certifiés',
-    'Contrôle qualité',
-    'Équipes qualifiées',
-    'Délais maîtrisés',
+  protected readonly values: readonly ValuePillar[] = [
+    { title: 'Qualité', body: 'Respect des standards élevés.' },
+    {
+      title: 'Innovation',
+      body: 'Solutions modernes et efficaces.',
+    },
+    {
+      title: 'Engagement',
+      body: 'Satisfaction client prioritaire.',
+    },
+    {
+      title: 'Fiabilité',
+      body: 'Respect des délais et des engagements.',
+    },
   ];
 }
