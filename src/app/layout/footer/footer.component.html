@@ -1,0 +1,71 @@
+<footer class="bg-dark-cmt px-4 py-12 text-white sm:px-6 lg:px-8">
+  <div
+    class="mx-auto flex max-w-7xl flex-col gap-10 border-b border-white/10 pb-10 lg:flex-row lg:items-start lg:justify-between"
+  >
+    <div class="max-w-md">
+      <div class="flex items-center gap-3">
+        <span class="grid h-10 w-10 place-items-center bg-red-cmt">
+          <i class="fa-solid fa-city text-white"></i>
+        </span>
+        <span class="text-xl font-extrabold uppercase tracking-tight"
+          >Afrimmo <span class="text-red-cmt">S.A.</span></span
+        >
+      </div>
+      <p class="mt-5 text-sm leading-7 text-white/55">
+        Excellence, fiabilité et innovation pour les projets de construction,
+        logistique et industrie.
+      </p>
+    </div>
+
+    <div class="grid gap-8 sm:grid-cols-3">
+      <div>
+        <h3 class="mb-4 text-[10px] font-extrabold uppercase tracking-[.24em] text-white/40">
+          {{ navigationColumn.heading }}
+        </h3>
+        <ul class="space-y-3 text-xs font-bold uppercase tracking-widest text-white/65">
+          @for (item of navigationColumn.links; track item.href) {
+            <li>
+              <a [href]="item.href" class="hover:text-red-cmt">{{ item.label }}</a>
+            </li>
+          }
+        </ul>
+      </div>
+      <div>
+        <h3 class="mb-4 text-[10px] font-extrabold uppercase tracking-[.24em] text-white/40">
+          {{ directColumn.heading }}
+        </h3>
+        <ul class="space-y-3 text-xs font-bold uppercase tracking-widest text-white/65">
+          @for (item of directColumn.links; track item.href) {
+            <li>
+              <a [href]="item.href" class="hover:text-red-cmt">{{ item.label }}</a>
+            </li>
+          }
+        </ul>
+      </div>
+      <div>
+        <h3 class="mb-4 text-[10px] font-extrabold uppercase tracking-[.24em] text-white/40">
+          Réseaux
+        </h3>
+        <div class="flex gap-3">
+          @for (social of socialLinks; track social.ariaLabel) {
+            <a
+              [href]="social.href"
+              class="grid h-11 w-11 place-items-center border border-white/10 transition hover:bg-red-cmt"
+              [attr.aria-label]="social.ariaLabel"
+              ><i [class]="social.iconClass"></i
+            ></a>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mx-auto flex max-w-7xl flex-col gap-3 pt-8 text-[10px] font-extrabold uppercase tracking-[.2em] text-white/35 sm:flex-row sm:items-center sm:justify-between"
+  >
+    <p>© 2026 Groupe Afrimmo S.A. Tous droits réservés.</p>
+    <div class="flex gap-5">
+      <a href="#" class="hover:text-white">Mentions légales</a>
+      <a href="#" class="hover:text-white">Confidentialité</a>
+    </div>
+  </div>
+</footer>
