@@ -2,102 +2,99 @@
   id="home"
   class="scroll-mt-28 noise relative min-h-[100svh] overflow-hidden bg-dark-cmt pt-28 text-white"
 >
-  <div class="absolute inset-0 opacity-50">
-    <video autoplay muted loop playsinline class="h-full w-full object-cover">
+  <div class="pointer-events-none absolute inset-0 opacity-45">
+    <video autoplay muted loop playsinline class="h-full w-full scale-105 object-cover">
       <source [src]="videoSrc" type="video/mp4" />
     </video>
   </div>
   <div
-    class="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,.55)_0%,rgba(10,10,10,.82)_45%,rgba(10,10,10,.94)_100%)]"
+    class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,.4)_0%,rgba(10,10,10,.82)_52%,rgba(10,10,10,.94)_100%)]"
     aria-hidden="true"
   ></div>
   <div
-    class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(227,30,36,.12)_0%,transparent_55%)]"
+    class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_50%_35%,rgba(227,30,36,.14)_0%,transparent_62%)]"
     aria-hidden="true"
   ></div>
 
   <div
-    class="relative z-10 mx-auto flex min-h-[calc(100svh-7rem)] max-w-5xl flex-col items-center justify-center px-4 py-14 text-center sm:px-6 lg:min-h-[min(100svh,860px)] lg:px-8 lg:py-20"
+    class="relative z-10 mx-auto flex min-h-[calc(100svh-7rem)] max-w-[min(100%,56rem)] flex-col justify-center px-4 py-12 sm:px-6 lg:min-h-[min(100svh,880px)] lg:py-16"
   >
-    <!-- Badge (Sparkles façon capsule shadcn) -->
-    <div class="hero-echo-chip mb-5">
-      <span
-        class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-sm font-semibold tracking-tight text-white/85 backdrop-blur-sm"
-      >
-        <svg
-          lucideSparkles
-          class="size-4 shrink-0 text-red-cmt"
-          [strokeWidth]="2"
-        ></svg>
-        Construction · logistique · industrie
-      </span>
-    </div>
-
-    <div class="hero-echo-heading max-w-4xl space-y-1">
-      <h1
-        class="text-balance text-5xl font-extrabold leading-[1.02] tracking-tight md:text-6xl lg:text-7xl"
-      >
-        Bâtir le futur
-        <span class="mt-2 block font-bold normal-case md:mt-1">
-          <span
-            class="bg-gradient-to-br from-white via-white to-white/55 bg-clip-text text-transparent"
-          >
-            avec maîtrise &amp; cadence&nbsp;terrain
-          </span>
-        </span>
-      </h1>
-    </div>
-
-    <p
-      class="hero-echo-copy mx-auto mb-10 mt-8 max-w-2xl text-lg leading-relaxed text-white/70 md:text-xl"
-    >
-      Groupe Afrimmo S.A. structure des programmes exigeants en génie civil, logistique
-      industrielle et exécution projets&nbsp; — RDC, Afrique centrale&nbsp;&amp;&nbsp;de l’Est, et missions
-      internationales lorsque vos enjeux l’exigent.
-    </p>
-
-    <div class="hero-echo-cta mb-14 flex flex-col items-stretch gap-4 sm:flex-row sm:justify-center">
-      <a
-        routerLink="/"
-        fragment="contact"
-        class="hero-btn-primary inline-flex h-11 items-center justify-center gap-2 rounded-md bg-white px-8 text-[13px] font-semibold uppercase tracking-wide text-dark-cmt shadow-sm transition hover:bg-red-cmt hover:text-white sm:h-12 sm:text-sm"
-      >
-        Démarrer un projet
-        <svg lucideArrowRight class="size-4" [strokeWidth]="2"></svg>
-      </a>
-      <a
-        routerLink="/realisations"
-        class="hero-btn-outline inline-flex h-11 items-center justify-center rounded-md border border-white/35 bg-transparent px-8 text-[13px] font-semibold uppercase tracking-wide text-white transition hover:bg-white/10 sm:h-12 sm:text-sm"
-      >
-        Nos réalisations
-      </a>
-    </div>
-
-    <!-- Métriques strip (adapté groupe, inspiré grille démo) -->
+    <!-- Carte vitrée : très visible vs texte plat sur vidéo -->
     <div
-      class="hero-echo-metrics flex flex-wrap items-center justify-center gap-8 gap-y-6 border-t border-white/10 pt-10 text-sm text-white/60 sm:flex-nowrap sm:gap-10 md:gap-14"
-      aria-label="Indicateurs de présence projet"
+      class="mx-auto flex w-full max-w-[48rem] flex-col items-center rounded-3xl border border-white/[0.13] bg-dark-cmt/58 px-5 py-10 text-center shadow-[0_32px_100px_rgb(0_0_0/0.45)] ring-1 ring-white/[0.06] backdrop-blur-xl sm:px-10 sm:py-12"
     >
-      <div class="min-w-[5.5rem]">
-        <div class="text-2xl font-bold tracking-tight text-white md:text-3xl">
-          15+
-        </div>
-        <div class="mt-1 text-[11px] font-semibold uppercase tracking-widest text-white/55">
-          Années terrain
-        </div>
+      <div class="hero-echo-chip mb-5">
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/12 px-4 py-1.5 text-sm font-semibold tracking-tight text-white/90"
+        >
+          <svg lucideSparkles class="size-4 shrink-0 text-red-cmt" [strokeWidth]="2"></svg>
+          Construction · logistique · industrie
+        </span>
       </div>
-      <div class="hidden h-9 w-px bg-white/20 sm:block" aria-hidden="true"></div>
-      <div class="min-w-[5.5rem]">
-        <div class="text-2xl font-bold tracking-tight text-white md:text-3xl">40+</div>
-        <div class="mt-1 text-[11px] font-semibold uppercase tracking-widest text-white/55">
-          Projets représentatifs
-        </div>
+
+      <div class="hero-echo-heading">
+        <h1
+          class="text-balance text-5xl font-extrabold leading-[1.06] tracking-tight md:text-[3.35rem] lg:text-6xl"
+        >
+          Bâtir le futur
+          <span class="mt-2 block md:mt-1">
+            <span
+              class="bg-gradient-to-br from-white via-white to-white/50 bg-clip-text text-transparent"
+            >
+              avec maîtrise &amp;&nbsp;cadence terrain
+            </span>
+          </span>
+        </h1>
       </div>
-      <div class="hidden h-9 w-px bg-white/20 sm:block" aria-hidden="true"></div>
-      <div class="min-w-[5.5rem]">
-        <div class="text-2xl font-bold tracking-tight text-white md:text-3xl">100%</div>
-        <div class="mt-1 text-[11px] font-semibold uppercase tracking-widest text-white/55">
-          Engagement qualité
+
+      <p
+        class="hero-echo-copy mx-auto mb-10 mt-7 max-w-2xl text-base leading-relaxed text-white/[0.74] md:text-lg"
+      >
+        Groupe Afrimmo S.A. structure des programmes exigeants en génie civil, logistique
+        industrielle et exécution projets — RDC, Afrique centrale &amp;&nbsp;Est, et missions
+        internationales lorsque vos enjeux l’exigent.
+      </p>
+
+      <div class="hero-echo-cta mb-11 flex w-full flex-col gap-4 sm:flex-row sm:justify-center">
+        <a
+          routerLink="/"
+          fragment="contact"
+          class="hero-btn-primary inline-flex h-12 min-h-[44px] flex-1 items-center justify-center gap-2 rounded-md bg-white px-8 text-[12px] font-semibold uppercase tracking-[0.12em] text-dark-cmt shadow-lg transition hover:bg-red-cmt hover:text-white sm:flex-initial sm:text-[13px]"
+        >
+          Démarrer un projet
+          <svg lucideArrowRight class="size-4" [strokeWidth]="2"></svg>
+        </a>
+        <a
+          routerLink="/realisations"
+          class="hero-btn-outline inline-flex h-12 min-h-[44px] flex-1 items-center justify-center rounded-md border border-white/40 bg-white/[0.04] px-8 text-[12px] font-semibold uppercase tracking-[0.12em] text-white transition hover:bg-white/12 sm:flex-initial sm:text-[13px]"
+        >
+          Nos réalisations
+        </a>
+      </div>
+
+      <div
+        class="hero-echo-metrics flex w-full max-w-xl flex-wrap items-center justify-center gap-x-10 gap-y-6 border-t border-white/14 pt-8 text-[13px] text-white/62 sm:flex-nowrap md:gap-x-12"
+        aria-label="Indicateurs projet"
+      >
+        <div>
+          <div class="text-2xl font-bold tracking-tight text-white md:text-3xl">15+</div>
+          <div class="mt-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white/52">
+            Années terrain
+          </div>
+        </div>
+        <div class="hidden h-10 w-px bg-white/20 sm:block" aria-hidden="true"></div>
+        <div>
+          <div class="text-2xl font-bold tracking-tight text-white md:text-3xl">40+</div>
+          <div class="mt-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white/52">
+            Projets représentatifs
+          </div>
+        </div>
+        <div class="hidden h-10 w-px bg-white/20 sm:block" aria-hidden="true"></div>
+        <div>
+          <div class="text-2xl font-bold tracking-tight text-white md:text-3xl">100%</div>
+          <div class="mt-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white/52">
+            Engagement qualité
+          </div>
         </div>
       </div>
     </div>

@@ -13,9 +13,11 @@ import type {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfileSectionComponent {
+  /** même host Unsplash déjà utilisé côté réalisations (meilleure fiabilité hotlink que l’URL précédente). */
   protected readonly mainImageSrc =
-    'https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=1400&auto=format&fit=crop';
-  protected readonly mainImageAlt = 'Chantier et équipes en coordination terrain';
+    'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=82';
+  protected readonly mainImageAlt =
+    'Chantier avec grues et ouvrages — coordination exécution et sécurité opérationnelle';
 
   protected readonly pillars: readonly ProfileHighlight[] = [
     {

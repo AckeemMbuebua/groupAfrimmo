@@ -83,46 +83,42 @@ body {
   transform: translateY(0);
 }
 
-/** Entrées hero centré (équivalent visuel stagger Framer Motion, sans JS). */
+/**
+ * Hero : animation uniquement sur translateY (+ fill backwards).
+ * Important : éviter opacity:0 pendant l’anim — avant, un cadre noir pouvait donner hero « vide » ou figé.
+ */
 @keyframes heroEchoIn {
   from {
-    opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(22px);
   }
   to {
-    opacity: 1;
     transform: translateY(0);
   }
 }
 
 .hero-echo-chip {
-  opacity: 0;
-  animation: heroEchoIn 0.55s cubic-bezier(0.2, 0.75, 0.25, 1) forwards;
-  animation-delay: 0.1s;
+  animation: heroEchoIn 0.55s cubic-bezier(0.2, 0.75, 0.25, 1) backwards;
+  animation-delay: 0.08s;
 }
 
 .hero-echo-heading {
-  opacity: 0;
-  animation: heroEchoIn 0.52s cubic-bezier(0.2, 0.75, 0.25, 1) forwards;
-  animation-delay: 0.25s;
+  animation: heroEchoIn 0.52s cubic-bezier(0.2, 0.75, 0.25, 1) backwards;
+  animation-delay: 0.2s;
 }
 
 .hero-echo-copy {
-  opacity: 0;
-  animation: heroEchoIn 0.52s cubic-bezier(0.2, 0.75, 0.25, 1) forwards;
-  animation-delay: 0.4s;
+  animation: heroEchoIn 0.52s cubic-bezier(0.2, 0.75, 0.25, 1) backwards;
+  animation-delay: 0.34s;
 }
 
 .hero-echo-cta {
-  opacity: 0;
-  animation: heroEchoIn 0.52s cubic-bezier(0.2, 0.75, 0.25, 1) forwards;
-  animation-delay: 0.55s;
+  animation: heroEchoIn 0.52s cubic-bezier(0.2, 0.75, 0.25, 1) backwards;
+  animation-delay: 0.46s;
 }
 
 .hero-echo-metrics {
-  opacity: 0;
-  animation: heroEchoIn 0.52s cubic-bezier(0.2, 0.75, 0.25, 1) forwards;
-  animation-delay: 0.7s;
+  animation: heroEchoIn 0.52s cubic-bezier(0.2, 0.75, 0.25, 1) backwards;
+  animation-delay: 0.58s;
 }
 
 .marquee-track {
