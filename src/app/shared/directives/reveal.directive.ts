@@ -1,9 +1,9 @@
 import {
-  AfterViewInit,
+  afterNextRender,
   Directive,
   ElementRef,
-  OnDestroy,
   inject,
+  OnDestroy,
 } from '@angular/core';
 
 @Directive({
@@ -11,15 +11,13 @@ import {
   standalone: true,
   host: { class: 'reveal' },
 })
-export class RevealDirective implements AfterViewInit, OnDestroy {
+export class RevealDirective implements OnDestroy {
   private readonly el = inject(ElementRef<HTMLElement>);
   private observer?: IntersectionObserver;
   private revealed = false;
 
-  ngAfterViewInit(): void {
-    // Une frame après hydration / lazy route évite un premier IO erroné ; threshold 0 évite qu’un
-    // bloc très haut reste bloqué sous l’ancien seuil 16 %.
-    requestAnimationFrame(() => this.startObserver());
+  constructor() {
+    afterNextRender(() => queueMicrotask(() => this.startObserver()));
   }
 
   private startObserver(): void {
@@ -47,7 +45,7 @@ export class RevealDirective implements AfterViewInit, OnDestroy {
 
     this.observer.observe(host);
 
-    requestAnimationFrame(() => {
+    queueMicrotask(() => {
       if (host.classList.contains('is-visible')) return;
 
       const root = document.documentElement;

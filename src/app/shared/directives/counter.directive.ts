@@ -1,17 +1,17 @@
 import {
-  AfterViewInit,
+  afterNextRender,
   Directive,
   ElementRef,
-  OnDestroy,
   inject,
   input,
+  OnDestroy,
 } from '@angular/core';
 
 @Directive({
   selector: '[appCounter]',
   standalone: true,
 })
-export class CounterDirective implements AfterViewInit, OnDestroy {
+export class CounterDirective implements OnDestroy {
   readonly target = input.required<number>();
   readonly suffix = input<string>('');
 
@@ -20,8 +20,8 @@ export class CounterDirective implements AfterViewInit, OnDestroy {
   private rafId = 0;
   private hasStarted = false;
 
-  ngAfterViewInit(): void {
-    requestAnimationFrame(() => this.armCounterObserver());
+  constructor() {
+    afterNextRender(() => queueMicrotask(() => this.armCounterObserver()));
   }
 
   private armCounterObserver(): void {
@@ -48,7 +48,7 @@ export class CounterDirective implements AfterViewInit, OnDestroy {
     );
     this.observer.observe(host);
 
-    requestAnimationFrame(() => {
+    queueMicrotask(() => {
       const root = document.documentElement;
       const vh = root.clientHeight || window.innerHeight;
       const r = host.getBoundingClientRect();

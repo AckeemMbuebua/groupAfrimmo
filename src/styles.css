@@ -146,18 +146,49 @@ body {
   }
 }
 
+/* Réduction de mouvement : sélecteurs ciblés uniquement — pas de `*` global en !important sur les transitions. */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+  html.scroll-smooth {
     scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
+  }
+
+  .hero-title,
+  .hero-copy,
+  .hero-actions {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
   }
 
   .reveal {
-    opacity: 1;
-    transform: none;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .mobile-menu {
+    transition: none !important;
+  }
+
+  .magnetic-card {
+    transition: none !important;
+  }
+
+  .magnetic-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .project-card img {
+    transition: none !important;
+  }
+
+  .project-card:hover img {
+    transform: none !important;
+    filter: none !important;
   }
 }

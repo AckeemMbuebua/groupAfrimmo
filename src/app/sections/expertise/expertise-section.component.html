@@ -17,24 +17,26 @@
 
     <div class="grid gap-5 md:grid-cols-3">
       @for (card of cards; track card.numberLabel) {
-        <article
+        <div
           appReveal
-          class="magnetic-card border border-gray-200 bg-white"
+          class="h-full"
           [style.transition-delay.s]="card.transitionDelaySeconds ?? undefined"
         >
-          <img
-            [src]="card.imageUrl"
-            [alt]="card.imageAlt"
-            class="h-56 w-full object-cover grayscale"
-          />
-          <div class="p-7">
-            <span class="text-5xl font-extrabold text-gray-100">{{
-              card.numberLabel
-            }}</span>
-            <h3 class="mt-4 text-xl font-extrabold uppercase">{{ card.title }}</h3>
-            <p class="mt-4 text-sm leading-7 text-steel">{{ card.description }}</p>
-          </div>
-        </article>
+          <article class="magnetic-card h-full border border-gray-200 bg-white">
+            <img
+              [src]="card.imageUrl"
+              [alt]="card.imageAlt"
+              class="h-56 w-full object-cover grayscale"
+            />
+            <div class="p-7">
+              <span class="text-5xl font-extrabold text-gray-100">{{
+                card.numberLabel
+              }}</span>
+              <h3 class="mt-4 text-xl font-extrabold uppercase">{{ card.title }}</h3>
+              <p class="mt-4 text-sm leading-7 text-steel">{{ card.description }}</p>
+            </div>
+          </article>
+        </div>
       }
     </div>
   </div>
