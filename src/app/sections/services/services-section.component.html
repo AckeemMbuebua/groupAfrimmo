@@ -1,0 +1,37 @@
+<section id="services" class="border-t border-gray-100 bg-white px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+  <div class="mx-auto max-w-7xl">
+    <div appReveal class="mb-12 max-w-3xl">
+      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">
+        Nos services
+      </p>
+      <h2
+        class="text-4xl font-extrabold uppercase leading-tight tracking-tight sm:text-5xl"
+      >
+        Des prestations métiers ciblées pour chaque projet.
+      </h2>
+      <p class="mt-6 text-base leading-8 text-steel">
+        Le Groupe Afrimmo S.A. déploige des équipes et des méthodes éprouvées sur l’ensemble
+        du cycle projet, du diagnostic à la mise en œuvre.
+      </p>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      @for (item of services; track item.summary; let i = $index) {
+        <article
+          appReveal
+          class="flex gap-5 border border-gray-200 bg-white p-7"
+          [style.transition-delay.s]="i > 0 ? i * 0.06 : undefined"
+        >
+          <span
+            class="shrink-0 text-3xl font-extrabold leading-none tabular-nums text-red-cmt opacity-90"
+          >
+            {{ formatOrdinal(i) }}
+          </span>
+          <p class="text-sm font-extrabold uppercase leading-snug tracking-wide text-dark-cmt">
+            {{ item.summary }}
+          </p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
