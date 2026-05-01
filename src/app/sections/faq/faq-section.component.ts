@@ -17,12 +17,12 @@ export class FaqSectionComponent {
     {
       question: 'Quels types de projets gérez-vous ?',
       answer:
-        'Bâtiments publics et privés, infrastructures, logements, projets industriels, travaux MEP, approvisionnement et coordination logistique.',
+        'Le Groupe Afrimmo S.A. intervient sur les bâtiments publics et privés, les infrastructures routières, les complexes résidentiels et hôteliers, les projets industriels et miniers, les équipements de santé, les travaux MEP, ainsi que sur l’approvisionnement et la coordination logistique.',
     },
     {
       question: 'Fournissez-vous les matériaux ?',
       answer:
-        "Oui. Afrimmo peut assurer l'approvisionnement en ciment, fer à béton, bois, agrégats et autres fournitures techniques selon le cahier des charges.",
+        "Oui. Le groupe peut assurer l'approvisionnement en ciment, fer à béton, bois, agrégats, matières premières selon usages et autres fournitures techniques définies au cahier des charges.",
     },
     {
       question: 'Dans quelles zones intervenez-vous ?',
@@ -33,6 +33,16 @@ export class FaqSectionComponent {
       question: 'Comment demander une estimation ?',
       answer:
         "Envoyez un brief avec la localisation, la nature des travaux, les délais souhaités et les contraintes connues. L'équipe revient avec les prochaines étapes.",
+    },
+    {
+      question: 'Intervenez-vous sur les infrastructures électriques ou les très grands ensembles ?',
+      answer:
+        'Oui selon périmètre : construction et réhabilitation de réseaux et ouvrages associés peuvent faire partie du mandat, avec coordination des équipes techniques et corps de métier. Les projets d’envergure utilisent la même exigence méthodes / pilotage décrite sur le site.',
+    },
+    {
+      question: 'Proposez-vous uniquement du gros œuvre ou aussi des lots spécialisés ?',
+      answer:
+        'Le Groupe Afrimmo S.A. peut mobiliser plusieurs lots : rénovation et habillage, services industriels, renfort de capacité terrain (personnel qualifié) et autres prestations présentées dans la partie « Nos services ».',
     },
   ];
 

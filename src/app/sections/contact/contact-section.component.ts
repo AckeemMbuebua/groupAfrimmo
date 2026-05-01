@@ -17,8 +17,13 @@ export class ContactSectionComponent {
 
   protected readonly projectOptions: readonly ContactProjectOption[] = [
     { value: 'construction', label: 'Construction & génie civil' },
-    { value: 'logistics', label: 'Logistique industrielle' },
-    { value: 'import-export', label: 'Import - export' },
+    { value: 'renovation', label: 'Rénovation et habillage' },
+    { value: 'electrical', label: 'Infrastructures électriques' },
+    { value: 'raw-materials', label: 'Fourniture matières premières' },
+    { value: 'industrial-services', label: 'Services industriels et techniques' },
+    { value: 'workforce', label: 'Main-d’œuvre qualifiée' },
+    { value: 'logistics', label: 'Logistique & transport' },
+    { value: 'import-export', label: 'Import-export' },
     { value: 'other', label: 'Autre besoin' },
   ];
 }
