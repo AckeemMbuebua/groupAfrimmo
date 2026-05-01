@@ -1,0 +1,88 @@
+<section
+  id="contact"
+  class="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+>
+  <div class="absolute inset-y-0 right-0 hidden w-1/3 bg-red-cmt lg:block"></div>
+  <div class="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+    <div appReveal>
+      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">Contact</p>
+      <h2
+        class="text-4xl font-extrabold uppercase leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+      >
+        Parlons de votre prochain chantier.
+      </h2>
+      <p class="mt-6 max-w-xl text-sm leading-7 text-steel">
+        Une demande claire aujourd'hui peut éviter des semaines d'incertitude sur le
+        terrain.
+      </p>
+      <div class="mt-8 grid gap-4 text-sm font-bold">
+        <a [href]="phoneHref" class="flex items-center gap-4">
+          <span class="grid h-12 w-12 place-items-center bg-dark-cmt text-white"
+            ><i class="fa-solid fa-phone"></i></span>
+          {{ phoneDisplay }}
+        </a>
+        <a [href]="mailHref" class="flex items-center gap-4">
+          <span class="grid h-12 w-12 place-items-center bg-dark-cmt text-white"
+            ><i class="fa-solid fa-envelope"></i></span>
+          {{ mailDisplay }}
+        </a>
+        <span class="flex items-center gap-4">
+          <span class="grid h-12 w-12 place-items-center bg-dark-cmt text-white">
+            <i class="fa-solid fa-location-dot"></i>
+          </span>
+          RDC & International
+        </span>
+      </div>
+    </div>
+
+    <form appReveal class="bg-dark-cmt p-5 text-white shadow-soft sm:p-8 lg:p-10">
+      <div class="grid gap-4 sm:grid-cols-2">
+        <label class="grid gap-2 text-[10px] font-extrabold uppercase tracking-widest text-white/50">
+          Nom
+          <input
+            type="text"
+            class="border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-red-cmt"
+            placeholder="Votre nom"
+          />
+        </label>
+        <label class="grid gap-2 text-[10px] font-extrabold uppercase tracking-widest text-white/50">
+          Téléphone
+          <input
+            type="tel"
+            class="border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-red-cmt"
+            placeholder="+243 ..."
+          />
+        </label>
+        <label
+          class="grid gap-2 text-[10px] font-extrabold uppercase tracking-widest text-white/50 sm:col-span-2"
+        >
+          Type de projet
+          <select
+            class="border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-red-cmt"
+          >
+            @for (opt of projectOptions; track opt.value) {
+              <option class="text-dark-cmt">{{ opt.label }}</option>
+            }
+          </select>
+        </label>
+        <label
+          class="grid gap-2 text-[10px] font-extrabold uppercase tracking-widest text-white/50 sm:col-span-2"
+        >
+          Message
+          <textarea
+            rows="5"
+            class="resize-none border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-red-cmt"
+            placeholder="Localisation, délais, besoin principal..."
+          ></textarea>
+        </label>
+      </div>
+      <button
+        type="button"
+        class="mt-5 inline-flex w-full items-center justify-center gap-3 bg-red-cmt px-6 py-4 text-xs font-extrabold uppercase tracking-widest text-white transition hover:bg-white hover:text-dark-cmt"
+      >
+        Envoyer la demande
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </form>
+  </div>
+</section>
