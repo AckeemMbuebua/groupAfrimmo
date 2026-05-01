@@ -10,11 +10,14 @@ import type { NavLink } from '../../shared/landing/landing.models';
 export class NavbarComponent {
   protected readonly menuOpen = signal(false);
 
+  /**
+   * Menu court : détail du parcours (profil, services, méthode, témoignages…)
+   * reste accessible via défilement et liens du pied de page.
+   */
   protected readonly navLinks: readonly NavLink[] = [
-    { href: '#profil', label: 'Profil' },
-    { href: '#expertise', label: 'Expertise' },
+    { href: '#a-propos', label: 'À propos' },
+    { href: '#expertise', label: 'Expertises' },
     { href: '#realisations', label: 'Réalisations' },
-    { href: '#temoignages', label: 'Témoignages' },
     { href: '#contact', label: 'Contact' },
   ];
 
