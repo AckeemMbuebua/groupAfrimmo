@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import type { NavLink } from '../../shared/landing/landing.models';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
+  imports: [RouterLink],
   templateUrl: './navbar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -15,10 +17,10 @@ export class NavbarComponent {
    * reste accessible via défilement et liens du pied de page.
    */
   protected readonly navLinks: readonly NavLink[] = [
-    { href: '#a-propos', label: 'À propos' },
-    { href: '#expertise', label: 'Expertises' },
-    { href: '#realisations', label: 'Réalisations' },
-    { href: '#contact', label: 'Contact' },
+    { label: 'À propos', fragment: 'a-propos' },
+    { label: 'Expertises', fragment: 'expertise' },
+    { label: 'Réalisations', fragment: 'realisations' },
+    { label: 'Contact', fragment: 'contact' },
   ];
 
   protected readonly phoneHref = 'tel:+243899450037';

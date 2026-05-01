@@ -1,10 +1,13 @@
 import { TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { App } from './app';
+import { routes } from './app.routes';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
+      providers: [provideRouter(routes)],
     }).compileComponents();
   });
 
@@ -14,12 +17,13 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render landing layout', async () => {
+  it('should render shell with router outlet', async () => {
     const fixture = TestBed.createComponent(App);
+    fixture.autoDetectChanges();
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('app-navbar')).toBeTruthy();
-    expect(compiled.querySelector('app-hero-section')).toBeTruthy();
+    expect(compiled.querySelector('router-outlet')).toBeTruthy();
     expect(compiled.querySelector('app-footer')).toBeTruthy();
   });
 });

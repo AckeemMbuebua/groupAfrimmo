@@ -1,6 +1,7 @@
+/** Lien navbar vers une ancre sur la page d’accueil (sans `#`). */
 export interface NavLink {
-  readonly href: string;
   readonly label: string;
+  readonly fragment: string;
 }
 
 export interface StatItem {
@@ -71,9 +72,14 @@ export interface FaqItem {
   readonly answer: string;
 }
 
+export type FooterNavLink =
+  | { readonly kind: 'homeFragment'; readonly label: string; readonly fragment: string }
+  | { readonly kind: 'external'; readonly label: string; readonly href: string }
+  | { readonly kind: 'route'; readonly label: string; readonly path: string };
+
 export interface FooterNavColumn {
   readonly heading: string;
-  readonly links: readonly { readonly label: string; readonly href: string }[];
+  readonly links: readonly FooterNavLink[];
 }
 
 export interface FooterSocialLink {

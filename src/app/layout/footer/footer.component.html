@@ -23,9 +23,24 @@
           {{ navigationColumn.heading }}
         </h3>
         <ul class="space-y-3 text-xs font-bold uppercase tracking-widest text-white/65">
-          @for (item of navigationColumn.links; track item.href) {
+          @for (item of navigationColumn.links; track item.label) {
             <li>
-              <a [href]="item.href" class="hover:text-red-cmt">{{ item.label }}</a>
+              @switch (item.kind) {
+                @case ('homeFragment') {
+                  <a
+                    routerLink="/"
+                    [fragment]="item.fragment"
+                    class="hover:text-red-cmt"
+                    >{{ item.label }}</a
+                  >
+                }
+                @case ('external') {
+                  <a [href]="item.href" class="hover:text-red-cmt">{{ item.label }}</a>
+                }
+                @case ('route') {
+                  <a [routerLink]="item.path" class="hover:text-red-cmt">{{ item.label }}</a>
+                }
+              }
             </li>
           }
         </ul>
@@ -35,9 +50,24 @@
           {{ directColumn.heading }}
         </h3>
         <ul class="space-y-3 text-xs font-bold uppercase tracking-widest text-white/65">
-          @for (item of directColumn.links; track item.href) {
+          @for (item of directColumn.links; track item.label) {
             <li>
-              <a [href]="item.href" class="hover:text-red-cmt">{{ item.label }}</a>
+              @switch (item.kind) {
+                @case ('homeFragment') {
+                  <a
+                    routerLink="/"
+                    [fragment]="item.fragment"
+                    class="hover:text-red-cmt"
+                    >{{ item.label }}</a
+                  >
+                }
+                @case ('external') {
+                  <a [href]="item.href" class="hover:text-red-cmt">{{ item.label }}</a>
+                }
+                @case ('route') {
+                  <a [routerLink]="item.path" class="hover:text-red-cmt">{{ item.label }}</a>
+                }
+              }
             </li>
           }
         </ul>
@@ -71,8 +101,10 @@
       </p>
     </div>
     <div class="flex shrink-0 flex-wrap gap-x-5 gap-y-2 font-extrabold uppercase">
-      <a href="#" class="hover:text-white">Mentions légales</a>
-      <a href="#" class="hover:text-white">Confidentialité</a>
+      <a routerLink="/mentions-legales" class="hover:text-white">Mentions légales</a>
+      <a routerLink="/politique-de-confidentialite" class="hover:text-white"
+        >Confidentialité</a
+      >
     </div>
   </div>
 </footer>
