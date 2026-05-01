@@ -1,0 +1,119 @@
+<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+  @for (project of projects(); track project.id) {
+    @if (projectDetailParent(); as parent) {
+      <a
+        [routerLink]="['/', parent, project.id]"
+        class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-cmt"
+        [ngClass]="{ 'md:col-span-2': project.wide }"
+      >
+        <article
+          appReveal
+          class="project-card group relative h-[340px] overflow-hidden bg-dark-cmt lg:h-[360px]"
+          [style.transition-delay.s]="project.transitionDelaySeconds ?? undefined"
+        >
+          <img
+            [src]="project.imageUrl"
+            [alt]="project.imageAlt"
+            class="h-full w-full object-cover grayscale transition duration-700 group-hover:scale-[1.02] group-hover:grayscale-0"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"
+          ></div>
+          <div
+            class="absolute top-6 right-6 rounded-sm bg-black/55 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.16em] text-white backdrop-blur-sm"
+          >
+            {{ project.statusLabel }}
+          </div>
+          <div class="pointer-events-none absolute bottom-0 left-0 right-0 p-6 text-white md:p-7">
+            <span
+              class="text-[10px] font-extrabold uppercase tracking-[.24em] text-red-cmt"
+              >{{ project.category }}</span
+            >
+            @if (project.wide) {
+              <h3 class="mt-3 text-2xl font-extrabold uppercase leading-snug tracking-tight">
+                {{ project.title }}
+              </h3>
+              <p class="mt-2 text-sm leading-6 text-white/70">{{ project.description }}</p>
+            } @else {
+              <h3 class="mt-3 text-xl font-extrabold uppercase leading-snug tracking-tight">
+                {{ project.title }}
+              </h3>
+              <p class="mt-2 text-sm leading-6 text-white/65">{{ project.description }}</p>
+            }
+            <p class="pointer-events-none mt-4 inline-flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[.2em] text-red-cmt">
+              Voir la fiche <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+            </p>
+          </div>
+        </article>
+      </a>
+    } @else {
+      <article
+        appReveal
+        class="project-card group relative h-[340px] overflow-hidden bg-dark-cmt lg:h-[360px]"
+        [ngClass]="{ 'md:col-span-2': project.wide }"
+        [style.transition-delay.s]="project.transitionDelaySeconds ?? undefined"
+      >
+        <img
+          [src]="project.imageUrl"
+          [alt]="project.imageAlt"
+          class="h-full w-full object-cover grayscale"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"
+        ></div>
+        <div
+          class="absolute top-6 right-6 rounded-sm bg-black/55 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.16em] text-white backdrop-blur-sm"
+        >
+          {{ project.statusLabel }}
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-6 text-white md:p-7">
+          <span
+            class="text-[10px] font-extrabold uppercase tracking-[.24em] text-red-cmt"
+            >{{ project.category }}</span
+          >
+          @if (project.wide) {
+            <h3 class="mt-3 text-2xl font-extrabold uppercase leading-snug tracking-tight">
+              {{ project.title }}
+            </h3>
+            <p class="mt-2 text-sm leading-6 text-white/70">{{ project.description }}</p>
+          } @else {
+            <h3 class="mt-3 text-xl font-extrabold uppercase leading-snug tracking-tight">
+              {{ project.title }}
+            </h3>
+            <p class="mt-2 text-sm leading-6 text-white/65">{{ project.description }}</p>
+          }
+        </div>
+      </article>
+    }
+  }
+</div>
+
+@if (showExpertCta()) {
+  <div
+    appReveal
+    class="mx-auto mt-14 flex max-w-3xl flex-col items-center gap-6 border border-dark-cmt/10 bg-neutral-50 px-6 py-8 text-center sm:px-10"
+  >
+    <p class="text-[10px] font-extrabold uppercase tracking-[.24em] text-red-cmt">
+      Aller plus loin sur une réalisation
+    </p>
+    <p class="max-w-xl text-sm leading-7 text-steel">
+      Besoin du détail méthodo, références ou équipe projet sur un dossier précis ? Écrivez-nous avec le nom du projet.
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <a
+        routerLink="/"
+        [fragment]="contactFragment()"
+        class="inline-flex items-center gap-3 bg-dark-cmt px-6 py-4 text-[11px] font-extrabold uppercase tracking-widest text-white transition hover:bg-red-cmt"
+      >
+        Contacter nos équipes <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+      </a>
+      <a
+        class="inline-flex items-center gap-3 border border-dark-cmt/15 px-6 py-4 text-[11px] font-extrabold uppercase tracking-widest text-dark-cmt transition hover:border-red-cmt hover:text-red-cmt"
+        [href]="phoneHref"
+      >
+        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+        Appeler maintenant
+      </a>
+    </div>
+  </div>
+}

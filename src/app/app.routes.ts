@@ -9,6 +9,42 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'realisations',
+    title: 'Réalisations · Groupe Afrimmo',
+    loadComponent: () =>
+      import('./pages/realisations/realisations-hub.component').then(
+        (m) => m.RealisationsHubComponent,
+      ),
+  },
+  {
+    path: 'realisations/:id',
+    loadComponent: () =>
+      import('./pages/realisations/project-detail.component').then(
+        (m) => m.ProjectDetailComponent,
+      ),
+  },
+  {
+    path: 'actualites',
+    title: 'Actualités · Groupe Afrimmo',
+    loadComponent: () =>
+      import('./pages/actualites/actualites-index.component').then(
+        (m) => m.ActualitesIndexComponent,
+      ),
+  },
+  {
+    path: 'actualites/:slug',
+    loadComponent: () =>
+      import('./pages/actualites/actualite-detail.component').then(
+        (m) => m.ActualiteDetailComponent,
+      ),
+  },
+  {
+    path: 'carrieres',
+    title: 'Carrières · Groupe Afrimmo',
+    loadComponent: () =>
+      import('./pages/carrieres/carrieres.component').then((m) => m.CarrieresComponent),
+  },
+  {
     path: 'mentions-legales',
     loadComponent: () =>
       import('./pages/legal/mentions-legales.component').then(

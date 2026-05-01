@@ -14,58 +14,39 @@
           Des projets exigeants, du diagnostic à la mise en œuvre.
         </h2>
         <p class="mt-4 max-w-2xl text-sm leading-7 text-steel">
-          Aperçu de références terrain du Groupe Afrimmo S.A. (statuts et années indicatifs selon mandat client).
+          Aperçu de références terrain du Groupe Afrimmo S.A. (statuts et années indicatifs selon mandat client). Chaque vignette renvoie vers une fiche plus détaillée.
         </p>
+        <div class="mt-6 flex flex-wrap gap-4">
+          <a
+            routerLink="/realisations"
+            class="inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-widest text-red-cmt transition hover:text-dark-cmt"
+          >
+            Toutes nos réalisations
+            <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+          </a>
+          <span class="text-dark-cmt/25" aria-hidden="true">|</span>
+          <a
+            [href]="phoneHref"
+            class="inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-widest text-dark-cmt transition hover:text-red-cmt"
+          >
+            Brief téléphonique
+            <i class="fa-solid fa-phone text-xs" aria-hidden="true"></i>
+          </a>
+        </div>
       </div>
       <a
-        href="#contact"
+        routerLink="/"
+        fragment="contact"
         class="inline-flex items-center justify-center gap-3 bg-dark-cmt px-6 py-4 text-xs font-extrabold uppercase tracking-widest text-white transition hover:bg-red-cmt"
       >
         Soumettre un projet
-        <i class="fa-solid fa-arrow-right"></i>
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
       </a>
     </div>
 
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-      @for (project of projects; track project.id) {
-        <article
-          appReveal
-          class="project-card group relative h-[340px] overflow-hidden bg-dark-cmt lg:h-[360px]"
-          [ngClass]="{ 'md:col-span-2': project.wide }"
-          [style.transition-delay.s]="project.transitionDelaySeconds ?? undefined"
-        >
-          <img
-            [src]="project.imageUrl"
-            [alt]="project.imageAlt"
-            class="h-full w-full object-cover grayscale"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"
-          ></div>
-          <div
-            class="absolute top-6 right-6 rounded-sm bg-black/55 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.16em] text-white backdrop-blur-sm"
-          >
-            {{ project.statusLabel }}
-          </div>
-          <div class="absolute bottom-0 left-0 right-0 p-6 text-white md:p-7">
-            <span
-              class="text-[10px] font-extrabold uppercase tracking-[.24em] text-red-cmt"
-              >{{ project.category }}</span
-            >
-            @if (project.wide) {
-              <h3 class="mt-3 text-2xl font-extrabold uppercase leading-snug tracking-tight">
-                {{ project.title }}
-              </h3>
-              <p class="mt-2 text-sm leading-6 text-white/70">{{ project.description }}</p>
-            } @else {
-              <h3 class="mt-3 text-xl font-extrabold uppercase leading-snug tracking-tight">
-                {{ project.title }}
-              </h3>
-              <p class="mt-2 text-sm leading-6 text-white/65">{{ project.description }}</p>
-            }
-          </div>
-        </article>
-      }
-    </div>
+    <app-projects-grid
+      [projects]="projects"
+      projectDetailParent="realisations"
+    />
   </div>
 </section>

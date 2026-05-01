@@ -21,8 +21,15 @@
     <div
       class="hidden items-center gap-9 text-[11px] font-extrabold uppercase tracking-[.18em] lg:flex"
     >
-      @for (link of navLinks; track link.fragment) {
-        <a routerLink="/" [fragment]="link.fragment" class="nav-link">{{ link.label }}</a>
+      @for (link of navLinks; track navTrack($index, link)) {
+        @switch (link.kind) {
+          @case ('home') {
+            <a routerLink="/" [fragment]="link.fragment" class="nav-link">{{ link.label }}</a>
+          }
+          @case ('route') {
+            <a [routerLink]="link.path" class="nav-link">{{ link.label }}</a>
+          }
+        }
       }
     </div>
 
@@ -59,14 +66,26 @@
     <div
       class="mx-auto grid max-w-7xl gap-1 px-4 py-4 text-sm font-extrabold uppercase tracking-[.16em] sm:px-6"
     >
-      @for (link of navLinks; track link.fragment) {
-        <a
-          routerLink="/"
-          [fragment]="link.fragment"
-          class="mobile-link px-2 py-3"
-          (click)="closeMenu()"
-          >{{ link.label }}</a
-        >
+      @for (link of navLinks; track navTrack($index, link)) {
+        @switch (link.kind) {
+          @case ('home') {
+            <a
+              routerLink="/"
+              [fragment]="link.fragment"
+              class="mobile-link px-2 py-3"
+              (click)="closeMenu()"
+              >{{ link.label }}</a
+            >
+          }
+          @case ('route') {
+            <a
+              [routerLink]="link.path"
+              class="mobile-link px-2 py-3"
+              (click)="closeMenu()"
+              >{{ link.label }}</a
+            >
+          }
+        }
       }
       <a
         [href]="phoneHref"

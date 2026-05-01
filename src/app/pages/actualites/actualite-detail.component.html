@@ -1,0 +1,55 @@
+@if (resolve(); as article) {
+  <article class="pb-24 pt-28">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <nav
+        class="mb-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] font-extrabold uppercase tracking-[.2em] text-dark-cmt/40"
+        aria-label="Fil d'Ariane"
+      >
+        <a routerLink="/" class="text-red-cmt transition hover:text-dark-cmt">Accueil</a>
+        <span aria-hidden="true">/</span>
+        <a routerLink="/actualites" class="text-red-cmt transition hover:text-dark-cmt">
+          Actualités
+        </a>
+        <span aria-hidden="true">/</span>
+        <span class="max-w-[10rem] truncate text-dark-cmt sm:max-w-md">{{ article.title }}</span>
+      </nav>
+
+      <header class="border-b border-dark-cmt/10 pb-10">
+        <time
+          [attr.datetime]="article.dateISO"
+          class="text-[10px] font-extrabold uppercase tracking-[.2em] text-dark-cmt/40"
+        >
+          {{ formatDate(article.dateISO) }}
+        </time>
+        <h1 class="mt-4 text-3xl font-extrabold uppercase leading-tight tracking-tight md:text-4xl">
+          {{ article.title }}
+        </h1>
+        <p class="mt-5 text-sm leading-7 text-steel">{{ article.excerpt }}</p>
+      </header>
+
+      <div class="relative mt-10 aspect-[16/9] overflow-hidden bg-dark-cmt">
+        <img
+          [src]="article.coverUrl"
+          [alt]="article.coverAlt"
+          class="h-full w-full object-cover"
+        />
+      </div>
+
+      <div class="mt-12 space-y-5">
+        @for (p of article.body; track $index) {
+          <p class="text-sm leading-7 text-dark-cmt/85">{{ p }}</p>
+        }
+      </div>
+
+      <footer class="mt-16 border-t border-dark-cmt/10 pt-10">
+        <a
+          routerLink="/actualites"
+          class="inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-widest text-red-cmt hover:text-dark-cmt"
+        >
+          <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
+          Toutes les actualités
+        </a>
+      </footer>
+    </div>
+  </article>
+}

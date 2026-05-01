@@ -1,8 +1,7 @@
-/** Lien navbar vers une ancre sur la page d’accueil (sans `#`). */
-export interface NavLink {
-  readonly label: string;
-  readonly fragment: string;
-}
+/** Lien navbar principal : ancres accueil ou routes P5+. */
+export type NavbarPrimaryLink =
+  | { readonly kind: 'home'; readonly label: string; readonly fragment: string }
+  | { readonly kind: 'route'; readonly label: string; readonly path: string };
 
 export interface StatItem {
   readonly target: number;

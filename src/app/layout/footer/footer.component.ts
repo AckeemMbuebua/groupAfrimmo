@@ -16,6 +16,9 @@ export class FooterComponent {
   protected readonly navigationColumn: FooterNavColumn = {
     heading: 'Navigation',
     links: [
+      { kind: 'route', label: 'Actualités', path: '/actualites' },
+      { kind: 'route', label: 'Carrières', path: '/carrieres' },
+      { kind: 'route', label: 'Hub réalisations', path: '/realisations' },
       { kind: 'homeFragment', label: 'À propos', fragment: 'a-propos' },
       { kind: 'homeFragment', label: 'Profil', fragment: 'profil' },
       { kind: 'homeFragment', label: 'Expertise', fragment: 'expertise' },
