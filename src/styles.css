@@ -117,7 +117,7 @@ body {
 }
 
 .mobile-menu.open {
-  max-height: 430px;
+  max-height: 640px;
 }
 
 @keyframes heroRise {
