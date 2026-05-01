@@ -1,0 +1,16 @@
+<section class="relative overflow-hidden bg-dark-cmt py-5 text-white">
+  <div
+    class="marquee-track flex w-[200%] gap-8 text-[11px] font-extrabold uppercase tracking-[.24em] text-white/45"
+  >
+    @for (_ of trackIndices; track _) {
+      <div class="flex w-1/2 items-center justify-around gap-8">
+        @for (label of labels; track label; let i = $index) {
+          <span>{{ label }}</span>
+          @if (i < labels.length - 1) {
+            <span class="text-red-cmt">+</span>
+          }
+        }
+      </div>
+    }
+  </div>
+</section>

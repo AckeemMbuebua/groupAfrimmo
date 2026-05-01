@@ -1,0 +1,56 @@
+<section
+  id="home"
+  class="noise relative min-h-[100svh] overflow-hidden bg-dark-cmt pt-28 text-white"
+>
+  <div class="absolute inset-0 opacity-55">
+    <video autoplay muted loop playsinline class="h-full w-full object-cover">
+      <source [src]="videoSrc" type="video/mp4" />
+    </video>
+  </div>
+  <div
+    class="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,10,10,.96),rgba(10,10,10,.66),rgba(10,10,10,.24))]"
+  ></div>
+  <div
+    class="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-dark-cmt to-transparent"
+  ></div>
+
+  <div
+    class="relative z-10 mx-auto flex min-h-[calc(100svh-7rem)] max-w-7xl items-center px-4 py-16 sm:px-6 lg:px-8"
+  >
+    <div class="max-w-5xl">
+      <p
+        class="hero-copy mb-6 flex items-center gap-4 text-[11px] font-extrabold uppercase tracking-[.28em] text-red-cmt sm:text-xs"
+      >
+        <span class="h-[2px] w-10 bg-red-cmt"></span>
+        Construction, logistique &amp; industrie
+      </p>
+      <h1
+        class="hero-title max-w-5xl text-[clamp(3rem,13vw,8.8rem)] font-extrabold uppercase leading-[.88] tracking-tight"
+      >
+        Bâtir le futur <span class="text-outline block">avec maîtrise.</span>
+      </h1>
+      <p
+        class="hero-copy mt-7 max-w-2xl text-base leading-8 text-white/75 sm:text-lg"
+      >
+        Groupe Afrimmo S.A. accompagne les chantiers exigeants avec des solutions
+        intégrées en génie civil, approvisionnement, logistique et exécution
+        industrielle.
+      </p>
+      <div class="hero-actions mt-9 flex flex-col gap-3 sm:flex-row">
+        <a
+          href="#contact"
+          class="inline-flex items-center justify-center gap-3 bg-red-cmt px-7 py-4 text-xs font-extrabold uppercase tracking-widest text-white shadow-red transition hover:-translate-y-1 hover:bg-white hover:text-dark-cmt"
+        >
+          Démarrer un projet
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a
+          href="#realisations"
+          class="inline-flex items-center justify-center gap-3 border border-white/20 px-7 py-4 text-xs font-extrabold uppercase tracking-widest text-white transition hover:-translate-y-1 hover:border-white hover:bg-white hover:text-dark-cmt"
+        >
+          Voir les réalisations
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
