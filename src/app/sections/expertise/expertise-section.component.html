@@ -1,0 +1,40 @@
+<section
+  id="expertise"
+  class="bg-gray-50 px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+>
+  <div class="mx-auto max-w-7xl">
+    <div appReveal class="mb-12 max-w-3xl">
+      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">
+        Domaines d'expertise
+      </p>
+      <h2
+        class="text-4xl font-extrabold uppercase leading-tight tracking-tight sm:text-5xl"
+      >
+        Des solutions intégrées, du plan au terrain.
+      </h2>
+    </div>
+
+    <div class="grid gap-5 md:grid-cols-3">
+      @for (card of cards; track card.numberLabel) {
+        <article
+          appReveal
+          class="magnetic-card border border-gray-200 bg-white"
+          [style.transition-delay.s]="card.transitionDelaySeconds ?? undefined"
+        >
+          <img
+            [src]="card.imageUrl"
+            [alt]="card.imageAlt"
+            class="h-56 w-full object-cover grayscale"
+          />
+          <div class="p-7">
+            <span class="text-5xl font-extrabold text-gray-100">{{
+              card.numberLabel
+            }}</span>
+            <h3 class="mt-4 text-xl font-extrabold uppercase">{{ card.title }}</h3>
+            <p class="mt-4 text-sm leading-7 text-steel">{{ card.description }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
