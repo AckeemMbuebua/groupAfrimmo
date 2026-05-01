@@ -1,0 +1,149 @@
+@if (testimonials().length > 0) {
+  <section
+    id="temoignages"
+    class="relative overflow-hidden bg-warm py-16 lg:py-28"
+    [ngClass]="hostClass()"
+  >
+    <div class="container mx-auto max-w-[1200px] items-center px-4 md:px-6">
+      <div appReveal class="mb-12 space-y-4 text-center">
+        @if (sectionEyebrow()) {
+          <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">
+            {{ sectionEyebrow() }}
+          </p>
+        }
+        <h2
+          class="text-balance text-4xl font-extrabold uppercase leading-tight tracking-tight md:text-5xl"
+        >
+          {{ sectionTitle() }}
+        </h2>
+        <p class="mx-auto max-w-[700px] text-base leading-8 text-steel md:text-lg">
+          {{ sectionLead() }}
+        </p>
+      </div>
+
+      <div
+        class="max-w-[1200px] items-center gap-8 md:grid md:grid-cols-[1fr_auto] md:items-center"
+      >
+        <div class="relative">
+          <div class="absolute -top-6 -left-6 z-10 md:-top-10 md:-left-8">
+            <svg lucideQuote class="h-11 w-11 text-red-cmt/20 md:h-12 md:w-12" [strokeWidth]="1"></svg>
+          </div>
+
+          <div class="relative h-[360px] md:h-[300px]">
+            @for (t of testimonials(); track t.id; let idx = $index) {
+              <div
+                class="absolute inset-0 overflow-hidden rounded-lg border border-black/10 bg-white text-dark-cmt shadow-sm transition-all duration-500"
+                [class.shadow-lg]="idx === activeIndex()"
+                [class.z-10]="idx === activeIndex()"
+                [class.z-0]="idx !== activeIndex()"
+                [style.opacity]="idx === activeIndex() ? 1 : 0"
+                [style.transform]="
+                  idx === activeIndex() ? 'translateX(0)' : 'translateX(100px)'
+                "
+                [style.pointer-events]="idx === activeIndex() ? 'auto' : 'none'"
+              >
+                <div class="flex h-full flex-col p-6 md:p-8">
+                  <div class="mb-4 flex items-start justify-between gap-4">
+                    <div class="flex min-w-0 items-center gap-4">
+                      <div
+                        class="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-red-cmt/10 bg-gray-100"
+                      >
+                        @if (!avatarBrokenIds().has(t.id)) {
+                          <img
+                            [src]="t.avatar"
+                            [alt]="t.name"
+                            class="h-full w-full object-cover"
+                            loading="lazy"
+                            (error)="onAvatarError(t.id)"
+                          />
+                        } @else {
+                          <span class="text-sm font-bold text-dark-cmt">{{
+                            initials(t.name)
+                          }}</span>
+                        }
+                      </div>
+                      <div class="min-w-0 text-left">
+                        <h4 class="truncate font-semibold uppercase tracking-tight">
+                          {{ t.name }}
+                        </h4>
+                        <p class="text-sm text-steel">
+                          {{ t.role }}@if (t.company.length > 0) {
+                            <span>, {{ t.company }}</span>
+                          }
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex shrink-0 gap-0.5">
+                      @for (r of ratingIndices(t.rating); track r) {
+                        <svg lucideStar class="h-4 w-4"></svg>
+                      }
+                    </div>
+                  </div>
+
+                  <div class="my-4 h-px w-full bg-black/10" role="separator"></div>
+
+                  <p class="flex-1 text-base italic leading-relaxed text-dark-cmt">
+                    “{{ t.content }}”
+                  </p>
+
+                  @if (showVerifiedBadge()) {
+                    <div class="mt-4 text-right text-xs text-steel">Client vérifié</div>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+
+        <div
+          class="mt-8 flex justify-center gap-4 md:mt-0 md:flex-col md:items-center"
+        >
+          <button
+            type="button"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/15 bg-white text-dark-cmt transition hover:border-red-cmt hover:text-red-cmt"
+            aria-label="Témoignage précédent"
+            (click)="goPrevClick()"
+          >
+            <svg lucideChevronLeft class="h-4 w-4"></svg>
+          </button>
+
+          <div class="flex items-center justify-center gap-2 md:flex-col">
+            @for (t of testimonials(); track t.id; let i = $index) {
+              <button
+                type="button"
+                class="h-2 w-2 rounded-full transition-colors"
+                [class.bg-red-cmt]="i === activeIndex()"
+                [class.bg-steel/30]="i !== activeIndex()"
+                [attr.aria-label]="'Aller au témoignage ' + (i + 1)"
+                (click)="goToSlide(i)"
+                (keydown)="handleDotKeyboard($event, i)"
+              ></button>
+            }
+          </div>
+
+          <button
+            type="button"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/15 bg-white text-dark-cmt transition hover:border-red-cmt hover:text-red-cmt"
+            aria-label="Témoignage suivant"
+            (click)="goNextClick()"
+          >
+            <svg lucideChevronRight class="h-4 w-4"></svg>
+          </button>
+        </div>
+      </div>
+
+      @if (partnerNames().length > 0) {
+        <div class="mt-20 border-t border-black/10 pt-10">
+          <h3 class="mb-8 text-center text-sm font-medium uppercase tracking-widest text-steel">
+            {{ partnersBlockTitle() }}
+          </h3>
+          <div class="flex flex-wrap justify-center gap-x-12 gap-y-8">
+            @for (company of partnerNames(); track $index) {
+              <div class="text-2xl font-semibold text-steel/50">{{ company }}</div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+}
