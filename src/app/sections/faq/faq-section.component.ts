@@ -22,7 +22,7 @@ export class FaqSectionComponent {
     {
       question: 'Fournissez-vous les matériaux ?',
       answer:
-        "Oui. Le groupe peut assurer l'approvisionnement en ciment, fer à béton, bois, agrégats, matières premières selon usages et autres fournitures techniques définies au cahier des charges.",
+        "Oui. Le groupe peut assurer l'approvisionnement en ciment, fer à béton, bois, agrégats, matières premières et fournitures techniques définies au cahier des charges.",
     },
     {
       question: 'Dans quelles zones intervenez-vous ?',
@@ -32,12 +32,12 @@ export class FaqSectionComponent {
     {
       question: 'Comment demander une estimation ?',
       answer:
-        "Envoyez un brief avec la localisation, la nature des travaux, les délais souhaités et les contraintes connues. L'équipe revient avec les prochaines étapes.",
+        "Envoyez un brief avec la localisation, la nature des travaux, les délais souhaités, le budget indicatif et les contraintes connues. L'équipe vous répond avec les prochaines étapes.",
     },
     {
       question: 'Intervenez-vous sur les infrastructures électriques ou les très grands ensembles ?',
       answer:
-        'Oui selon périmètre : construction et réhabilitation de réseaux et ouvrages associés peuvent faire partie du mandat, avec coordination des équipes techniques et corps de métier. Les projets d’envergure utilisent la même exigence méthodes / pilotage décrite sur le site.',
+        'Oui, selon le périmètre : construction et réhabilitation de réseaux et ouvrages associés peuvent faire partie du mandat, avec coordination des équipes techniques et corps de métier. Les projets d’envergure suivent la même exigence de méthode et de pilotage.',
     },
     {
       question: 'Proposez-vous uniquement du gros œuvre ou aussi des lots spécialisés ?',

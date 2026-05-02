@@ -12,6 +12,7 @@ import type { ContactProjectOption } from '../../shared/landing/landing.models';
 export class ContactSectionComponent {
   protected readonly phoneDisplay = '+243 899 450 037';
   protected readonly phoneHref = 'tel:+243899450037';
+  protected readonly whatsappHref = 'https://wa.me/243899450037';
   protected readonly mailHref = 'mailto:contact@afrimmo.com';
   protected readonly mailDisplay = 'contact@afrimmo.com';
 

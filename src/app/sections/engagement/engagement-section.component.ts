@@ -10,10 +10,10 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
 })
 export class EngagementSectionComponent {
   protected readonly partnersLead =
-    'Le Groupe Afrimmo S.A. collabore avec des partenaires locaux et internationaux, renforçant sa capacité à répondre efficacement aux projets d’envergure.';
+    'Groupe Afrimmo S.A. s’appuie sur des partenaires locaux et internationaux pour renforcer la capacité d’exécution, sécuriser les approvisionnements et répondre aux projets d’envergure.';
 
   protected readonly innovationIntro =
-    'Le groupe intègre des approches innovantes dans la conception et la réalisation de ses projets afin d’améliorer la qualité, l’efficacité et la durabilité de ses interventions.';
+    'Le groupe intègre des méthodes de conception, de planification et de suivi qui améliorent la qualité, l’efficacité et la durabilité de ses interventions.';
 
   protected readonly innovationPillars: readonly string[] = [
     'Techniques modernes de construction',
@@ -22,7 +22,7 @@ export class EngagementSectionComponent {
   ];
 
   protected readonly innovationOutro =
-    'Cette démarche permet de proposer des solutions performantes, fiables et adaptées aux exigences des clients.';
+    'Cette démarche permet de livrer des solutions fiables, mesurables et adaptées aux exigences du client.';
 
   protected readonly csrIntro =
     'L’entreprise s’engage dans des initiatives sociales concrètes sur le long terme :';

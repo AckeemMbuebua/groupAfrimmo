@@ -10,10 +10,10 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
 })
 export class DemarcheSectionComponent {
   protected readonly approachItems: readonly string[] = [
-    'Une analyse précise des besoins clients',
-    'Des solutions personnalisées',
-    'Une exécution rigoureuse',
-    'Une culture de résultats',
+    'Analyse précise du besoin, du site et des contraintes',
+    'Solution calibrée sur le budget, les délais et les ressources',
+    'Exécution suivie par points de contrôle terrain',
+    'Culture du résultat et reporting exploitable',
   ];
 
   protected readonly strengthItems: readonly string[] = [

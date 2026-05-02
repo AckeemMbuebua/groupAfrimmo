@@ -15,10 +15,10 @@ export class ServicesSectionComponent {
   }
 
   protected readonly services: readonly OfferedServiceLine[] = [
-    { summary: 'Rénovation et habillage de bâtiments' },
-    { summary: "Construction d'infrastructures électriques" },
-    { summary: 'Fourniture de matières premières' },
-    { summary: 'Services industriels et techniques' },
-    { summary: 'Fourniture de main-d’œuvre qualifiée' },
+    { summary: 'Rénovation, habillage et finitions de bâtiments' },
+    { summary: "Construction et réhabilitation d'infrastructures électriques" },
+    { summary: 'Fourniture de matériaux et matières premières' },
+    { summary: 'Services industriels, techniques et maintenance projet' },
+    { summary: 'Mobilisation de main-d’œuvre qualifiée' },
   ];
 }

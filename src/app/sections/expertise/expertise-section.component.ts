@@ -29,7 +29,7 @@ export class ExpertiseSectionComponent {
       numberLabel: '01',
       title: 'Construction & génie civil',
       description:
-        'Bâtiments publics et privés, infrastructures routières, projets industriels et miniers.',
+        'Bâtiments publics et privés, infrastructures routières, ouvrages industriels et programmes miniers.',
     },
     {
       imageUrl:
@@ -38,7 +38,7 @@ export class ExpertiseSectionComponent {
       numberLabel: '02',
       title: 'Logistique & transport',
       description:
-        'Transport de marchandises, logistique industrielle et coordination des approvisionnements.',
+        'Transport de marchandises, logistique industrielle et coordination des flux d’approvisionnement.',
       transitionDelaySeconds: 0.08,
     },
     {
@@ -48,7 +48,7 @@ export class ExpertiseSectionComponent {
       numberLabel: '03',
       title: 'Import – export',
       description:
-        'Fourniture de matériaux, matières premières et développement du commerce international.',
+        'Fourniture de matériaux, matières premières et solutions d’import-export pour projets exigeants.',
       transitionDelaySeconds: 0.16,
     },
   ];

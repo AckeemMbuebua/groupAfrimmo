@@ -9,17 +9,28 @@
       <h2
         class="text-4xl font-extrabold uppercase leading-tight tracking-tight sm:text-5xl lg:text-6xl"
       >
-        Parlons de votre prochain chantier.
+        Parlons de votre projet.
       </h2>
       <p class="mt-6 max-w-xl text-sm leading-7 text-steel">
-        Une demande claire aujourd'hui peut éviter des semaines d'incertitude sur le
-        terrain.
+        Construction, génie civil, logistique, import-export ou renfort technique : envoyez les
+        premières informations et notre équipe revient avec un cadrage clair.
       </p>
       <div class="mt-8 grid gap-4 text-sm font-bold">
         <a [href]="phoneHref" class="flex items-center gap-4">
           <span class="grid h-12 w-12 place-items-center bg-dark-cmt text-white"
             ><i class="fa-solid fa-phone"></i></span>
           {{ phoneDisplay }}
+        </a>
+        <a
+          [href]="whatsappHref"
+          class="flex items-center gap-4"
+          target="_blank"
+          rel="noopener"
+          aria-label="Contacter Groupe Afrimmo S.A. sur WhatsApp"
+        >
+          <span class="grid h-12 w-12 place-items-center bg-green-600 text-white"
+            ><i class="fa-brands fa-whatsapp"></i></span>
+          WhatsApp direct
         </a>
         <a [href]="mailHref" class="flex items-center gap-4">
           <span class="grid h-12 w-12 place-items-center bg-dark-cmt text-white"
@@ -38,17 +49,21 @@
     <form appReveal class="border border-white/15 bg-dark-cmt p-5 text-white sm:p-8 lg:p-10">
       <div class="grid gap-4 sm:grid-cols-2">
         <label class="grid gap-2 text-[10px] font-extrabold uppercase tracking-widest text-white/50">
-          Nom
+          Nom complet
           <input
             type="text"
+            name="name"
+            autocomplete="name"
             class="border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-red-cmt"
-            placeholder="Votre nom"
+            placeholder="Nom et prénom"
           />
         </label>
         <label class="grid gap-2 text-[10px] font-extrabold uppercase tracking-widest text-white/50">
           Téléphone
           <input
             type="tel"
+            name="phone"
+            autocomplete="tel"
             class="border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-red-cmt"
             placeholder="+243 ..."
           />
@@ -58,6 +73,7 @@
         >
           Type de projet
           <select
+            name="projectType"
             class="border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-red-cmt"
           >
             @for (opt of projectOptions; track opt.value) {
@@ -70,9 +86,10 @@
         >
           Message
           <textarea
+            name="message"
             rows="5"
             class="resize-none border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-red-cmt"
-            placeholder="Localisation, délais, besoin principal..."
+            placeholder="Localisation, délais, budget indicatif, besoin principal..."
           ></textarea>
         </label>
       </div>
@@ -80,7 +97,7 @@
         type="button"
         class="mt-5 inline-flex w-full items-center justify-center gap-3 bg-red-cmt px-6 py-4 text-xs font-extrabold uppercase tracking-widest text-white transition hover:bg-white hover:text-dark-cmt"
       >
-        Envoyer la demande
+        Demander un devis
         <i class="fa-solid fa-paper-plane"></i>
       </button>
     </form>

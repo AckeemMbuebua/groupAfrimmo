@@ -10,10 +10,10 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
 })
 export class AboutSectionComponent {
   protected readonly leadParagraph =
-    'Bienvenue au Groupe Afrimmo S.A., une entreprise polyvalente et innovante opérant en République démocratique du Congo et à l’international.';
+    'Groupe Afrimmo S.A. est une entreprise multisectorielle basée en République démocratique du Congo, organisée pour exécuter des projets de construction, d’infrastructures, de logistique et d’approvisionnement avec une même exigence de terrain.';
 
   protected readonly bullets: readonly string[] = [
-    'Depuis notre création, nous nous engageons à offrir des solutions complètes et diversifiées pour répondre aux besoins de nos clients dans plusieurs secteurs clés de l’économie.',
-    'Nous croyons fermement en l’importance de l’innovation et de la qualité pour stimuler le développement et la croissance durable.',
+    'Nous accompagnons maîtres d’ouvrage, partenaires privés et acteurs institutionnels sur des périmètres où la coordination, les délais et la conformité sont critiques.',
+    'Notre valeur tient à la combinaison d’une présence locale, d’un réseau de partenaires fiables et de standards d’exécution adaptés aux projets complexes.',
   ];
 }
