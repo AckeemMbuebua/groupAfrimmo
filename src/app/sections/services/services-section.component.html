@@ -1,6 +1,6 @@
 <section
   id="services"
-  class="scroll-mt-28 border-t border-gray-100 bg-white px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+  class="scroll-mt-28 border-t border-dark-cmt/10 bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
 >
   <div class="mx-auto max-w-7xl">
     <div appReveal class="mb-12 max-w-3xl">
@@ -22,7 +22,7 @@
       @for (item of services; track item.summary; let i = $index) {
         <article
           appReveal
-          class="flex gap-5 border border-gray-200 bg-white p-7"
+          class="flex gap-5 border border-dark-cmt/10 bg-white p-7 transition-colors duration-300 hover:border-brand/30"
           [style.transition-delay.s]="i > 0 ? i * 0.06 : undefined"
         >
           <span
