@@ -16,7 +16,7 @@ export class FooterComponent {
 
   protected readonly phoneHref = 'tel:+243899450037';
 
-  protected readonly mailHref = 'mailto:contact@afrimmo.com';
+  protected readonly mailHref = 'mailto:Info@groupeafrimmo.com';
 
   protected readonly footerLinks: readonly FooterNavLink[] = SITE_FOOTER_NAV;
 

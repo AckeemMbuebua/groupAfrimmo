@@ -23,7 +23,7 @@ export class CarrieresComponent implements OnInit {
   protected readonly roles = JOB_POSTINGS;
 
   protected readonly mailIntro =
-    'mailto:contact@afrimmo.com?subject=Candidature%20spontan%C3%A9e%20%2F%20';
+    'mailto:Info@groupeafrimmo.com?subject=Candidature%20spontan%C3%A9e%20%2F%20';
 
   ngOnInit(): void {
     this.title.setTitle('Carrières | Groupe Afrimmo S.A.');

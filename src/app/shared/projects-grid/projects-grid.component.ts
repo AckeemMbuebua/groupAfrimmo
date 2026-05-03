@@ -32,7 +32,7 @@ export class ProjectsGridComponent {
 
   readonly phoneHref = 'tel:+243899450037';
 
-  readonly mailHref = 'mailto:contact@afrimmo.com?subject=Dossier%20r%C3%A9alisation';
+  readonly mailHref = 'mailto:Info@groupeafrimmo.com?subject=Dossier%20r%C3%A9alisation';
 
   readonly contactFragment = input<string>('contact');
 
