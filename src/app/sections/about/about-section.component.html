@@ -3,8 +3,8 @@
   class="relative scroll-mt-28 border-t border-gray-200 bg-white px-4 py-20 sm:px-6 lg:px-8 lg:py-24"
 >
   <div class="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-12 lg:gap-y-12">
-    <div appReveal class="lg:col-span-5">
-      <div class="border border-gray-200 bg-gray-50">
+    <div appReveal class="lg:col-span-5 reveal-left">
+      <div class="about-image-frame overflow-hidden border border-gray-200 bg-gray-50">
         <img
           [src]="mainImageUrl()"
           [alt]="mainImageAlt"
@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <div appReveal class="mt-12 lg:col-span-7 lg:mt-0">
+    <div appReveal class="mt-12 lg:col-span-7 lg:mt-0 reveal-right">
       <p class="mb-4 text-xs font-extrabold uppercase tracking-[.28em] text-brand">
         Qui nous sommes
       </p>
@@ -29,7 +29,7 @@
         Une entreprise structurée pour les projets exigeants.
       </h2>
 
-      <div class="mt-8 border border-gray-200 bg-gray-50 p-7 sm:p-9">
+      <div appReveal class="mt-8 border border-gray-200 bg-gray-50 p-7 sm:p-9 reveal-scale" style="transition-delay: 0.08s">
         <p class="text-lg font-light leading-relaxed text-dark-cmt sm:text-xl">
           Basée en République démocratique du Congo, Groupe Afrimmo S.A. intervient dans la
           construction, le génie civil, les infrastructures, la logistique et l’approvisionnement.
@@ -39,7 +39,7 @@
         </p>
       </div>
 
-      <p class="mt-8 text-base font-light leading-relaxed text-dark-cmt/85">
+      <p appReveal class="mt-8 text-base font-light leading-relaxed text-dark-cmt/85" style="transition-delay: 0.14s">
         <span class="font-extrabold text-dark-cmt">Notre valeur ajoutée :</span>
         relier les besoins du projet, les ressources techniques, les approvisionnements et
         l’exécution terrain dans une même logique de résultat.
@@ -49,9 +49,11 @@
         Pourquoi nous faire confiance
       </p>
       <ul class="mt-4 grid gap-3 sm:grid-cols-2">
-        @for (line of trustPoints; track line) {
+        @for (line of trustPoints; track line; let i = $index) {
           <li
+            appReveal
             class="flex items-start gap-3 border border-gray-200 bg-white px-4 py-3 text-sm font-light leading-relaxed text-dark-cmt/85"
+            [style.transition-delay.s]="0.18 + i * 0.05"
           >
             <span
               class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center bg-brand text-[10px] text-white"
@@ -65,7 +67,9 @@
       </ul>
 
       <div
+        appReveal
         class="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 border border-gray-200 bg-white px-5 py-4 text-[11px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/55"
+        style="transition-delay: 0.32s"
       >
         <span class="text-brand">RDC</span>
         <span class="hidden h-4 w-px bg-gray-200 sm:block" aria-hidden="true"></span>

@@ -7,7 +7,7 @@
     class="bg-brand px-4 pb-24 pt-14 text-center text-white sm:px-6 sm:pb-28 sm:pt-16 lg:px-8 lg:pb-32 lg:pt-20 xl:pb-36"
   >
     <div class="mx-auto max-w-7xl">
-      <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
+      <div appReveal class="mx-auto flex max-w-3xl flex-col items-center text-center reveal-scale">
         <span
           class="mb-4 block h-0.5 w-10 bg-brand-light/90"
           aria-hidden="true"
@@ -48,7 +48,7 @@
             aria-hidden="true"
           ></span>
           <p
-            class="font-black tabular-nums leading-none tracking-tight text-dark-cmt text-[clamp(2.25rem,6.5vw,3rem)] sm:text-[clamp(2.5rem,4vw,2.85rem)] lg:text-[2.75rem]"
+            class="stat-number font-black tabular-nums leading-none tracking-tight text-dark-cmt text-[clamp(2.25rem,6.5vw,3rem)] sm:text-[clamp(2.5rem,4vw,2.85rem)] lg:text-[2.75rem]"
           >
             {{ stat.valuePrefix }}{{ stat.value }}
           </p>
@@ -66,7 +66,7 @@
   </div>
 
   <div
-    class="border-t border-gray-200 bg-white px-4 pb-14 pt-12 sm:px-6 sm:pb-16 sm:pt-14 lg:px-8 lg:pb-20"
+    class=" bg-white px-4 pb-14 pt-12 sm:px-6 sm:pb-16 sm:pt-14 lg:px-8 lg:pb-20"
   >
     <div class="mx-auto max-w-7xl">
       <div
