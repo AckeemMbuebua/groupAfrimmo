@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AboutSectionComponent } from '../../sections/about/about-section.component';
 import { HeroSectionComponent } from '../../sections/hero/hero-section.component';
-import { MarqueeSectionComponent } from '../../sections/marquee/marquee-section.component';
 import { StatsSectionComponent } from '../../sections/stats/stats-section.component';
 import { ExpertiseSectionComponent } from '../../sections/expertise/expertise-section.component';
 import { ServicesSectionComponent } from '../../sections/services/services-section.component';
@@ -14,11 +13,9 @@ import { ContactSectionComponent } from '../../sections/contact/contact-section.
 
 @Component({
   selector: 'app-landing-page',
-  standalone: true,
   imports: [
     AboutSectionComponent,
     HeroSectionComponent,
-    MarqueeSectionComponent,
     StatsSectionComponent,
     ExpertiseSectionComponent,
     ServicesSectionComponent,

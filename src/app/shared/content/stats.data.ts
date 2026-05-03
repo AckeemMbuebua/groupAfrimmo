@@ -1,6 +1,12 @@
 import type { StatItem } from '../landing/landing.models';
 import { PROJECT_CARD_LIST } from './projects.data';
 
+/** En-tête de section — éditorial centralisé. */
+export const STATS_SECTION_TITLE = 'Nos repères terrain';
+
+export const STATS_SECTION_LEAD =
+  'Quelques indicateurs pour situer l’expérience et les capacités de Groupe Afrimmo S.A.';
+
 /**
  * Nombre de références présentées dans `projects.data.ts`.
  * Modifie la liste des projets plutôt que ce nombre pour rester cohérent.
