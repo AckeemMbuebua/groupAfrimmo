@@ -9,6 +9,7 @@ import {
 import { RouterLink } from '@angular/router';
 import { RevealDirective } from '../directives/reveal.directive';
 import type { ProjectCard } from '../landing/landing.models';
+import { CTA_LABELS } from '../content/cta-labels';
 
 @Component({
   selector: 'app-projects-grid',
@@ -36,6 +37,8 @@ export class ProjectsGridComponent {
   readonly contactFragment = input<string>('contact');
 
   readonly showExpertCta = input(false);
+
+  protected readonly cta = CTA_LABELS;
 
   protected cardImageSrc(project: ProjectCard): string {
     return this.brokenCardImages.has(project.id)

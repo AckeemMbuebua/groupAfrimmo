@@ -3,10 +3,8 @@ import { AboutSectionComponent } from '../../sections/about/about-section.compon
 import { HeroSectionComponent } from '../../sections/hero/hero-section.component';
 import { MarqueeSectionComponent } from '../../sections/marquee/marquee-section.component';
 import { StatsSectionComponent } from '../../sections/stats/stats-section.component';
-import { ProfileSectionComponent } from '../../sections/profile/profile-section.component';
 import { ExpertiseSectionComponent } from '../../sections/expertise/expertise-section.component';
 import { ServicesSectionComponent } from '../../sections/services/services-section.component';
-import { DemarcheSectionComponent } from '../../sections/demarche/demarche-section.component';
 import { MethodSectionComponent } from '../../sections/method/method-section.component';
 import { ProjectsSectionComponent } from '../../sections/projects/projects-section.component';
 import { EngagementSectionComponent } from '../../sections/engagement/engagement-section.component';
@@ -22,10 +20,8 @@ import { ContactSectionComponent } from '../../sections/contact/contact-section.
     HeroSectionComponent,
     MarqueeSectionComponent,
     StatsSectionComponent,
-    ProfileSectionComponent,
     ExpertiseSectionComponent,
     ServicesSectionComponent,
-    DemarcheSectionComponent,
     MethodSectionComponent,
     ProjectsSectionComponent,
     EngagementSectionComponent,

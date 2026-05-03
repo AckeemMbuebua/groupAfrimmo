@@ -10,26 +10,17 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
 })
 export class EngagementSectionComponent {
   protected readonly partnersLead =
-    'Groupe Afrimmo S.A. s’appuie sur des partenaires locaux et internationaux pour renforcer la capacité d’exécution, sécuriser les approvisionnements et répondre aux projets d’envergure.';
+    'Groupe Afrimmo S.A. inscrit ses interventions dans une logique de qualité, d’adaptation au contexte local et de mobilisation de partenaires fiables selon les besoins du projet.';
 
-  protected readonly innovationIntro =
-    'Le groupe intègre des méthodes de conception, de planification et de suivi qui améliorent la qualité, l’efficacité et la durabilité de ses interventions.';
+  protected readonly qualityIntro =
+    'La démarche qualité repose sur des méthodes de planification, de suivi terrain et de contrôle des livrables — adaptées au périmètre mandaté et aux contraintes du chantier.';
 
-  protected readonly innovationPillars: readonly string[] = [
-    'Techniques modernes de construction',
-    'Outils de gestion optimisés',
-    'Adaptation constante aux évolutions du marché',
+  protected readonly qualityPillars: readonly string[] = [
+    'Coordination lisible entre maître d’ouvrage, équipes et fournisseurs',
+    'Points de contrôle aux jalons critiques du calendrier',
+    'Reporting proportionné à la sensibilité du projet',
   ];
 
-  protected readonly innovationOutro =
-    'Cette démarche permet de livrer des solutions fiables, mesurables et adaptées aux exigences du client.';
-
-  protected readonly csrIntro =
-    'L’entreprise s’engage dans des initiatives sociales concrètes sur le long terme :';
-
-  protected readonly csrPillars: readonly string[] = [
-    'Développement communautaire',
-    'Soutien à l’éducation',
-    'Protection de l’environnement',
-  ];
+  protected readonly responsibilityLead =
+    'L’entreprise veille à intégrer des pratiques responsables dans la conduite de ses opérations : respect des équipes, attention aux communautés, gestion raisonnée des ressources et adaptation aux contraintes environnementales. Les initiatives plus structurantes (communautaires, éducatives ou environnementales) pourront être présentées lorsque des preuves ou partenariats formalisés seront disponibles.';
 }

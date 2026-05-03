@@ -9,7 +9,7 @@
       routerLink="/"
       fragment="home"
       class="flex items-center gap-3"
-      aria-label="Accueil Afrimmo"
+      aria-label="Accueil Groupe Afrimmo S.A."
     >
       <span
         class="grid h-10 w-10 rotate-45 place-items-center border border-white/20 bg-red-cmt"
@@ -17,76 +17,35 @@
         <i class="fa-solid fa-hard-hat -rotate-45 text-white"></i>
       </span>
       <span class="text-lg font-extrabold uppercase tracking-tight sm:text-xl"
-        >Afrimmo <span class="text-red-cmt">S.A.</span></span
+        >Groupe Afrimmo <span class="text-red-cmt">S.A.</span></span
       >
     </a>
 
-    <div class="hidden items-center gap-6 text-[11px] font-extrabold uppercase tracking-[.16em] lg:flex">
+    <div
+      class="hidden flex-wrap items-center justify-end gap-x-5 gap-y-2 text-[11px] font-extrabold uppercase tracking-[.14em] lg:flex xl:gap-x-7"
+    >
       @for (link of mainLinks; track trackMain($index, link)) {
         @switch (link.kind) {
           @case ('fragment') {
-            <a routerLink="/" [fragment]="link.fragment" class="nav-link">{{ link.label }}</a>
+            <a routerLink="/" [fragment]="link.fragment" class="nav-link whitespace-nowrap">{{
+              link.label
+            }}</a>
           }
           @case ('route') {
-            <a [routerLink]="link.path" class="nav-link">{{ link.label }}</a>
+            <a [routerLink]="link.path" class="nav-link whitespace-nowrap">{{ link.label }}</a>
           }
         }
       }
-
-      <div class="relative" #moreMenuRoot>
-        <button
-          type="button"
-          class="nav-link flex items-center gap-1.5 text-left"
-          [attr.aria-expanded]="moreOpen()"
-          aria-haspopup="true"
-          aria-controls="nav-more-panel"
-          (click)="toggleMore($event)"
-        >
-          Plus
-          <i class="fa-solid fa-chevron-down text-[10px] opacity-70"></i>
-        </button>
-        @if (moreOpen()) {
-          <div
-            id="nav-more-panel"
-            class="absolute right-0 top-full z-[110] mt-2 min-w-[15rem] border border-white/15 bg-dark-cmt py-2"
-            role="menu"
-          >
-            @for (link of moreLinks; track trackMore($index, link)) {
-              @switch (link.kind) {
-                @case ('fragment') {
-                  <a
-                    routerLink="/"
-                    [fragment]="link.fragment"
-                    role="menuitem"
-                    class="block px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.12em] text-white/85 hover:bg-white/10 hover:text-white"
-                    (click)="closeMore()"
-                    >{{ link.label }}</a
-                  >
-                }
-                @case ('route') {
-                  <a
-                    [routerLink]="link.path"
-                    role="menuitem"
-                    class="block px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.12em] text-white/85 hover:bg-white/10 hover:text-white"
-                    (click)="closeMore()"
-                    >{{ link.label }}</a
-                  >
-                }
-              }
-            }
-          </div>
-        }
-      </div>
     </div>
 
     <div class="hidden items-center sm:flex">
       <a
         [href]="phoneHref"
         class="inline-flex items-center gap-2 border border-white/25 px-4 py-2.5 text-[10px] font-extrabold uppercase tracking-[0.14em] text-white transition hover:border-white hover:bg-white hover:text-dark-cmt"
-        aria-label="Appeler le +243 899 450 037"
+        [attr.aria-label]="'Appeler Afrimmo — ' + phoneDisplay"
       >
         <i class="fa-solid fa-phone"></i>
-        <span class="hidden md:inline">+243 899 450 037</span>
+        <span class="hidden md:inline">{{ phoneDisplay }}</span>
       </a>
     </div>
 
@@ -110,7 +69,9 @@
     class="mobile-menu border-t border-white/10 bg-dark-cmt lg:hidden"
     [class.open]="menuOpen()"
   >
-    <div class="mx-auto max-w-7xl space-y-1 px-4 py-4 text-[11px] font-extrabold uppercase tracking-[.14em] sm:px-6">
+    <div
+      class="mx-auto max-w-7xl space-y-1 px-4 py-4 text-[11px] font-extrabold uppercase tracking-[.14em] sm:px-6"
+    >
       @for (link of mainLinks; track trackMain($index, link)) {
         @switch (link.kind) {
           @case ('fragment') {
@@ -132,37 +93,13 @@
           }
         }
       }
-      <p class="px-2 pt-3 text-[10px] font-extrabold uppercase tracking-[0.2em] text-white/40">
-        Plus
-      </p>
-      @for (link of moreLinks; track trackMore($index, link)) {
-        @switch (link.kind) {
-          @case ('fragment') {
-            <a
-              routerLink="/"
-              [fragment]="link.fragment"
-              class="mobile-link block border-l-2 border-white/10 pl-4 py-2.5 text-white/80"
-              (click)="closeMenu()"
-              >{{ link.label }}</a
-            >
-          }
-          @case ('route') {
-            <a
-              [routerLink]="link.path"
-              class="mobile-link block border-l-2 border-white/10 pl-4 py-2.5 text-white/80"
-              (click)="closeMenu()"
-              >{{ link.label }}</a
-            >
-          }
-        }
-      }
       <a
         [href]="phoneHref"
         class="mt-4 inline-flex w-full items-center justify-center gap-2 border border-red-cmt bg-red-cmt px-4 py-3 text-[11px] text-white"
         (click)="closeMenu()"
       >
         <i class="fa-solid fa-phone"></i>
-        +243 899 450 037
+        Appeler Afrimmo
       </a>
     </div>
   </div>

@@ -8,7 +8,7 @@
           <i class="fa-solid fa-city text-sm text-white" aria-hidden="true"></i>
         </span>
         <span class="text-lg font-extrabold uppercase tracking-tight"
-          >Afrimmo <span class="text-red-cmt">S.A.</span></span
+          >Groupe Afrimmo <span class="text-red-cmt">S.A.</span></span
         >
       </div>
       <p class="mt-3 max-w-xs text-sm font-light leading-relaxed text-white/60">
@@ -20,12 +20,12 @@
       <h3
         class="mb-3 text-[10px] font-extrabold uppercase tracking-[0.22em] text-white/45"
       >
-        Liens rapides
+        Plan du site
       </h3>
       <ul
         class="space-y-2.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-white/75"
       >
-        @for (item of quickLinks; track itemLabel(item)) {
+        @for (item of footerLinks; track itemLabel(item)) {
           <li>
             @switch (item.kind) {
               @case ('homeFragment') {
@@ -38,6 +38,9 @@
               }
               @case ('route') {
                 <a [routerLink]="item.path" class="hover:text-red-cmt">{{ item.label }}</a>
+              }
+              @case ('external') {
+                <a [href]="item.href" class="hover:text-red-cmt" rel="noopener">{{ item.label }}</a>
               }
             }
           </li>

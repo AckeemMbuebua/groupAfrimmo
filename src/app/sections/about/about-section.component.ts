@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 
 @Component({
@@ -9,11 +9,26 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutSectionComponent {
-  protected readonly leadParagraph =
-    'Groupe Afrimmo S.A. est une entreprise multisectorielle basée en République démocratique du Congo, organisée pour exécuter des projets de construction, d’infrastructures, de logistique et d’approvisionnement avec une même exigence de terrain.';
+  protected readonly mainImageSrc =
+    'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=82';
+  protected readonly mainImageAlt =
+    'Chantier — coordination, génie civil et exécution terrain (visuel illustratif)';
 
-  protected readonly bullets: readonly string[] = [
-    'Nous accompagnons maîtres d’ouvrage, partenaires privés et acteurs institutionnels sur des périmètres où la coordination, les délais et la conformité sont critiques.',
-    'Notre valeur tient à la combinaison d’une présence locale, d’un réseau de partenaires fiables et de standards d’exécution adaptés aux projets complexes.',
+  private readonly mainImageBroken = signal(false);
+  protected readonly fallbackMainImage = '/images/fallback-card.jpg';
+
+  protected mainImageUrl(): string {
+    return this.mainImageBroken() ? this.fallbackMainImage : this.mainImageSrc;
+  }
+
+  protected onMainImageError(): void {
+    this.mainImageBroken.set(true);
+  }
+
+  protected readonly trustPoints: readonly string[] = [
+    'Organisation terrain et hiérarchie de décision claire',
+    'Coordination multi-lots et interfaces techniques',
+    'Réseau de partenaires mobilisé selon le besoin',
+    'Respect des engagements et qualité d’exécution',
   ];
 }

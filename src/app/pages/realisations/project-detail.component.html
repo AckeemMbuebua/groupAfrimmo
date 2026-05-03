@@ -42,6 +42,20 @@
           {{ project.title }}
         </h1>
         <p class="mt-5 max-w-2xl text-sm leading-7 text-steel">{{ project.description }}</p>
+        <dl class="mt-6 grid max-w-2xl gap-4 border border-dark-cmt/10 bg-gray-50 p-5 text-sm sm:grid-cols-2">
+          <div>
+            <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/45">
+              Lieu
+            </dt>
+            <dd class="mt-1 text-dark-cmt">{{ project.location }}</dd>
+          </div>
+          <div class="sm:col-span-2">
+            <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/45">
+              Périmètre Groupe Afrimmo S.A.
+            </dt>
+            <dd class="mt-1 leading-relaxed text-steel">{{ project.roleScope }}</dd>
+          </div>
+        </dl>
         <div class="mt-8 flex flex-wrap gap-4">
           <a
             routerLink="/realisations"
@@ -55,7 +69,7 @@
             fragment="contact"
             class="inline-flex items-center gap-2 bg-dark-cmt px-5 py-3 text-[11px] font-extrabold uppercase tracking-widest text-white hover:bg-red-cmt"
           >
-            Étudier un projet équivalent <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            Parler de votre projet <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
           </a>
         </div>
       </header>
@@ -84,7 +98,7 @@
 
         @if (project.outcomes && project.outcomes.length) {
           <h2 class="mt-12 text-xs font-extrabold uppercase tracking-[.22em] text-dark-cmt">
-            Résultats & garanties projet
+            Suivi et résultats mentionnés
           </h2>
           <ul class="mt-4 list-none space-y-3">
             @for (o of project.outcomes; track $index) {

@@ -46,8 +46,10 @@
               </h3>
               <p class="mt-2 text-sm leading-6 text-white/65">{{ project.description }}</p>
             }
-            <p class="pointer-events-none mt-4 inline-flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[.2em] text-red-cmt">
-              Voir la fiche <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+            <p
+              class="pointer-events-none mt-4 inline-flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[.2em] text-red-cmt"
+            >
+              {{ cta.projectSheet }} <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
             </p>
           </div>
         </article>
@@ -106,10 +108,11 @@
     class="mx-auto mt-14 flex max-w-3xl flex-col items-center gap-6 border border-dark-cmt/10 bg-neutral-50 px-6 py-8 text-center sm:px-10"
   >
     <p class="text-[10px] font-extrabold uppercase tracking-[.24em] text-red-cmt">
-      Aller plus loin sur une réalisation
+      Après les fiches projet
     </p>
     <p class="max-w-xl text-sm leading-7 text-steel">
-      Besoin du détail méthode, références ou équipe projet sur un dossier précis ? Écrivez-nous avec le nom du projet.
+      Pour cadrer un besoin ou préciser le périmètre sur une référence, indiquez le nom du projet et
+      le contexte dans votre message.
     </p>
     <div class="flex flex-wrap items-center justify-center gap-3">
       <a
@@ -117,14 +120,14 @@
         [fragment]="contactFragment()"
         class="inline-flex items-center gap-3 bg-dark-cmt px-6 py-4 text-[11px] font-extrabold uppercase tracking-widest text-white transition hover:bg-red-cmt"
       >
-        Contacter nos équipes <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+        {{ cta.primary }} <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
       </a>
       <a
         class="inline-flex items-center gap-3 border border-dark-cmt/15 px-6 py-4 text-[11px] font-extrabold uppercase tracking-widest text-dark-cmt transition hover:border-red-cmt hover:text-red-cmt"
         [href]="phoneHref"
       >
         <i class="fa-solid fa-phone" aria-hidden="true"></i>
-        Appeler maintenant
+        {{ cta.call }}
       </a>
     </div>
   </div>

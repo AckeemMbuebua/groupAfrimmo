@@ -2,52 +2,76 @@
   id="a-propos"
   class="relative scroll-mt-28 border-t border-gray-200 bg-white px-4 py-20 sm:px-6 lg:px-8 lg:py-24"
 >
-  <div class="relative mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-12 lg:gap-y-10">
-    <header appReveal class="lg:col-span-5">
-      <div class="border border-gray-200 bg-white p-8 lg:border-l-4 lg:border-l-red-cmt lg:p-10">
-        <p class="mb-4 text-xs font-extrabold uppercase tracking-[.28em] text-red-cmt">
-          À propos
-        </p>
-        <h2
-          class="text-balance text-[clamp(1.75rem,4vw,2.75rem)] font-extrabold uppercase leading-[1.12] tracking-tight text-dark-cmt"
-        >
-          Industrialiser l’exécution, du premier jet au dernier geste terrain.
-        </h2>
-        <p class="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-dark-cmt/55">
-          Groupe Afrimmo S.A.
-        </p>
+  <div class="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-12 lg:gap-y-12">
+    <div appReveal class="lg:col-span-5">
+      <div class="border border-gray-200 bg-gray-50">
+        <img
+          [src]="mainImageUrl()"
+          [alt]="mainImageAlt"
+          width="1400"
+          height="1050"
+          loading="lazy"
+          decoding="async"
+          referrerpolicy="no-referrer"
+          class="aspect-[4/5] h-auto w-full object-cover sm:aspect-auto sm:min-h-[420px] sm:max-h-[520px]"
+          (error)="onMainImageError()"
+        />
       </div>
-    </header>
+    </div>
 
-    <div appReveal class="mt-12 space-y-8 lg:col-span-7 lg:mt-0">
-      <div class="border border-gray-200 bg-gray-50 p-7 sm:p-9">
+    <div appReveal class="mt-12 lg:col-span-7 lg:mt-0">
+      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.28em] text-red-cmt">
+        Qui nous sommes
+      </p>
+      <h2
+        class="text-balance text-[clamp(1.75rem,4vw,2.65rem)] font-extrabold uppercase leading-[1.12] tracking-tight text-dark-cmt"
+      >
+        Une entreprise structurée pour les projets exigeants.
+      </h2>
+
+      <div class="mt-8 border border-gray-200 bg-gray-50 p-7 sm:p-9">
         <p class="text-lg font-light leading-relaxed text-dark-cmt sm:text-xl">
-          {{ leadParagraph }}
+          Basée en République démocratique du Congo, Groupe Afrimmo S.A. intervient dans la
+          construction, le génie civil, les infrastructures, la logistique et l’approvisionnement.
+          L’entreprise accompagne les maîtres d’ouvrage, partenaires privés et acteurs
+          institutionnels avec une organisation orientée terrain, coordination et qualité
+          d’exécution.
         </p>
       </div>
 
-      <ul class="space-y-5 text-base font-light leading-relaxed text-dark-cmt/80">
-        @for (line of bullets; track line) {
-          <li class="flex gap-4 border border-gray-200 bg-white p-4 sm:p-5">
+      <p class="mt-8 text-base font-light leading-relaxed text-dark-cmt/85">
+        <span class="font-extrabold text-dark-cmt">Notre valeur ajoutée :</span>
+        relier les besoins du projet, les ressources techniques, les approvisionnements et
+        l’exécution terrain dans une même logique de résultat.
+      </p>
+
+      <p class="mt-10 text-[10px] font-extrabold uppercase tracking-[0.24em] text-dark-cmt/45">
+        Pourquoi nous faire confiance
+      </p>
+      <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+        @for (line of trustPoints; track line) {
+          <li
+            class="flex items-start gap-3 border border-gray-200 bg-white px-4 py-3 text-sm font-light leading-relaxed text-dark-cmt/85"
+          >
             <span
-              class="mt-0.5 grid h-8 w-8 shrink-0 place-items-center bg-red-cmt text-[11px] text-white"
+              class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center bg-red-cmt text-[10px] text-white"
               aria-hidden="true"
             >
               <i class="fa-solid fa-check"></i>
             </span>
-            <span class="pt-0.5">{{ line }}</span>
+            <span>{{ line }}</span>
           </li>
         }
       </ul>
 
       <div
-        class="flex flex-wrap items-center gap-x-5 gap-y-2 border border-gray-200 bg-white px-5 py-4 text-[11px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/55"
+        class="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 border border-gray-200 bg-white px-5 py-4 text-[11px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/55"
       >
         <span class="text-red-cmt">RDC</span>
         <span class="hidden h-4 w-px bg-gray-200 sm:block" aria-hidden="true"></span>
         <span>Afrique centrale &amp; Est</span>
         <span class="hidden h-4 w-px bg-gray-200 sm:block" aria-hidden="true"></span>
-        <span>Missions internationales</span>
+        <span>Missions internationales selon projet</span>
       </div>
     </div>
   </div>

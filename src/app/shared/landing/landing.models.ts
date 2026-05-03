@@ -1,12 +1,19 @@
-/** Lien navbar principal : ancres accueil ou routes P5+. */
+/** Lien navbar principal : ancres accueil ou routes. */
 export type NavbarPrimaryLink =
   | { readonly kind: 'home'; readonly label: string; readonly fragment: string }
   | { readonly kind: 'route'; readonly label: string; readonly path: string };
 
+/** Entrée menu principal ou footer (fragments accueil ou routes). */
+export type NavMainEntry =
+  | { readonly kind: 'fragment'; readonly label: string; readonly fragment: string }
+  | { readonly kind: 'route'; readonly label: string; readonly path: string };
+
+/** Carte indicateur : préfixe (+), valeur, labels (rendu type « +28 »). */
 export interface StatItem {
-  readonly target: number;
-  readonly suffix: string;
+  readonly valuePrefix: string;
+  readonly value: string;
   readonly label: string;
+  readonly sublabel: string;
   readonly transitionDelaySeconds?: number;
 }
 
@@ -48,11 +55,21 @@ export interface ProjectCard {
   readonly imageAlt: string;
   readonly category: string;
   readonly title: string;
+  /** Texte court affiché sur la carte. */
   readonly description: string;
   /** Ex. « Livré 2025 », « En cours », « Phase 1 — 2024 ». */
   readonly statusLabel: string;
   readonly wide: boolean;
   readonly transitionDelaySeconds?: number;
+  readonly location: string;
+  /** Formulation prudente du périmètre d’intervention du groupe. */
+  readonly roleScope: string;
+  readonly tags: readonly string[];
+  /**
+   * Nom de fichier image cible en production (`public/images/`).
+   * Les URLs Unsplash sont temporaires ; remplacer par ce fichier quand disponible.
+   */
+  readonly futureImageAsset: string;
 }
 
 /** Données d’un témoignage affiché dans le carousel. */
@@ -69,6 +86,15 @@ export interface CarouselTestimonial {
 export interface FaqItem {
   readonly question: string;
   readonly answer: string;
+}
+
+/** Référence anonymisée (pas de citation inventée). */
+export interface SelectedReference {
+  readonly id: string;
+  readonly clientType: string;
+  readonly projectType: string;
+  readonly zone: string;
+  readonly scope: string;
 }
 
 export type FooterNavLink =

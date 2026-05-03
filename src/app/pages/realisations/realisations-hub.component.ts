@@ -30,7 +30,7 @@ export class RealisationsHubComponent implements OnInit {
     this.meta.updateTag({
       name: 'description',
       content:
-        'Réalisations représentatives en construction résidentielle, hôtelière, industrie et programmes publics — Groupe Afrimmo S.A., RDC & missions régionales.',
+        'Références terrain — résidentiel, hôtellerie, industrie, santé — périmètres rappelés sur chaque fiche. Groupe Afrimmo S.A.',
     });
   }
 }

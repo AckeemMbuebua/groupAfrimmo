@@ -19,18 +19,23 @@
         <a [href]="phoneHref" class="flex items-center gap-4">
           <span class="grid h-12 w-12 place-items-center bg-dark-cmt text-white"
             ><i class="fa-solid fa-phone"></i></span>
-          {{ phoneDisplay }}
+          <span>
+            <span class="block text-xs font-extrabold uppercase tracking-wider text-dark-cmt/50">{{
+              cta.call
+            }}</span>
+            {{ phoneDisplay }}
+          </span>
         </a>
         <a
           [href]="whatsappHref"
           class="flex items-center gap-4"
           target="_blank"
           rel="noopener"
-          aria-label="Contacter Groupe Afrimmo S.A. sur WhatsApp"
+          aria-label="Écrire sur WhatsApp — Groupe Afrimmo S.A."
         >
           <span class="grid h-12 w-12 place-items-center bg-green-600 text-white"
             ><i class="fa-brands fa-whatsapp"></i></span>
-          WhatsApp direct
+          {{ cta.whatsapp }}
         </a>
         <a [href]="mailHref" class="flex items-center gap-4">
           <span class="grid h-12 w-12 place-items-center bg-dark-cmt text-white"
@@ -97,7 +102,7 @@
         type="button"
         class="mt-5 inline-flex w-full items-center justify-center gap-3 bg-red-cmt px-6 py-4 text-xs font-extrabold uppercase tracking-widest text-white transition hover:bg-white hover:text-dark-cmt"
       >
-        Demander un devis
+        {{ cta.formSubmit }}
         <i class="fa-solid fa-paper-plane"></i>
       </button>
     </form>

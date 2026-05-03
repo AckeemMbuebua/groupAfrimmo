@@ -1,39 +1,19 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CounterDirective } from '../../shared/directives/counter.directive';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
-import type { StatItem } from '../../shared/landing/landing.models';
+import {
+  LANDING_STATS,
+  STAT_CAPABILITY_LABELS,
+} from '../../shared/content/stats.data';
 
 @Component({
   selector: 'app-stats-section',
   standalone: true,
-  imports: [CounterDirective, RevealDirective],
+  imports: [RevealDirective],
   templateUrl: './stats-section.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StatsSectionComponent {
-  protected readonly stats: readonly StatItem[] = [
-    {
-      target: 10,
-      suffix: '+',
-      label: 'Hôpitaux construits',
-    },
-    {
-      target: 28,
-      suffix: '',
-      label: 'Unités de luxe',
-      transitionDelaySeconds: 0.08,
-    },
-    {
-      target: 2026,
-      suffix: '',
-      label: 'Vision durable',
-      transitionDelaySeconds: 0.16,
-    },
-    {
-      target: 100,
-      suffix: '%',
-      label: 'Engagement qualité',
-      transitionDelaySeconds: 0.24,
-    },
-  ];
+  protected readonly stats = LANDING_STATS;
+
+  protected readonly capabilityLabels = STAT_CAPABILITY_LABELS;
 }

@@ -2,21 +2,21 @@
   <div class="mx-auto max-w-7xl">
     <div appReveal class="mb-12 max-w-3xl">
       <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">
-        Domaines d'expertise
+        Expertises
       </p>
       <h2
         class="text-4xl font-extrabold uppercase leading-tight tracking-tight sm:text-5xl"
       >
-        Des solutions intégrées, du plan au terrain.
+        Des expertises intégrées pour sécuriser vos projets.
       </h2>
       <p class="mt-6 max-w-2xl text-base font-light leading-relaxed text-steel">
-        Le Groupe Afrimmo S.A. structure son offre autour de trois domaines stratégiques
-        couvrant l’œuvre lourde, les flux industriels et le commerce international.
+        Groupe Afrimmo S.A. intervient sur des projets où la construction, la coordination
+        technique, la logistique et l’approvisionnement doivent avancer ensemble.
       </p>
     </div>
 
     <div class="grid gap-5 md:grid-cols-3">
-      @for (card of cards; track card.numberLabel) {
+      @for (card of cards; track card.title) {
         <div
           appReveal
           class="h-full"

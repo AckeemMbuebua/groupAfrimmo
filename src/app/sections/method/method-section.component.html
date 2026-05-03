@@ -11,12 +11,12 @@
         Un pilotage lisible à chaque phase.
       </h2>
       <p class="mt-6 text-sm leading-7 text-white/60">
-        Le Groupe Afrimmo S.A. structure les étapes comme un fil conducteur : brief clair, choix
-        techniques assumés, suivi terrain et livraison documentée pour chaque maillon critique.
+        Chaque projet est cadré autour des contraintes terrain, des ressources disponibles, des
+        délais, des approvisionnements et des exigences de qualité.
       </p>
     </div>
     <div class="grid gap-4">
-      @for (phase of phases; track phase.numberLabel) {
+      @for (phase of phases; track phase.title) {
         <div appReveal class="grid gap-4 border border-white/10 bg-white/[.04] p-6 sm:grid-cols-[90px_1fr]">
           <span class="text-4xl font-extrabold text-red-cmt">{{ phase.numberLabel }}</span>
           <div>
