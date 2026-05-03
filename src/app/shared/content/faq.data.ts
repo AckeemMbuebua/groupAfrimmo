@@ -24,7 +24,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
   {
     question: 'Intervenez-vous sur des lots spécialisés ?',
     answer:
-      'Oui. Selon le mandat, Afrimmo peut intervenir sur des lots techniques, la rénovation, les finitions, les infrastructures électriques, l’appui industriel, la logistique ou la mobilisation de main-d’œuvre qualifiée.',
+      'Oui. Selon le mandat, Groupe Afrimmo S.A. peut intervenir sur des lots techniques, la rénovation, les finitions, les infrastructures électriques, l’appui industriel, la logistique ou la mobilisation de main-d’œuvre qualifiée.',
   },
   {
     question: 'Travaillez-vous avec des clients publics et privés ?',

@@ -195,14 +195,24 @@ h4 {
   filter: grayscale(0);
 }
 
+/* Panneau plein écran : pas d’opacity sur le conteneur (sinon le fond paraît transparent sur mobile). */
 .mobile-menu {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .mobile-menu.open {
-  max-height: 480px;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu-panel {
+  transform: translateY(-100%);
+  transition: transform 0.35s ease;
+}
+
+.mobile-menu.open .mobile-menu-panel {
+  transform: translateY(0);
 }
 
 @keyframes marquee {
@@ -256,7 +266,18 @@ h4 {
     transition: none !important;
   }
 
-  .mobile-menu {
+  .mobile-menu:not(.open) {
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  .mobile-menu.open {
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .mobile-menu-panel {
+    transform: none !important;
     transition: none !important;
   }
 

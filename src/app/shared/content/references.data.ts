@@ -7,7 +7,7 @@ export const SELECTED_REFERENCES: readonly SelectedReference[] = [
     clientType: 'Maître d’ouvrage privé',
     projectType: 'Projet résidentiel',
     zone: 'Zanzibar',
-    scope: 'Coordination et exécution terrain',
+    scope: 'Coordination et intervention selon périmètre mandaté',
   },
   {
     id: 'ref-2',

@@ -63,8 +63,8 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     imageAlt:
       'Villa Mbweni JKT — conception à la livraison.',
     category: 'Villa / résidentiel premium',
-    title: 'Mbweni JKT Villa Construction',
-    description: 'Villa livrée en 2025 après 8 mois de conception et d’exécution.',
+    title: 'Mbweni JKT Villa',
+    description: 'Villa livrée en 2025 après huit mois de conception et d’exécution, selon le mandat.',
     statusLabel: 'Terminé · 2025',
     wide: false,
     transitionDelaySeconds: 0.18,
@@ -78,16 +78,17 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=900&auto=format&fit=crop',
     imageAlt:
-      'Refonte d’identité et travaux sur sites Lake Energies.',
+      'Lake Energies — image de marque et interventions sur sites.',
     category: 'Station-service / supervision',
-    title: 'Lake Energies — Refonte d’identité et supervision',
-    description: 'Refonte d’identité et supervision de sites Lake Energies sur 9 mois.',
+    title: 'Lake Energies — Image de marque et supervision de sites',
+    description:
+      'Accompagnement de la transition Lake Oil vers Lake Energies : identité, suivi et interventions sur sites pendant neuf mois.',
     statusLabel: 'Réalisé · 2024',
     wide: false,
     transitionDelaySeconds: 0.24,
     location: 'Sites Lake Energies',
     roleScope: 'Intervention créative et exécution terrain sur sites (périmètre défini au mandat)',
-    tags: ['Refonte d’identité', 'supervision', 'station-service', '2024'],
+    tags: ['Image de marque', 'supervision', 'station-service', '2024'],
     futureImageAsset: 'lake-energies.webp',
   },
   {
@@ -115,7 +116,8 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
       'Complexe commercial et résidentiel Palm Complex — Kigamboni.',
     category: 'Commercial & résidentiel',
     title: 'Palm Complex — Kigamboni',
-    description: 'Complexe commercial et résidentiel livré à Kigamboni en 2025.',
+    description:
+      'Complexe commercial et résidentiel à Kigamboni, livré en 2025 selon le périmètre défini au mandat.',
     statusLabel: 'Terminé · 2025',
     wide: false,
     transitionDelaySeconds: 0.36,
@@ -170,9 +172,9 @@ const PROJECT_EXTRA: Record<string, ProjectCaseExtended> = {
   },
   'lake-energies': {
     seoDescription:
-      'Lake Energies — refonte d’identité depuis Lake Oil, avec supervision et travaux sur sites sur environ 9 mois. Référence Groupe Afrimmo S.A.',
+      'Lake Energies — transition depuis Lake Oil : image de marque, supervision et interventions sur sites sur environ neuf mois. Référence Groupe Afrimmo S.A.',
     intro: [
-      'Projet de passage de Lake Oil vers Lake Energies, intégrant conception visuelle, supervision et exécution des interventions sur les sites concernés.',
+      'Projet de passage de Lake Oil vers Lake Energies : identité visuelle, suivi de chantier et exécution des interventions sur les sites concernés, sur une durée d’environ neuf mois.',
       'Ce type de mandat conjugue continuité d’exploitation, signalétique et contraintes réglementaires locales.',
     ],
   },
@@ -186,10 +188,10 @@ const PROJECT_EXTRA: Record<string, ProjectCaseExtended> = {
   },
   'palm-complex': {
     seoDescription:
-      'Palm Complex — projet mixte commercial et résidentiel à Kigamboni, livré en 2025. Référence Groupe Afrimmo S.A.',
+      'Palm Complex — projet mixte commercial et résidentiel à Kigamboni, livré en 2025 selon le périmètre mandaté. Référence Groupe Afrimmo S.A.',
     intro: [
-      'Projet commercial et résidentiel réalisé à Kigamboni, livré en 2025 après une exécution d’environ un an selon le périmètre validé.',
-      'Les opérations mixtes combinent interfaces commerces / logements et planification des accès ; le pilotage des phases critiques sécurise la livraison globale.',
+      'Projet commercial et résidentiel à Kigamboni, avec une exécution sur environ un an et une livraison en 2025 selon le périmètre défini contractuellement.',
+      'Les opérations mixtes combinent interfaces commerces / logements et planification des accès ; le pilotage des jalons suit le mandat.',
     ],
   },
 };

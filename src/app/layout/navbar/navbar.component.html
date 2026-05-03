@@ -65,44 +65,84 @@
       }
     </button>
   </nav>
+</header>
 
-  <div
-    id="mobileMenu"
-    class="mobile-menu border-t border-white/10 bg-dark-cmt lg:hidden"
-    [class.open]="menuOpen()"
-  >
-    <div
-      class="mx-auto max-w-7xl space-y-1 px-4 py-4 text-[11px] font-extrabold uppercase tracking-[.14em] sm:px-6"
-    >
-      @for (link of mainLinks; track trackMain($index, link)) {
-        @switch (link.kind) {
-          @case ('fragment') {
-            <a
-              routerLink="/"
-              [fragment]="link.fragment"
-              class="mobile-link block px-2 py-3"
-              (click)="closeMenu()"
-              >{{ link.label }}</a
-            >
-          }
-          @case ('route') {
-            <a
-              [routerLink]="link.path"
-              class="mobile-link block px-2 py-3"
-              (click)="closeMenu()"
-              >{{ link.label }}</a
-            >
-          }
-        }
-      }
+<!-- Hors du <header> : sinon backdrop-blur sur le header crée un bloc de positionnement et fixed inset-0
+     ne couvre pas l’écran (menu coincé / masqué par rapport à la topbar). -->
+<div
+  id="mobileMenu"
+  class="mobile-menu fixed inset-0 z-[150] w-full overflow-hidden bg-dark-cmt lg:hidden"
+  [class.open]="menuOpen()"
+  [attr.aria-hidden]="menuOpen() ? 'false' : 'true'"
+>
+  <div class="mobile-menu-panel flex min-h-[100dvh] min-h-svh w-full flex-col bg-dark-cmt text-white">
+    <div class="flex shrink-0 items-center justify-between gap-4 border-b border-white/10 px-5 py-4">
       <a
-        [href]="phoneHref"
-        class="mt-4 inline-flex w-full items-center justify-center gap-2 border border-brand bg-brand px-4 py-3 text-[11px] text-white transition hover:border-brand-dark hover:bg-brand-dark"
+        routerLink="/"
+        fragment="home"
+        class="flex min-w-0 items-center gap-3 py-1"
+        aria-label="Accueil Groupe Afrimmo S.A."
         (click)="closeMenu()"
       >
-        <i class="fa-solid fa-phone"></i>
-        Appeler Afrimmo
+        <span class="flex h-10 items-center">
+          <img
+            src="/images/logo/Logo_white.png"
+            alt=""
+            width="568"
+            height="218"
+            class="h-8 w-auto max-w-[min(12rem,calc(100vw-7rem))]"
+            decoding="async"
+          />
+        </span>
+        <span class="truncate text-[10px] font-extrabold uppercase tracking-[.14em]"
+          >Groupe Afrimmo S.A.</span
+        >
       </a>
+      <button
+        type="button"
+        class="grid h-10 w-10 shrink-0 place-items-center border border-white/20 text-white transition hover:bg-white/10"
+        aria-label="Fermer le menu"
+        (click)="closeMenu()"
+      >
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
     </div>
+
+    <nav
+      class="min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 py-8"
+      aria-label="Navigation mobile"
+    >
+      <div class="flex flex-col gap-1 pb-10 text-[11px] font-extrabold uppercase tracking-[.14em]">
+        @for (link of mainLinks; track trackMain($index, link)) {
+          @switch (link.kind) {
+            @case ('fragment') {
+              <a
+                routerLink="/"
+                [fragment]="link.fragment"
+                class="mobile-link block rounded-sm border border-transparent px-3 py-5 tracking-[.14em] transition hover:border-white/15 hover:bg-white/5 active:bg-white/10 sm:py-6"
+                (click)="closeMenu()"
+                >{{ link.label }}</a
+              >
+            }
+            @case ('route') {
+              <a
+                [routerLink]="link.path"
+                class="mobile-link block rounded-sm border border-transparent px-3 py-5 tracking-[.14em] transition hover:border-white/15 hover:bg-white/5 active:bg-white/10 sm:py-6"
+                (click)="closeMenu()"
+                >{{ link.label }}</a
+              >
+            }
+          }
+        }
+        <a
+          [href]="phoneHref"
+          class="mt-6 inline-flex w-full min-h-[52px] items-center justify-center gap-2 border border-brand bg-brand px-5 py-4 text-[11px] text-white transition hover:border-brand-dark hover:bg-brand-dark"
+          (click)="closeMenu()"
+        >
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          Appeler Afrimmo
+        </a>
+      </div>
+    </nav>
   </div>
-</header>
+</div>

@@ -3,10 +3,10 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
+    title:
+      'Groupe Afrimmo S.A. | Construction, génie civil, logistique & import-export',
     loadComponent: () =>
-      import('./pages/landing/landing-page').then(
-        (m) => m.LandingPage,
-      ),
+      import('./pages/landing/landing-page').then((m) => m.LandingPage),
   },
   {
     path: 'realisations',

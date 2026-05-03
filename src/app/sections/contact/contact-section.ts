@@ -34,8 +34,7 @@ export class ContactSection {
   protected submitByEmail(event: Event): void {
     event.preventDefault();
 
-    const trigger = event.currentTarget as HTMLElement | null;
-    const form = trigger?.closest('form');
+    const form = event.currentTarget;
     if (!(form instanceof HTMLFormElement)) {
       return;
     }
@@ -43,22 +42,30 @@ export class ContactSection {
     const data = new FormData(form);
     const name = String(data.get('name') ?? '').trim();
     const phone = String(data.get('phone') ?? '').trim();
+    const email = String(data.get('email') ?? '').trim();
     const projectType = String(data.get('projectType') ?? '').trim();
     const message = String(data.get('message') ?? '').trim();
 
     const subject = `Demande projet - ${name || 'Groupe Afrimmo'}`;
-    const body = [
+    const lines = [
       'Bonjour Groupe Afrimmo S.A.,',
       '',
       'Je souhaite vous contacter au sujet d’un projet.',
       '',
       `Nom complet : ${name}`,
       `Téléphone : ${phone}`,
+    ];
+    if (email) {
+      lines.push(`E-mail : ${email}`);
+    }
+    lines.push(
       `Type de projet : ${projectType}`,
       '',
       'Message :',
       message,
-    ].join('\n');
+    );
+
+    const body = lines.join('\n');
 
     const mailtoUrl = `${this.mailHref}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(mailtoUrl, '_self');

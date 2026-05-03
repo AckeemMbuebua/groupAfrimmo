@@ -54,9 +54,8 @@
     <form
       appReveal
       class="w-full max-w-full min-w-0 overflow-hidden border border-white/15 bg-dark-cmt p-4 text-white sm:p-6 md:p-8 lg:p-10"
-      [attr.action]="mailHref"
-      method="post"
-      enctype="text/plain"
+      novalidate
+      (submit)="submitByEmail($event)"
     >
       <div class="grid w-full min-w-0 grid-cols-1 gap-4 md:grid-cols-2">
         <label class="grid min-w-0 gap-2 text-[10px] font-extrabold uppercase tracking-widest text-white/50">
@@ -77,6 +76,19 @@
             autocomplete="tel"
             class="box-border w-full max-w-full min-w-0 border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-brand"
             placeholder="+243 ..."
+          />
+        </label>
+        <label
+          class="grid min-w-0 gap-2 text-[10px] font-extrabold uppercase tracking-widest text-white/50 md:col-span-2"
+        >
+          E-mail (optionnel)
+          <input
+            type="email"
+            name="email"
+            autocomplete="email"
+            inputmode="email"
+            class="box-border w-full max-w-full min-w-0 border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-brand"
+            placeholder="vous@exemple.com"
           />
         </label>
         <label
@@ -104,13 +116,20 @@
           ></textarea>
         </label>
       </div>
+      <p
+        id="contact-form-note"
+        class="mt-4 text-[11px] font-light leading-relaxed text-white/55"
+      >
+        Le bouton ouvre votre messagerie avec un message prérempli ; aucun envoi automatique n’est
+        effectué depuis le site.
+      </p>
       <button
-        type="button"
-        class="mt-5 inline-flex w-full max-w-full min-w-0 items-center justify-center gap-3 bg-brand px-5 py-4 text-xs font-extrabold uppercase tracking-widest text-white transition hover:bg-brand-dark sm:px-6"
-        (click)="submitByEmail($event)"
+        type="submit"
+        class="mt-4 inline-flex w-full max-w-full min-w-0 items-center justify-center gap-3 bg-brand px-5 py-4 text-xs font-extrabold uppercase tracking-widest text-white transition hover:bg-brand-dark sm:px-6"
+        aria-describedby="contact-form-note"
       >
         {{ cta.formSubmit }}
-        <i class="fa-solid fa-paper-plane"></i>
+        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
       </button>
     </form>
   </div>
