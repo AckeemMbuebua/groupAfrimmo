@@ -1,14 +1,14 @@
-<footer class="border-t border-white/10 bg-dark-cmt px-4 py-10 text-white sm:px-6 lg:px-8 lg:py-12">
+<footer class="overflow-hidden border-t border-white/10 bg-dark-cmt px-4 py-10 text-white sm:px-6 lg:px-8 lg:py-12">
   <div class="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.2fr_.8fr_1fr] md:gap-12">
     <div>
       <div class="flex items-center gap-2.5">
-        <span class="flex h-14 items-center border border-white/15 bg-white px-3.5">
+        <span class="flex h-12 max-w-full items-center sm:h-14">
           <img
-            src="/images/Logo.png"
+            src="/images/logo/Logo_white.png"
             alt="Groupe Afrimmo S.A."
-            width="1173"
-            height="453"
-            class="h-10 w-auto"
+            width="568"
+            height="218"
+            class="h-9 w-auto max-w-[min(16rem,calc(100vw-3.5rem))] sm:h-11"
             loading="lazy"
             decoding="async"
           />
@@ -59,19 +59,19 @@
       <div class="space-y-3">
         <a
           [href]="phoneHref"
-          class="flex items-center justify-between gap-4 border border-white/10 bg-white/[.04] px-4 py-3 text-sm font-extrabold tabular-nums tracking-tight text-white transition hover:border-brand-light/55"
+          class="flex min-w-0 items-center justify-between gap-4 border border-white/10 bg-white/[.04] px-4 py-3 text-sm font-extrabold tabular-nums tracking-tight text-white transition hover:border-brand-light/55"
           ><span>+243 899 450 037</span><i class="fa-solid fa-phone text-brand-light" aria-hidden="true"></i></a
         >
         <a
           href="https://wa.me/243899450037"
-          class="flex items-center justify-between gap-4 border border-white/10 bg-white/[.04] px-4 py-3 text-sm font-extrabold text-white transition hover:border-brand-light/55"
+          class="flex min-w-0 items-center justify-between gap-4 border border-white/10 bg-white/[.04] px-4 py-3 text-sm font-extrabold text-white transition hover:border-brand-light/55"
           target="_blank"
           rel="noopener"
           ><span>WhatsApp direct</span><i class="fa-brands fa-whatsapp text-brand-light" aria-hidden="true"></i></a
         >
         <a
           [href]="mailHref"
-          class="block text-sm font-light text-white/60 hover:text-white"
+          class="block break-all text-sm font-light text-white/60 hover:text-white"
           >contact@afrimmo.com</a
         >
       </div>
