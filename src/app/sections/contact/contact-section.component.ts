@@ -30,4 +30,37 @@ export class ContactSectionComponent {
     { value: 'import-export', label: 'Import-export' },
     { value: 'other', label: 'Autre besoin' },
   ];
+
+  protected submitByEmail(event: Event): void {
+    event.preventDefault();
+
+    const trigger = event.currentTarget as HTMLElement | null;
+    const form = trigger?.closest('form');
+    if (!(form instanceof HTMLFormElement)) {
+      return;
+    }
+
+    const data = new FormData(form);
+    const name = String(data.get('name') ?? '').trim();
+    const phone = String(data.get('phone') ?? '').trim();
+    const projectType = String(data.get('projectType') ?? '').trim();
+    const message = String(data.get('message') ?? '').trim();
+
+    const subject = `Demande projet - ${name || 'Groupe Afrimmo'}`;
+    const body = [
+      'Bonjour Groupe Afrimmo S.A.,',
+      '',
+      'Je souhaite vous contacter au sujet d’un projet.',
+      '',
+      `Nom complet : ${name}`,
+      `Téléphone : ${phone}`,
+      `Type de projet : ${projectType}`,
+      '',
+      'Message :',
+      message,
+    ].join('\n');
+
+    const mailtoUrl = `${this.mailHref}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(mailtoUrl, '_self');
+  }
 }

@@ -51,7 +51,13 @@
       </div>
     </div>
 
-    <form appReveal class="w-full max-w-full min-w-0 overflow-hidden border border-white/15 bg-dark-cmt p-4 text-white sm:p-6 md:p-8 lg:p-10">
+    <form
+      appReveal
+      class="w-full max-w-full min-w-0 overflow-hidden border border-white/15 bg-dark-cmt p-4 text-white sm:p-6 md:p-8 lg:p-10"
+      [attr.action]="mailHref"
+      method="post"
+      enctype="text/plain"
+    >
       <div class="grid w-full min-w-0 grid-cols-1 gap-4 md:grid-cols-2">
         <label class="grid min-w-0 gap-2 text-[10px] font-extrabold uppercase tracking-widest text-white/50">
           Nom complet
@@ -82,7 +88,7 @@
             class="box-border w-full max-w-full min-w-0 appearance-none border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-brand"
           >
             @for (opt of projectOptions; track opt.value) {
-              <option class="text-dark-cmt">{{ opt.label }}</option>
+              <option class="text-dark-cmt" [value]="opt.label">{{ opt.label }}</option>
             }
           </select>
         </label>
@@ -101,6 +107,7 @@
       <button
         type="button"
         class="mt-5 inline-flex w-full max-w-full min-w-0 items-center justify-center gap-3 bg-brand px-5 py-4 text-xs font-extrabold uppercase tracking-widest text-white transition hover:bg-brand-dark sm:px-6"
+        (click)="submitByEmail($event)"
       >
         {{ cta.formSubmit }}
         <i class="fa-solid fa-paper-plane"></i>
