@@ -6,9 +6,9 @@ import { METHOD_PHASES } from '../../shared/content/method.data';
   selector: 'app-method-section',
   standalone: true,
   imports: [RevealDirective],
-  templateUrl: './method-section.component.html',
+  templateUrl: './method-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MethodSectionComponent {
+export class MethodSection {
   protected readonly phases = METHOD_PHASES;
 }

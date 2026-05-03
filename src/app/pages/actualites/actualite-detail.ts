@@ -18,10 +18,10 @@ import type { InsightArticle } from '../../shared/content/content.models';
   selector: 'app-actualite-detail',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './actualite-detail.component.html',
+  templateUrl: './actualite-detail.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ActualiteDetailComponent {
+export class ActualiteDetail {
   private readonly router = inject(Router);
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);

@@ -13,10 +13,10 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
   selector: 'app-carrieres',
   standalone: true,
   imports: [RouterLink, RevealDirective],
-  templateUrl: './carrieres.component.html',
+  templateUrl: './carrieres.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CarrieresComponent implements OnInit {
+export class Carrieres implements OnInit {
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
 

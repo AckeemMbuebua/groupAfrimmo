@@ -5,10 +5,10 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
   selector: 'app-about-section',
   standalone: true,
   imports: [RevealDirective],
-  templateUrl: './about-section.component.html',
+  templateUrl: './about-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutSectionComponent {
+export class AboutSection {
   protected readonly mainImageSrc =
     'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=82';
   protected readonly mainImageAlt =

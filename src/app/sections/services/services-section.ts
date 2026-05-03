@@ -7,10 +7,10 @@ import { SERVICES_LINES } from '../../shared/content/services.data';
   selector: 'app-services-section',
   standalone: true,
   imports: [RevealDirective],
-  templateUrl: './services-section.component.html',
+  templateUrl: './services-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ServicesSectionComponent {
+export class ServicesSection {
   protected formatOrdinal(index: number): string {
     return (index + 1).toString().padStart(2, '0');
   }

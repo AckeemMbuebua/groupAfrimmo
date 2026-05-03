@@ -12,10 +12,10 @@ import { EXPERTISE_CARDS } from '../../shared/content/expertise.data';
   selector: 'app-expertise-section',
   standalone: true,
   imports: [RevealDirective],
-  templateUrl: './expertise-section.component.html',
+  templateUrl: './expertise-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ExpertiseSectionComponent {
+export class ExpertiseSection {
   private readonly cdr = inject(ChangeDetectorRef);
 
   private readonly brokenImages = new Set<string>();

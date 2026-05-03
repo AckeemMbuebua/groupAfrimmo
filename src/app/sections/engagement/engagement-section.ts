@@ -5,10 +5,10 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
   selector: 'app-engagement-section',
   standalone: true,
   imports: [RevealDirective],
-  templateUrl: './engagement-section.component.html',
+  templateUrl: './engagement-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EngagementSectionComponent {
+export class EngagementSection {
   protected readonly partnersLead =
     'Groupe Afrimmo S.A. inscrit ses interventions dans une logique de qualité, d’adaptation au contexte local et de mobilisation de partenaires fiables selon les besoins du projet.';
 

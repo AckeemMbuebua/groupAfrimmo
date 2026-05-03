@@ -14,10 +14,10 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
   selector: 'app-realisations-hub',
   standalone: true,
   imports: [RouterLink, ProjectsGridComponent, RevealDirective],
-  templateUrl: './realisations-hub.component.html',
+  templateUrl: './realisations-hub.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RealisationsHubComponent implements OnInit {
+export class RealisationsHub implements OnInit {
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
 

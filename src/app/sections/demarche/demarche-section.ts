@@ -5,10 +5,10 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
   selector: 'app-demarche-section',
   standalone: true,
   imports: [RevealDirective],
-  templateUrl: './demarche-section.component.html',
+  templateUrl: './demarche-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DemarcheSectionComponent {
+export class DemarcheSection {
   protected readonly approachItems: readonly string[] = [
     'Analyse précise du besoin, du site et des contraintes',
     'Solution calibrée sur le budget, les délais et les ressources',

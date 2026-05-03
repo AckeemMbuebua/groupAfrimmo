@@ -6,10 +6,10 @@ import { LucideArrowRight } from '@lucide/angular';
   selector: 'app-hero-section',
   standalone: true,
   imports: [RouterLink, LucideArrowRight],
-  templateUrl: './hero-section.component.html',
+  templateUrl: './hero-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeroSectionComponent {
+export class HeroSection {
   /** Image hero plein écran (`public/images/`). */
   protected readonly heroImageSrc = '/images/hero-poster.jpg';
 }

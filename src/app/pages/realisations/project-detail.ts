@@ -15,10 +15,10 @@ import type { ResolvedProjectCase } from '../../shared/content/content.models';
   selector: 'app-project-detail',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './project-detail.component.html',
+  templateUrl: './project-detail.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProjectDetailComponent {
+export class ProjectDetail {
   private readonly router = inject(Router);
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);

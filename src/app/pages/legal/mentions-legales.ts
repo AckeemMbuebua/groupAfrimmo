@@ -2,10 +2,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-politique-confidentialite',
+  selector: 'app-mentions-legales',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './politique-confidentialite.component.html',
+  templateUrl: './mentions-legales.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PolitiqueConfidentialiteComponent {}
+export class MentionsLegales {}

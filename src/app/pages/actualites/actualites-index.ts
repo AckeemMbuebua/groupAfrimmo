@@ -18,10 +18,10 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
   selector: 'app-actualites-index',
   standalone: true,
   imports: [RouterLink, RevealDirective],
-  templateUrl: './actualites-index.component.html',
+  templateUrl: './actualites-index.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ActualitesIndexComponent implements OnInit {
+export class ActualitesIndex implements OnInit {
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
   private readonly cdr = inject(ChangeDetectorRef);

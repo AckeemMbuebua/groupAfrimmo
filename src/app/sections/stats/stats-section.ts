@@ -11,10 +11,10 @@ import {
   selector: 'app-stats-section',
   standalone: true,
   imports: [RevealDirective],
-  templateUrl: './stats-section.component.html',
+  templateUrl: './stats-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StatsSectionComponent {
+export class StatsSection {
   protected readonly stats = LANDING_STATS;
 
   protected readonly capabilityLabels = STAT_CAPABILITY_LABELS;

@@ -7,10 +7,10 @@ import { CTA_LABELS } from '../../shared/content/cta-labels';
   selector: 'app-contact-section',
   standalone: true,
   imports: [RevealDirective],
-  templateUrl: './contact-section.component.html',
+  templateUrl: './contact-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContactSectionComponent {
+export class ContactSection {
   protected readonly cta = CTA_LABELS;
 
   protected readonly phoneDisplay = '+243 899 450 037';

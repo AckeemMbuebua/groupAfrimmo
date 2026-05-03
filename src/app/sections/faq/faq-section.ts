@@ -7,10 +7,10 @@ import { FAQ_ITEMS } from '../../shared/content/faq.data';
   selector: 'app-faq-section',
   standalone: true,
   imports: [NgClass, RevealDirective],
-  templateUrl: './faq-section.component.html',
+  templateUrl: './faq-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FaqSectionComponent {
+export class FaqSection {
   protected readonly openIndex = signal<number | null>(null);
 
   protected readonly items = FAQ_ITEMS;

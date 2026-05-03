@@ -6,9 +6,9 @@ import { SELECTED_REFERENCES } from '../../shared/content/references.data';
   selector: 'app-testimonials-section',
   standalone: true,
   imports: [RevealDirective],
-  templateUrl: './testimonials-section.component.html',
+  templateUrl: './testimonials-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TestimonialsSectionComponent {
+export class TestimonialsSection {
   protected readonly references = SELECTED_REFERENCES;
 }
