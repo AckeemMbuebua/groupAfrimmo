@@ -1,52 +1,54 @@
 <section
   id="references"
-  class="relative scroll-mt-28 overflow-hidden border-t border-gray-100 bg-warm py-16 lg:py-28"
+  class="relative scroll-mt-28 overflow-hidden border-y border-dark-cmt/10 bg-surface py-18 sm:py-20 lg:py-28"
 >
   <div class="container mx-auto max-w-[1200px] items-center px-4 md:px-6">
-    <div appReveal class="mb-12 space-y-4 text-center">
-      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-brand">
+    <div appReveal class="mx-auto mb-12 max-w-3xl space-y-4 text-center">
+      <span class="mx-auto mb-4 block h-0.5 w-10 bg-brand" aria-hidden="true"></span>
+      <p class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">
         Crédibilité
       </p>
       <h2
-        class="text-balance text-4xl font-extrabold uppercase leading-tight tracking-tight md:text-5xl"
+        class="text-balance text-3xl font-extrabold uppercase leading-tight tracking-tight text-dark-cmt md:text-5xl"
       >
         Références sélectionnées
       </h2>
-      <p class="mx-auto max-w-[700px] text-base leading-8 text-steel md:text-lg">
+      <p class="mx-auto max-w-[700px] text-sm leading-7 text-steel md:text-base md:leading-8">
         Typologies de mandats et périmètres — sans citation attribuée ni badge de validation non
         vérifiable.
       </p>
     </div>
 
-    <div class="grid gap-5 md:grid-cols-2">
+    <div class="grid gap-4 md:grid-cols-2 lg:gap-5">
       @for (ref of references; track ref.id) {
         <article
           appReveal
-          class="border border-gray-200 bg-white p-6 text-left md:p-8"
+          class="group border border-dark-cmt/10 bg-white p-6 text-left transition-colors duration-300 hover:border-brand/35 md:p-8"
         >
+          <span class="mb-6 block h-0.5 w-8 bg-brand/80 transition-[width] duration-300 group-hover:w-12" aria-hidden="true"></span>
           <dl class="space-y-4 text-sm">
             <div>
-              <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/45">
+              <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/40">
                 Type de client
               </dt>
-              <dd class="mt-1 font-semibold uppercase tracking-wide text-dark-cmt">
+              <dd class="mt-1 font-extrabold uppercase tracking-wide text-dark-cmt">
                 {{ ref.clientType }}
               </dd>
             </div>
             <div>
-              <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/45">
+              <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/40">
                 Type de projet
               </dt>
               <dd class="mt-1 font-semibold text-dark-cmt">{{ ref.projectType }}</dd>
             </div>
             <div>
-              <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/45">
+              <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/40">
                 Zone
               </dt>
               <dd class="mt-1 text-dark-cmt/85">{{ ref.zone }}</dd>
             </div>
             <div>
-              <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/45">
+              <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/40">
                 Périmètre d’intervention
               </dt>
               <dd class="mt-1 text-sm leading-relaxed text-steel">{{ ref.scope }}</dd>
