@@ -5,13 +5,13 @@
       class="mb-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] font-extrabold uppercase tracking-[.2em] text-dark-cmt/40"
       aria-label="Fil d'Ariane"
     >
-      <a routerLink="/" class="text-red-cmt transition hover:text-dark-cmt">Accueil</a>
+      <a routerLink="/" class="text-brand transition hover:text-dark-cmt">Accueil</a>
       <span aria-hidden="true">/</span>
       <span class="text-dark-cmt">Actualités</span>
     </nav>
 
-    <header appReveal class="mb-16 max-w-3xl border-l-4 border-red-cmt pl-6">
-      <p class="text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">
+    <header appReveal class="mb-16 max-w-3xl border-l-4 border-brand pl-6">
+      <p class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">
         Éditorial
       </p>
       <h1 class="mt-3 text-4xl font-extrabold uppercase leading-tight tracking-tight sm:text-5xl">
@@ -28,7 +28,7 @@
       @for (article of articles; track article.slug) {
         <article
           appReveal
-          class="group flex flex-col border border-dark-cmt/10 bg-white transition hover:border-red-cmt/40"
+          class="group flex flex-col border border-dark-cmt/10 bg-white transition hover:border-brand/40"
         >
           <a [routerLink]="['/actualites', article.slug]" class="block focus:outline-none">
             <div class="aspect-[16/10] overflow-hidden bg-dark-cmt">
@@ -56,7 +56,7 @@
               </h2>
               <p class="mt-3 flex-1 text-sm leading-7 text-steel">{{ article.excerpt }}</p>
               <span
-                class="mt-6 inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-widest text-red-cmt"
+                class="mt-6 inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-widest text-brand"
               >
                 Lire l’article
                 <i class="fa-solid fa-arrow-right text-xs transition group-hover:translate-x-1"></i>

@@ -4,7 +4,7 @@
 >
   <div class="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2 lg:gap-16 lg:items-start">
     <div appReveal class="relative">
-      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">
+      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-brand">
         Notre approche
       </p>
       <h2
@@ -20,7 +20,7 @@
       <ul class="mt-8 space-y-4 text-sm font-bold uppercase tracking-[.06em] text-dark-cmt">
         @for (line of approachItems; track line) {
           <li class="flex gap-3">
-            <i class="fa-solid fa-circle-check mt-1 shrink-0 text-red-cmt"></i>
+            <i class="fa-solid fa-circle-check mt-1 shrink-0 text-brand"></i>
             {{ line }}
           </li>
         }
@@ -28,7 +28,7 @@
     </div>
 
     <div appReveal class="border border-gray-200 bg-white p-8 sm:p-10">
-      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">
+      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-brand">
         Nos atouts
       </p>
       <h2 class="text-3xl font-extrabold uppercase leading-tight tracking-tight sm:text-4xl">
@@ -42,9 +42,9 @@
       <ul class="mt-8 space-y-4">
         @for (line of strengthItems; track line) {
           <li
-            class="flex items-start gap-3 border-l-4 border-red-cmt bg-gray-50 py-4 pr-4 pl-5 text-sm font-semibold uppercase leading-relaxed tracking-wide text-dark-cmt"
+            class="flex items-start gap-3 border-l-4 border-brand bg-gray-50 py-4 pr-4 pl-5 text-sm font-semibold uppercase leading-relaxed tracking-wide text-dark-cmt"
           >
-            <span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-cmt"></span>
+            <span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
             {{ line }}
           </li>
         }

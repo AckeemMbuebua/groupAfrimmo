@@ -2,10 +2,10 @@
   id="contact"
   class="scroll-mt-28 relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
 >
-  <div class="absolute inset-y-0 right-0 hidden w-1/3 bg-red-cmt lg:block"></div>
+  <div class="absolute inset-y-0 right-0 hidden w-1/3 bg-brand lg:block"></div>
   <div class="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
     <div appReveal>
-      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">Contact</p>
+      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-brand">Contact</p>
       <h2
         class="text-4xl font-extrabold uppercase leading-tight tracking-tight sm:text-5xl lg:text-6xl"
       >
@@ -59,7 +59,7 @@
             type="text"
             name="name"
             autocomplete="name"
-            class="border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-red-cmt"
+            class="border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-brand"
             placeholder="Nom et prénom"
           />
         </label>
@@ -69,7 +69,7 @@
             type="tel"
             name="phone"
             autocomplete="tel"
-            class="border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-red-cmt"
+            class="border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-brand"
             placeholder="+243 ..."
           />
         </label>
@@ -79,7 +79,7 @@
           Type de projet
           <select
             name="projectType"
-            class="border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-red-cmt"
+            class="border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-brand"
           >
             @for (opt of projectOptions; track opt.value) {
               <option class="text-dark-cmt">{{ opt.label }}</option>
@@ -93,14 +93,14 @@
           <textarea
             name="message"
             rows="5"
-            class="resize-none border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-red-cmt"
+            class="resize-none border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-brand"
             placeholder="Localisation, délais, budget indicatif, besoin principal..."
           ></textarea>
         </label>
       </div>
       <button
         type="button"
-        class="mt-5 inline-flex w-full items-center justify-center gap-3 bg-red-cmt px-6 py-4 text-xs font-extrabold uppercase tracking-widest text-white transition hover:bg-white hover:text-dark-cmt"
+        class="mt-5 inline-flex w-full items-center justify-center gap-3 bg-brand px-6 py-4 text-xs font-extrabold uppercase tracking-widest text-white transition hover:bg-brand-dark"
       >
         {{ cta.formSubmit }}
         <i class="fa-solid fa-paper-plane"></i>

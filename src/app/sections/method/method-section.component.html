@@ -4,7 +4,7 @@
 >
   <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
     <div appReveal class="lg:sticky lg:top-28">
-      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-red-cmt">
+      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-brand-light">
         Méthode
       </p>
       <h2 class="text-4xl font-extrabold uppercase leading-tight sm:text-5xl">
@@ -18,7 +18,7 @@
     <div class="grid gap-4">
       @for (phase of phases; track phase.title) {
         <div appReveal class="grid gap-4 border border-white/10 bg-white/[.04] p-6 sm:grid-cols-[90px_1fr]">
-          <span class="text-4xl font-extrabold text-red-cmt">{{ phase.numberLabel }}</span>
+          <span class="text-4xl font-extrabold text-brand-light">{{ phase.numberLabel }}</span>
           <div>
             <h3 class="font-extrabold uppercase">{{ phase.title }}</h3>
             <p class="mt-2 text-sm leading-7 text-white/60">{{ phase.description }}</p>

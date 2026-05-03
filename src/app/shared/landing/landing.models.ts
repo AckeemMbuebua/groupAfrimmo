@@ -20,7 +20,7 @@ export interface StatItem {
 export interface ProfileHighlight {
   readonly title: string;
   readonly body: string;
-  readonly borderClass: 'border-red-cmt' | 'border-dark-cmt';
+  readonly borderClass: 'border-brand' | 'border-dark-cmt';
 }
 
 /** Valeurs de marque (piliers). */
