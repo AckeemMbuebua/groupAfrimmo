@@ -34,6 +34,6 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
   {
     question: 'Peut-on vous consulter pour un projet déjà en cours ?',
     answer:
-      'Oui. L’entreprise peut intervenir pour un renfort technique, une reprise de coordination, un approvisionnement, une évaluation de contraintes ou une mission spécifique.',
+      'Oui. L’entreprise peut intervenir pour un appui technique, une reprise de coordination, un approvisionnement, une évaluation de contraintes ou une mission spécifique.',
   },
 ];

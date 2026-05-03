@@ -16,31 +16,29 @@ export const LANDING_REFERENCE_PROJECT_COUNT = PROJECT_CARD_LIST.length;
 /** Domaines intégrés mis en avant en card 4 — ajustable sans toucher au template. */
 export const LANDING_INTEGRATED_DOMAINS_COUNT = 4;
 
-const PLUS = '+' as const;
-
 export const LANDING_STATS: readonly StatItem[] = [
   {
-    valuePrefix: PLUS,
+    valuePrefix: '',
     value: '28',
     label: 'Unités résidentielles',
     sublabel: 'Al Saad Apartments, Zanzibar',
   },
   {
-    valuePrefix: PLUS,
+    valuePrefix: '',
     value: '10',
     label: 'Hôpitaux de district',
-    sublabel: 'Contribution technique / MEP, Zanzibar',
+    sublabel: 'Contribution technique / lots MEP, Zanzibar',
     transitionDelaySeconds: 0.08,
   },
   {
-    valuePrefix: PLUS,
+    valuePrefix: '',
     value: String(LANDING_REFERENCE_PROJECT_COUNT),
     label: 'Références projets',
     sublabel: 'Résidentiel, hôtelier, industriel et institutionnel',
     transitionDelaySeconds: 0.16,
   },
   {
-    valuePrefix: PLUS,
+    valuePrefix: '',
     value: String(LANDING_INTEGRATED_DOMAINS_COUNT),
     label: 'Domaines intégrés',
     sublabel: 'Construction, logistique, import-export, services techniques',

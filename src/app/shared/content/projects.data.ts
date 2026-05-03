@@ -11,7 +11,7 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1400&auto=format&fit=crop',
     imageAlt:
-      'Résidence Al Saad Apartments — 28 unités, Chukwani, Zanzibar (visuel provisoire, à remplacer par al-saad-apartments.webp).',
+      'Résidence Al Saad Apartments — 28 unités, Chukwani, Zanzibar.',
     category: 'Résidentiel haut standing',
     title: 'Al Saad Apartments',
     description: 'Résidence de 28 unités à Zanzibar, livrée en 2022.',
@@ -27,7 +27,7 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=900&auto=format&fit=crop',
     imageAlt:
-      'Projet hôtelier Kiwengwa — Zanzibar (visuel provisoire, à remplacer par kiwengwa-hotel.webp).',
+      'Projet hôtelier Kiwengwa — Zanzibar.',
     category: 'Hôtellerie',
     title: 'Kiwengwa Hotel',
     description: 'Hôtel à Kiwengwa avec unités indépendantes, piscines et restaurant.',
@@ -44,7 +44,7 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=900&auto=format&fit=crop',
     imageAlt:
-      'Entrepôts industriels Kisraa — Kisarawe II (visuel provisoire, à remplacer par kisraa-godowns.webp).',
+      'Entrepôts industriels Kisraa — Kisarawe II.',
     category: 'Industriel / entrepôts',
     title: 'Kisraa Company Limited — Entrepôts industriels',
     description: 'Première phase de 2 entrepôts industriels, terminée en 2024.',
@@ -61,7 +61,7 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=900&auto=format&fit=crop',
     imageAlt:
-      'Villa Mbweni JKT — conception à la livraison (visuel provisoire, à remplacer par mbweni-jkt-villa.webp).',
+      'Villa Mbweni JKT — conception à la livraison.',
     category: 'Villa / résidentiel premium',
     title: 'Mbweni JKT Villa Construction',
     description: 'Villa livrée en 2025 après 8 mois de conception et d’exécution.',
@@ -78,14 +78,14 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=900&auto=format&fit=crop',
     imageAlt:
-      'Refonte d’identité et travaux sur sites Lake Energies (visuel provisoire, à remplacer par lake-energies.webp).',
+      'Refonte d’identité et travaux sur sites Lake Energies.',
     category: 'Station-service / supervision',
     title: 'Lake Energies — Refonte d’identité et supervision',
     description: 'Refonte d’identité et supervision de sites Lake Energies sur 9 mois.',
     statusLabel: 'Réalisé · 2024',
     wide: false,
     transitionDelaySeconds: 0.24,
-    location: 'Non précisé',
+    location: 'Sites Lake Energies',
     roleScope: 'Intervention créative et exécution terrain sur sites (périmètre défini au mandat)',
     tags: ['Refonte d’identité', 'supervision', 'station-service', '2024'],
     futureImageAsset: 'lake-energies.webp',
@@ -95,10 +95,10 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=900&auto=format&fit=crop',
     imageAlt:
-      'Programme de santé à Zanzibar — contribution technique (visuel provisoire, à remplacer par zanzibar-district-hospitals.webp).',
+      'Programme de santé à Zanzibar — contribution technique.',
     category: 'Infrastructure de santé',
-    title: 'Zanzibar 10 District Hospitals',
-    description: 'Contribution MEP sur un programme de 10 hôpitaux de district.',
+    title: 'Programme de 10 hôpitaux de district à Zanzibar',
+    description: 'Contribution technique / lots MEP sur un programme de 10 hôpitaux de district.',
     statusLabel: 'Terminé · 2025',
     wide: false,
     transitionDelaySeconds: 0.3,
@@ -112,9 +112,9 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=900&auto=format&fit=crop',
     imageAlt:
-      'Complexe commercial et résidentiel Palm Complex — Kigamboni (visuel provisoire, à remplacer par palm-complex-kigamboni.webp).',
+      'Complexe commercial et résidentiel Palm Complex — Kigamboni.',
     category: 'Commercial & résidentiel',
-    title: 'Palm Complex in Kigamboni',
+    title: 'Palm Complex — Kigamboni',
     description: 'Complexe commercial et résidentiel livré à Kigamboni en 2025.',
     statusLabel: 'Terminé · 2025',
     wide: false,
@@ -181,14 +181,14 @@ const PROJECT_EXTRA: Record<string, ProjectCaseExtended> = {
       'Contribution technique sur un programme public de 10 hôpitaux de district à Zanzibar — implication sur les lots MEP. Référence Groupe Afrimmo S.A.',
     intro: [
       'Contribution technique au programme de 10 hôpitaux de district à Zanzibar, avec implication des équipes sur les lots MEP et la coordination de mise en œuvre associée au projet.',
-      'Il ne s’agit pas d’attribuer la construction intégrale des ouvrages sans validation contractuelle : le rôle porte sur la contribution technique dans le cadre du programme public.',
+      'Le périmètre présenté concerne l’appui technique MEP documenté pour ce programme public.',
     ],
   },
   'palm-complex': {
     seoDescription:
       'Palm Complex — projet mixte commercial et résidentiel à Kigamboni, livré en 2025. Référence Groupe Afrimmo S.A.',
     intro: [
-      'Projet commercial et résidentiel réalisé à Kigamboni, livré en 2025 après une exécution d’environ un an selon le mandat.',
+      'Projet commercial et résidentiel réalisé à Kigamboni, livré en 2025 après une exécution d’environ un an selon le périmètre validé.',
       'Les opérations mixtes combinent interfaces commerces / logements et planification des accès ; le pilotage des phases critiques sécurise la livraison globale.',
     ],
   },

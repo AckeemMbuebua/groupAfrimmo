@@ -22,5 +22,5 @@ export class EngagementSectionComponent {
   ];
 
   protected readonly responsibilityLead =
-    'L’entreprise veille à intégrer des pratiques responsables dans la conduite de ses opérations : respect des équipes, attention aux communautés, gestion raisonnée des ressources et adaptation aux contraintes environnementales. Les initiatives plus structurantes (communautaires, éducatives ou environnementales) pourront être présentées lorsque des preuves ou partenariats formalisés seront disponibles.';
+    'L’entreprise veille à intégrer des pratiques responsables dans la conduite de ses opérations : respect des équipes, attention aux communautés, gestion raisonnée des ressources et adaptation aux contraintes environnementales. Les actions communautaires, éducatives ou environnementales peuvent être structurées avec les parties prenantes lorsque le cadre du projet le permet.';
 }

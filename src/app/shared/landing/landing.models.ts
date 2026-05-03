@@ -8,7 +8,7 @@ export type NavMainEntry =
   | { readonly kind: 'fragment'; readonly label: string; readonly fragment: string }
   | { readonly kind: 'route'; readonly label: string; readonly path: string };
 
-/** Carte indicateur : préfixe (+), valeur, labels (rendu type « +28 »). */
+/** Carte indicateur : préfixe optionnel, valeur et libellés. */
 export interface StatItem {
   readonly valuePrefix: string;
   readonly value: string;

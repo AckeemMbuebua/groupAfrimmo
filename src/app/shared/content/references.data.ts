@@ -1,6 +1,6 @@
 import type { SelectedReference } from '../landing/landing.models';
 
-/** Références anonymisées — pas de citation ni badge « vérifié ». */
+/** Références sélectionnées — typologies publiques, sans attribution client détaillée. */
 export const SELECTED_REFERENCES: readonly SelectedReference[] = [
   {
     id: 'ref-1',
