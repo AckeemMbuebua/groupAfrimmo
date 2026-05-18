@@ -17,7 +17,30 @@ export class RevealDirective implements OnDestroy {
   private revealed = false;
 
   constructor() {
-    afterNextRender(() => queueMicrotask(() => this.startObserver()));
+    afterNextRender(() => {
+      queueMicrotask(() => this.startObserver());
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => this.revealIfAlreadyInView());
+      });
+    });
+  }
+
+  /** Sécurise l’affichage après hydratation si l’élément est déjà dans le viewport. */
+  private revealIfAlreadyInView(): void {
+    const host = this.el.nativeElement;
+    if (!host.isConnected || this.revealed || host.classList.contains('is-visible')) {
+      return;
+    }
+    const root = document.documentElement;
+    const vh = root.clientHeight || window.innerHeight;
+    const bounds = root.getBoundingClientRect();
+    const vw = bounds.width || root.clientWidth;
+    const r = host.getBoundingClientRect();
+    if (r.top < vh + 96 && r.bottom > -96 && r.left < vw && r.right > 0) {
+      this.revealed = true;
+      host.classList.add('is-visible');
+      this.observer?.unobserve(host);
+    }
   }
 
   private startObserver(): void {

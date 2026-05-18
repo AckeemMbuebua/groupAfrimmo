@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
 
   --color-brand: #1e5389;
   --color-brand-dark: #173f68;
@@ -22,7 +22,7 @@
 }
 
 html {
-  scroll-padding-top: 7rem;
+  scroll-padding-top: 6rem;
 }
 
 body {
@@ -61,12 +61,61 @@ h4 {
 /* Navigation header minimal (type Tailark / 21st.dev) : lisibilité sans ligne décorative lourde */
 .nav-link {
   position: relative;
-  color: rgb(255 255 255 / 0.62);
+  color: rgb(255 255 255 / 0.72);
   transition: color 0.2s ease;
 }
 
 .nav-link:hover,
 .nav-link:focus-visible {
+  color: rgb(255 255 255);
+}
+
+.locale-switcher-trigger {
+  height: 2.5rem;
+  min-width: 5.25rem;
+  border-color: rgb(255 255 255 / 0.15);
+  background: rgb(255 255 255 / 0.04);
+  padding-inline: 0.75rem;
+}
+
+.locale-switcher-trigger:hover,
+.locale-switcher-trigger:focus-visible {
+  border-color: rgb(255 255 255 / 0.28);
+  background: rgb(255 255 255 / 0.08);
+}
+
+.locale-switcher--drawer .locale-switcher-trigger {
+  width: 100%;
+  min-width: 0;
+  justify-content: space-between;
+}
+
+.locale-switcher-menu {
+  top: calc(100% + 0.35rem);
+  right: 0;
+}
+
+.locale-switcher-menu--drawer {
+  position: static;
+  width: 100%;
+  min-width: 0;
+  margin-top: 0.5rem;
+  box-shadow: none;
+  border-color: rgb(255 255 255 / 0.12);
+}
+
+.locale-switcher-option {
+  color: rgb(255 255 255 / 0.82);
+}
+
+.locale-switcher-option:hover,
+.locale-switcher-option:focus-visible {
+  background: rgb(255 255 255 / 0.06);
+  color: rgb(255 255 255);
+}
+
+.locale-switcher-option[aria-selected='true'] {
+  background: rgb(30 83 137 / 0.22);
   color: rgb(255 255 255);
 }
 
@@ -117,8 +166,46 @@ h4 {
   }
 }
 
-.reveal.is-visible .stat-number {
+.reveal.is-visible .stat-number:not(.counter) {
   animation: statNumberIn 0.65s cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+/**
+ * Landing : le contenu reste lisible pendant l’entrée (évite sections « vides » après hydratation).
+ * Utiliser avec appReveal : class="reveal-readable …"
+ */
+.landing-page .reveal-readable.reveal {
+  opacity: 1;
+  transform: translateY(16px);
+}
+
+.landing-page .reveal-readable.reveal.reveal-left {
+  transform: translateX(-16px);
+}
+
+.landing-page .reveal-readable.reveal.reveal-right {
+  transform: translateX(16px);
+}
+
+.landing-page .reveal-readable.reveal.reveal-scale {
+  transform: translateY(12px) scale(0.99);
+}
+
+.landing-page .reveal-readable.reveal.is-visible,
+.landing-page .reveal-readable.reveal.reveal-left.is-visible,
+.landing-page .reveal-readable.reveal.reveal-right.is-visible,
+.landing-page .reveal-readable.reveal.reveal-scale.is-visible {
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Stats : alias historique, même comportement */
+.stats-section .stats-card.reveal {
+  opacity: 1;
+  transform: translateY(16px);
+}
+
+.stats-section .stats-card.reveal.is-visible {
+  transform: translateY(0);
 }
 
 .about-image-frame img {
@@ -143,6 +230,11 @@ h4 {
   to {
     transform: translateY(0);
   }
+}
+
+.hero-bg-image {
+  opacity: 0.9;
+  transform: translateZ(0);
 }
 
 .hero-echo-chip {
