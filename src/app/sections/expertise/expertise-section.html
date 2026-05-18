@@ -22,7 +22,7 @@
           class="h-full"
           [style.transition-delay.s]="card.transitionDelaySeconds ?? undefined"
         >
-          <article class="magnetic-card h-full border border-gray-200 bg-white">
+          <article class="magnetic-card h-full overflow-hidden rounded-none border border-gray-200 bg-white">
             <img
               [src]="cardImageSrc(card)"
               [alt]="card.imageAlt"

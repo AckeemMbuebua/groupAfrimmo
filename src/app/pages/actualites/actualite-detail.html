@@ -5,9 +5,9 @@
         class="mb-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] font-extrabold uppercase tracking-[.2em] text-dark-cmt/40"
         aria-label="Fil d'Ariane"
       >
-        <a routerLink="/" class="text-brand transition hover:text-dark-cmt">Accueil</a>
+        <a routerLink="/" class="text-brand transition-colors duration-300 hover:text-dark-cmt">Accueil</a>
         <span aria-hidden="true">/</span>
-        <a routerLink="/actualites" class="text-brand transition hover:text-dark-cmt">
+        <a routerLink="/actualites" class="text-brand transition-colors duration-300 hover:text-dark-cmt">
           Actualités
         </a>
         <span aria-hidden="true">/</span>
@@ -24,10 +24,10 @@
         <h1 class="mt-4 text-3xl font-extrabold uppercase leading-tight tracking-tight md:text-4xl">
           {{ article.title }}
         </h1>
-        <p class="mt-5 text-sm leading-7 text-steel">{{ article.excerpt }}</p>
+        <p class="mt-5 text-sm font-light leading-relaxed text-steel">{{ article.excerpt }}</p>
       </header>
 
-      <div class="relative mt-10 aspect-[16/9] overflow-hidden bg-dark-cmt">
+      <div class="relative mt-10 aspect-[16/9] overflow-hidden rounded-xl bg-dark-cmt">
         <img
           [src]="coverSrc(article)"
           [alt]="article.coverAlt"
@@ -41,14 +41,14 @@
 
       <div class="mt-12 space-y-5">
         @for (p of article.body; track $index) {
-          <p class="text-sm leading-7 text-dark-cmt/85">{{ p }}</p>
+          <p class="text-sm font-light leading-relaxed text-dark-cmt/85">{{ p }}</p>
         }
       </div>
 
       <footer class="mt-16 border-t border-dark-cmt/10 pt-10">
         <a
           routerLink="/actualites"
-          class="inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-widest text-brand hover:text-dark-cmt"
+          class="inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-widest text-brand transition-colors duration-300 hover:text-dark-cmt"
         >
           <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
           Toutes les actualités

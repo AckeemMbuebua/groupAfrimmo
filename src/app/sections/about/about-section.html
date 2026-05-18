@@ -4,7 +4,7 @@
 >
   <div class="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-12 lg:gap-y-12">
     <div appReveal class="lg:col-span-5 reveal-left">
-      <div class="about-image-frame overflow-hidden border border-gray-200 bg-gray-50">
+      <div class="about-image-frame overflow-hidden rounded-none border border-gray-200 bg-gray-50">
         <img
           [src]="mainImageUrl()"
           [alt]="mainImageAlt"
@@ -24,12 +24,12 @@
         Qui nous sommes
       </p>
       <h2
-        class="text-balance text-[clamp(1.75rem,4vw,2.65rem)] font-extrabold uppercase leading-[1.12] tracking-tight text-dark-cmt"
+        class="text-balance text-3xl font-extrabold uppercase leading-tight tracking-tight text-dark-cmt sm:text-4xl md:text-5xl"
       >
         Une entreprise structurée pour les projets exigeants.
       </h2>
 
-      <div appReveal class="mt-8 border border-gray-200 bg-gray-50 p-7 sm:p-9 reveal-scale" style="transition-delay: 0.08s">
+      <div appReveal class="mt-8 rounded-none border border-gray-200 bg-gray-50 p-7 sm:p-9 reveal-scale" style="transition-delay: 0.08s">
         <p class="text-lg font-light leading-relaxed text-dark-cmt sm:text-xl">
           Basée en République démocratique du Congo, Groupe Afrimmo S.A. intervient dans la
           construction, le génie civil, les infrastructures, la logistique et l’approvisionnement.
@@ -52,11 +52,11 @@
         @for (line of trustPoints; track line; let i = $index) {
           <li
             appReveal
-            class="flex items-start gap-3 border border-gray-200 bg-white px-4 py-3 text-sm font-light leading-relaxed text-dark-cmt/85"
+            class="flex items-start gap-3 rounded-none border border-gray-200 bg-white px-4 py-3 text-sm font-light leading-relaxed text-dark-cmt/85"
             [style.transition-delay.s]="0.18 + i * 0.05"
           >
             <span
-              class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center bg-brand text-[10px] text-white"
+              class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-none bg-brand text-[10px] text-white"
               aria-hidden="true"
             >
               <i class="fa-solid fa-check"></i>
@@ -68,7 +68,7 @@
 
       <div
         appReveal
-        class="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 border border-gray-200 bg-white px-5 py-4 text-[11px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/55"
+        class="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 rounded-none border border-gray-200 bg-white px-5 py-4 text-[11px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/55"
         style="transition-delay: 0.32s"
       >
         <span class="text-brand">RDC</span>

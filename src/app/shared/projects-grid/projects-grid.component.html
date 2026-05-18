@@ -8,7 +8,7 @@
       >
         <article
           appReveal
-          class="project-card group relative h-[340px] overflow-hidden bg-dark-cmt lg:h-[360px]"
+          class="project-card group relative h-[340px] overflow-hidden rounded-none bg-dark-cmt lg:h-[360px]"
           [style.transition-delay.s]="project.transitionDelaySeconds ?? undefined"
         >
           <img
@@ -26,7 +26,7 @@
             class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"
           ></div>
           <div
-            class="absolute top-6 right-6 rounded-sm bg-black/55 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.16em] text-white backdrop-blur-sm"
+            class="absolute top-6 right-6 rounded-none bg-black/55 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.16em] text-white backdrop-blur-sm"
           >
             {{ project.statusLabel }}
           </div>
@@ -57,7 +57,7 @@
     } @else {
       <article
         appReveal
-        class="project-card group relative h-[340px] overflow-hidden bg-dark-cmt lg:h-[360px]"
+        class="project-card group relative h-[340px] overflow-hidden rounded-none bg-dark-cmt lg:h-[360px]"
         [ngClass]="{ 'md:col-span-2': project.wide }"
         [style.transition-delay.s]="project.transitionDelaySeconds ?? undefined"
       >
@@ -76,7 +76,7 @@
           class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"
         ></div>
         <div
-          class="absolute top-6 right-6 rounded-sm bg-black/55 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.16em] text-white backdrop-blur-sm"
+          class="absolute top-6 right-6 rounded-none bg-black/55 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.16em] text-white backdrop-blur-sm"
         >
           {{ project.statusLabel }}
         </div>
@@ -105,7 +105,7 @@
 @if (showExpertCta()) {
   <div
     appReveal
-    class="mx-auto mt-14 flex max-w-3xl flex-col items-center gap-6 border border-dark-cmt/10 bg-neutral-50 px-6 py-8 text-center sm:px-10"
+    class="mx-auto mt-14 flex max-w-3xl flex-col items-center gap-6 rounded-none border border-dark-cmt/10 bg-neutral-50 px-6 py-8 text-center sm:px-10"
   >
     <p class="text-[10px] font-extrabold uppercase tracking-[.24em] text-brand">
       Après les fiches projet
@@ -118,12 +118,12 @@
       <a
         routerLink="/"
         [fragment]="contactFragment()"
-        class="inline-flex items-center gap-3 bg-dark-cmt px-6 py-4 text-[11px] font-extrabold uppercase tracking-widest text-white transition hover:bg-brand-dark"
+        class="inline-flex min-h-[56px] items-center gap-3 rounded-none bg-brand px-8 py-3 text-[11px] font-extrabold uppercase tracking-widest text-white transition-colors duration-300 hover:bg-brand-dark"
       >
         {{ cta.primary }} <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
       </a>
       <a
-        class="inline-flex items-center gap-3 border border-dark-cmt/15 px-6 py-4 text-[11px] font-extrabold uppercase tracking-widest text-dark-cmt transition hover:border-brand hover:text-brand"
+        class="inline-flex min-h-[56px] items-center gap-3 rounded-none border border-dark-cmt/15 px-8 py-3 text-[11px] font-extrabold uppercase tracking-widest text-dark-cmt transition-colors duration-300 hover:border-brand hover:text-brand"
         [href]="phoneHref"
       >
         <i class="fa-solid fa-phone" aria-hidden="true"></i>

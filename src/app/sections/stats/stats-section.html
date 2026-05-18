@@ -1,6 +1,6 @@
 <section
   aria-labelledby="stats-heading"
-  class="relative z-20 -mt-8 scroll-mt-28 sm:-mt-10 lg:-mt-12 mb-10 lg:mb-20 xl:-mt-14"
+  class="relative z-20 -mt-5 scroll-mt-28 sm:-mt-6 lg:-mt-8 mb-10 lg:mb-20 xl:-mt-9"
 >
   <!-- Bande brand : mêmes codes typo que « Expertises » / « Références » (surtitre + filet) -->
   <div
@@ -19,7 +19,7 @@
         </p>
         <h2
           id="stats-heading"
-          class="mt-4 text-balance text-3xl font-extrabold uppercase leading-tight tracking-tight text-white md:text-4xl lg:text-[2.65rem]"
+          class="mt-4 text-balance text-3xl font-extrabold uppercase leading-tight tracking-tight text-white md:text-4xl lg:text-5xl"
         >
           {{ sectionTitle }}
         </h2>
@@ -40,7 +40,7 @@
       @for (stat of stats; track stat.label) {
         <div
           appReveal
-          class="group h-full border border-gray-200 bg-white p-6 text-left shadow-none transition-colors duration-300 sm:p-7 magnetic-card"
+          class="group h-full rounded-none border border-gray-200 bg-white p-6 text-left shadow-none transition-colors duration-300 sm:p-7 magnetic-card"
           [style.transition-delay.s]="stat.transitionDelaySeconds ?? undefined"
         >
           <span
