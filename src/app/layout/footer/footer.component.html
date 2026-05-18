@@ -16,7 +16,7 @@
       </div>
       <span class="mt-5 block h-0.5 w-10 bg-brand-light" aria-hidden="true"></span>
       <p class="mt-4 max-w-sm text-sm font-light leading-relaxed text-white/62">
-        {{ slogan }}
+        {{ site().shared.brand.footerSlogan }}
       </p>
     </div>
 
@@ -24,10 +24,10 @@
       <h3
         class="mb-3 text-[10px] font-extrabold uppercase tracking-[0.22em] text-white/45"
       >
-        Plan du site
+        {{ site().ui.footer.sitemapHeading }}
       </h3>
       <ul class="grid grid-cols-2 gap-x-5 gap-y-2.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-white/75 md:grid-cols-1">
-        @for (item of footerLinks; track itemLabel(item)) {
+        @for (item of footerLinks(); track itemLabel(item)) {
           <li>
             @switch (item.kind) {
               @case ('homeFragment') {
@@ -54,7 +54,7 @@
       <h3
         class="mb-3 text-[10px] font-extrabold uppercase tracking-[0.22em] text-white/45"
       >
-        Contact
+        {{ site().ui.footer.contactHeading }}
       </h3>
       <div class="space-y-3">
         <a
@@ -67,12 +67,12 @@
           class="flex min-w-0 items-center justify-between gap-4 rounded-none border border-white/10 bg-white/[.04] px-4 py-3 text-sm font-extrabold text-white transition hover:border-brand-light/55"
           target="_blank"
           rel="noopener noreferrer"
-          ><span>WhatsApp direct</span><i class="fa-brands fa-whatsapp text-brand-light" aria-hidden="true"></i></a
+          ><span>{{ site().ui.footer.whatsappDirect }}</span><i class="fa-brands fa-whatsapp text-brand-light" aria-hidden="true"></i></a
         >
         <a
           [href]="mailHref"
           class="block break-all text-sm font-light text-white/60 hover:text-white"
-          >Info@groupeafrimmo.com</a
+          >{{ mailDisplay }}</a
         >
       </div>
     </div>
@@ -81,12 +81,13 @@
   <div
     class="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-[10px] font-light uppercase tracking-wide text-white/40 md:flex-row md:items-center md:justify-between"
   >
-    <p>© 2026 Groupe Afrimmo S.A. Tous droits réservés.</p>
+    <p>{{ site().ui.footer.copyright }}</p>
     <div class="flex flex-wrap gap-x-5 gap-y-1">
-      <a routerLink="/mentions-legales" class="hover:text-white/70">Mentions légales</a>
-      <a routerLink="/politique-de-confidentialite" class="hover:text-white/70"
-        >Confidentialité</a
-      >
+      @for (item of legalLinks(); track itemLabel(item)) {
+        @if (item.kind === 'route') {
+          <a [routerLink]="item.path" class="hover:text-white/70">{{ item.label }}</a>
+        }
+      }
     </div>
   </div>
 </footer>

@@ -1,38 +1,36 @@
 <header
-  class="fixed z-[100] transition-all duration-300 ease-out"
+  class="fixed inset-x-0 top-0 z-[100] w-full border-b transition-colors duration-300 ease-out"
   [ngClass]="
     isScrolled()
-      ? 'left-1/2 top-3 w-[calc(100%-1.25rem)] max-w-6xl -translate-x-1/2 rounded-none border border-white/10 bg-black/65 shadow-2xl shadow-black/30 backdrop-blur-xl sm:w-[calc(100%-2rem)]'
-      : 'inset-x-0 top-0 w-full border-b border-white/5 bg-black/25 backdrop-blur-lg'
+      ? 'border-white/10 bg-[#05070a]/88 backdrop-blur-md'
+      : 'border-white/5 bg-black/20 backdrop-blur-sm'
   "
   (window:scroll)="onWindowScroll()"
 >
   <nav
-    class="mx-auto grid max-w-7xl grid-cols-[1fr_auto] items-center gap-3 px-4 py-2.5 sm:px-5 sm:py-3 lg:grid-cols-[minmax(12rem,1fr)_auto_minmax(12rem,1fr)] lg:gap-4 lg:px-6"
-    aria-label="Navigation principale"
+    class="mx-auto grid max-w-7xl grid-cols-[1fr_auto] items-center gap-3 px-4 py-3 sm:px-5 sm:py-3.5 lg:grid-cols-[minmax(9rem,1fr)_auto_minmax(9rem,1fr)] lg:gap-6 lg:px-6"
+    [attr.aria-label]="site().ui.aria.primaryNav"
   >
     <a
       routerLink="/"
       fragment="home"
-      class="flex shrink-0 items-center gap-2"
-      aria-label="Accueil Groupe Afrimmo S.A."
+      class="flex shrink-0 items-center"
+      [attr.aria-label]="site().ui.aria.homeLink"
     >
-      <span class="flex h-10 items-center sm:h-11">
-        <img
-          src="/images/logo/Logo_white.png"
-          alt="Groupe Afrimmo S.A."
-          width="568"
-          height="218"
-          class="h-8 w-auto max-w-[min(11.5rem,calc(100vw-8rem))] sm:h-9 sm:max-w-[13rem]"
-          decoding="async"
-        />
-      </span>
+      <img
+        src="/images/logo/Logo_white.png"
+        alt="Groupe Afrimmo S.A."
+        width="568"
+        height="218"
+        class="h-8 w-auto max-w-[min(10.5rem,calc(100vw-5rem))] sm:h-9 sm:max-w-[11.5rem]"
+        decoding="async"
+      />
     </a>
 
     <div
-      class="hidden items-center justify-center gap-x-5 text-[12px] font-semibold lg:flex xl:gap-x-7"
+      class="hidden items-center justify-center gap-x-5 text-[11px] font-semibold uppercase tracking-[.1em] lg:flex xl:gap-x-6 xl:text-[12px]"
     >
-      @for (link of mainLinks; track trackMain($index, link)) {
+      @for (link of site().navigation.main; track trackMain($index, link)) {
         @switch (link.kind) {
           @case ('fragment') {
             <a routerLink="/" [fragment]="link.fragment" class="nav-link whitespace-nowrap">{{
@@ -46,21 +44,18 @@
       }
     </div>
 
-    <div class="hidden min-w-0 shrink-0 items-center justify-end gap-2 justify-self-end lg:flex xl:gap-3">
-      <a
-        [href]="phoneHref"
-        class="inline-flex items-center gap-2 whitespace-nowrap text-[12px] font-semibold tabular-nums text-white/72 transition-colors duration-300 hover:text-white"
-        [attr.aria-label]="cta.call + ' — ' + phoneDisplay"
-      >
-        <i class="fa-solid fa-phone text-[12px]" aria-hidden="true"></i>
-        <span>{{ phoneDisplay }}</span>
-      </a>
+    <div
+      class="hidden min-w-0 shrink-0 items-center justify-end justify-self-end gap-4 lg:flex xl:gap-5"
+    >
+      <app-locale-switcher variant="header" />
+
       <a
         routerLink="/"
         fragment="contact"
-        class="inline-flex items-center rounded-none bg-brand px-4 py-2 text-[12px] font-semibold text-white shadow-sm shadow-black/20 transition-colors duration-300 hover:bg-brand-dark xl:px-5 xl:py-2.5"
+        class="inline-flex h-10 items-center justify-center gap-2 rounded-none border border-brand bg-brand px-4 text-[11px] font-semibold uppercase tracking-[.08em] text-white transition-colors duration-300 hover:border-brand-dark hover:bg-brand-dark xl:px-5 xl:text-[12px]"
       >
-        {{ cta.primary }}
+        {{ site().shared.cta.primary }}
+        <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
       </a>
     </div>
 
@@ -68,7 +63,9 @@
       #menuToggleButton
       type="button"
       class="grid h-10 w-10 shrink-0 place-items-center justify-self-end rounded-none border border-white/15 text-white transition-colors duration-300 hover:bg-white/10 lg:hidden"
-      [attr.aria-label]="menuOpen() ? 'Fermer le menu' : 'Ouvrir le menu'"
+      [attr.aria-label]="
+        menuOpen() ? site().ui.aria.closeMenu : site().ui.aria.openMenu
+      "
       [attr.aria-expanded]="menuOpen()"
       aria-controls="mobileMenu"
       (click)="toggleMenu()"
@@ -96,34 +93,32 @@
   (keydown)="onMobileMenuKeydown($event)"
 >
   <div class="mobile-menu-panel flex min-h-[100dvh] min-h-svh w-full flex-col bg-dark-cmt text-white">
-    <div class="flex shrink-0 items-center justify-between gap-4 border-b border-white/10 px-4 py-4 sm:px-5">
+    <div class="flex shrink-0 items-center justify-between gap-4 border-b border-white/10 px-4 py-3 sm:px-5">
       <a
         routerLink="/"
         fragment="home"
         class="flex min-w-0 items-center gap-3 py-1"
-        aria-label="Accueil Groupe Afrimmo S.A."
+        [attr.aria-label]="site().ui.aria.homeLink"
         (click)="closeMenu(false)"
       >
-        <span class="flex h-10 items-center">
-          <img
-            src="/images/logo/Logo_white.png"
-            alt=""
-            width="568"
-            height="218"
-            class="h-8 w-auto max-w-[min(12rem,calc(100vw-7rem))]"
-            decoding="async"
-          />
-        </span>
+        <img
+          src="/images/logo/Logo_white.png"
+          alt=""
+          width="568"
+          height="218"
+          class="h-7 w-auto max-w-[min(10rem,calc(100vw-7rem))]"
+          decoding="async"
+        />
         <span
           id="mobileMenuLabel"
           class="truncate text-[10px] font-extrabold uppercase tracking-[.14em]"
-          >Groupe Afrimmo S.A.</span
+          >{{ site().shared.brand.legalName }}</span
         >
       </a>
       <button
         type="button"
-        class="grid h-10 w-10 shrink-0 place-items-center rounded-none border border-white/20 text-white transition-colors duration-300 hover:bg-white/10"
-        aria-label="Fermer le menu"
+        class="grid h-9 w-9 shrink-0 place-items-center rounded-none border border-white/20 text-white transition-colors duration-300 hover:bg-white/10"
+        [attr.aria-label]="site().ui.aria.closeMenu"
         (click)="closeMenu()"
       >
         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
@@ -131,17 +126,17 @@
     </div>
 
     <nav
-      class="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-7 pb-[calc(2rem+env(safe-area-inset-bottom))] sm:px-5 sm:py-8"
-      aria-label="Navigation mobile"
+      class="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] sm:px-5 sm:py-7"
+      [attr.aria-label]="site().ui.aria.mobileNav"
     >
       <div class="flex flex-col gap-1 text-[12px] font-semibold uppercase tracking-[.12em]">
-        @for (link of mainLinks; track trackMain($index, link)) {
+        @for (link of site().navigation.main; track trackMain($index, link)) {
           @switch (link.kind) {
             @case ('fragment') {
               <a
                 routerLink="/"
                 [fragment]="link.fragment"
-                class="mobile-link block rounded-none border border-transparent px-3 py-4 transition-colors duration-300 hover:border-white/15 hover:bg-white/5 active:bg-white/10 sm:py-5"
+                class="mobile-link block rounded-none border border-transparent px-3 py-4 transition-colors duration-300 hover:border-white/15 hover:bg-white/5 active:bg-white/10"
                 (click)="closeMenu(false)"
                 >{{ link.label }}</a
               >
@@ -149,29 +144,38 @@
             @case ('route') {
               <a
                 [routerLink]="link.path"
-                class="mobile-link block rounded-none border border-transparent px-3 py-4 transition-colors duration-300 hover:border-white/15 hover:bg-white/5 active:bg-white/10 sm:py-5"
+                class="mobile-link block rounded-none border border-transparent px-3 py-4 transition-colors duration-300 hover:border-white/15 hover:bg-white/5 active:bg-white/10"
                 (click)="closeMenu(false)"
                 >{{ link.label }}</a
               >
             }
           }
         }
+
         <a
           routerLink="/"
           fragment="contact"
-          class="mt-6 inline-flex min-h-[52px] w-full items-center justify-center rounded-none bg-brand px-5 py-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-white transition-colors duration-300 hover:bg-brand-dark"
+          class="mt-5 inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-none bg-brand px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-white transition-colors duration-300 hover:bg-brand-dark"
           (click)="closeMenu(false)"
         >
-          {{ cta.primary }}
+          {{ site().shared.cta.primary }}
+          <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
         </a>
+
         <a
           [href]="phoneHref"
-          class="mt-3 inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-none border border-white/20 px-5 py-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-white transition-colors duration-300 hover:bg-white/10"
+          class="mt-2 inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-none border border-white/15 px-5 py-3 text-[11px] font-semibold tabular-nums tracking-wide text-white/85 transition-colors duration-300 hover:border-white/25 hover:bg-white/5"
           (click)="closeMenu(false)"
         >
-          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          <i class="fa-solid fa-phone text-[12px]" aria-hidden="true"></i>
           {{ phoneDisplay }}
         </a>
+
+        <div
+          class="mt-6 border-t border-white/10 pt-6"
+        >
+          <app-locale-switcher variant="drawer" />
+        </div>
       </div>
     </nav>
   </div>

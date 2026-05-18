@@ -1,0 +1,51 @@
+<div
+  class="locale-switcher relative"
+  [class.locale-switcher--drawer]="variant() === 'drawer'"
+>
+  <button
+    type="button"
+    data-locale-trigger
+    class="locale-switcher-trigger inline-flex items-center justify-center gap-2 rounded-none border text-[11px] font-semibold uppercase tracking-[.08em] transition-colors duration-300"
+    [attr.aria-label]="site().ui.aria.chooseLanguage"
+    [attr.aria-expanded]="open()"
+    aria-haspopup="listbox"
+    (click)="toggleOpen()"
+  >
+    <i class="fa-solid fa-globe text-[11px] text-white/70" aria-hidden="true"></i>
+    <span class="tabular-nums text-white">{{ activeOption().short }}</span>
+    <i
+      class="fa-solid fa-chevron-down text-[9px] text-white/55 transition-transform duration-200"
+      [class.rotate-180]="open()"
+      aria-hidden="true"
+    ></i>
+  </button>
+
+  @if (open()) {
+    <ul
+      class="locale-switcher-menu absolute z-[110] min-w-[10.5rem] list-none rounded-none border border-white/12 bg-[#0a0c10] py-1 shadow-lg shadow-black/30"
+      [class.locale-switcher-menu--drawer]="variant() === 'drawer'"
+      role="listbox"
+      [attr.aria-label]="site().ui.aria.siteLanguage"
+    >
+      @for (opt of localeOptions(); track opt.code) {
+        <li role="presentation">
+          <button
+            type="button"
+            role="option"
+            class="locale-switcher-option flex w-full items-center justify-between gap-3 px-3 py-2.5 text-left text-[12px] font-medium transition-colors"
+            [attr.aria-selected]="isActive(opt.code)"
+            (click)="selectLocale(opt.code)"
+          >
+            <span>{{ opt.label }}</span>
+            <span
+              class="text-[10px] font-semibold uppercase tracking-wider tabular-nums"
+              [class.text-brand-light]="isActive(opt.code)"
+              [class.text-white/40]="!isActive(opt.code)"
+              >{{ opt.short }}</span
+            >
+          </button>
+        </li>
+      }
+    </ul>
+  }
+</div>

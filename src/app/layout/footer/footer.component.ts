@@ -1,12 +1,14 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import type { FooterNavLink } from '../../shared/landing/landing.models';
+import { injectLocaleContent } from '../../content/inject-locale-content';
 import {
+  SITE_EMAIL_DISPLAY,
+  SITE_EMAIL_HREF,
   SITE_PHONE_DISPLAY,
   SITE_PHONE_HREF,
   SITE_WHATSAPP_HREF,
 } from '../../shared/content/contact.data';
-import { SITE_FOOTER_NAV } from '../../shared/content/site-nav.data';
 
 @Component({
   selector: 'app-footer',
@@ -16,8 +18,20 @@ import { SITE_FOOTER_NAV } from '../../shared/content/site-nav.data';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {
-  protected readonly slogan =
-    'Construction, génie civil, infrastructures, logistique et approvisionnement — Groupe Afrimmo S.A.';
+  private readonly i18n = injectLocaleContent();
+
+  protected readonly site = this.i18n.site;
+
+  protected readonly footerLinks = computed(() => this.site().navigation.footer);
+
+  protected readonly legalLinks = computed(() =>
+    this.footerLinks().filter(
+      (item) =>
+        item.kind === 'route' &&
+        (item.path === '/mentions-legales' ||
+          item.path === '/politique-de-confidentialite'),
+    ),
+  );
 
   protected readonly phoneDisplay = SITE_PHONE_DISPLAY;
 
@@ -25,9 +39,9 @@ export class FooterComponent {
 
   protected readonly whatsappHref = SITE_WHATSAPP_HREF;
 
-  protected readonly mailHref = 'mailto:Info@groupeafrimmo.com';
+  protected readonly mailHref = SITE_EMAIL_HREF;
 
-  protected readonly footerLinks: readonly FooterNavLink[] = SITE_FOOTER_NAV;
+  protected readonly mailDisplay = SITE_EMAIL_DISPLAY;
 
   protected itemLabel(item: FooterNavLink): string {
     if (item.kind === 'homeFragment') {

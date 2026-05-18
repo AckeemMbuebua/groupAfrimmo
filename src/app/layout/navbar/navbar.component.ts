@@ -10,19 +10,23 @@ import {
 } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { CTA_LABELS } from '../../shared/content/cta-labels';
+import { injectLocaleContent } from '../../content/inject-locale-content';
+import { LocaleSwitcherComponent } from './locale-switcher.component';
 import { SITE_PHONE_DISPLAY, SITE_PHONE_HREF } from '../../shared/content/contact.data';
-import { SITE_MAIN_NAV } from '../../shared/content/site-nav.data';
 import type { NavMainEntry } from '../../shared/landing/landing.models';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [NgClass, RouterLink],
+  imports: [NgClass, RouterLink, LocaleSwitcherComponent],
   templateUrl: './navbar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
+  private readonly i18n = injectLocaleContent();
+
+  protected readonly site = this.i18n.site;
+
   private readonly doc = inject(DOCUMENT);
   private lastFocusedElement: HTMLElement | null = null;
 
@@ -31,7 +35,6 @@ export class NavbarComponent {
 
   protected readonly menuOpen = signal(false);
 
-  /** Capsule flottante façon 21st.dev au-delà de ce seuil. */
   protected readonly isScrolled = signal(false);
 
   constructor() {
@@ -48,11 +51,6 @@ export class NavbarComponent {
       });
     });
   }
-
-  /** Navigation principale (5 entrées, sans menu « Plus » sur desktop). */
-  protected readonly mainLinks: readonly NavMainEntry[] = SITE_MAIN_NAV;
-
-  protected readonly cta = CTA_LABELS;
 
   protected readonly phoneHref = SITE_PHONE_HREF;
 
