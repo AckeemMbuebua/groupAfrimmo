@@ -59,14 +59,14 @@
       <div class="space-y-3">
         <a
           [href]="phoneHref"
-          class="flex min-w-0 items-center justify-between gap-4 border border-white/10 bg-white/[.04] px-4 py-3 text-sm font-extrabold tabular-nums tracking-tight text-white transition hover:border-brand-light/55"
-          ><span>+243 899 450 037</span><i class="fa-solid fa-phone text-brand-light" aria-hidden="true"></i></a
+          class="flex min-w-0 items-center justify-between gap-4 rounded-none border border-white/10 bg-white/[.04] px-4 py-3 text-sm font-extrabold tabular-nums tracking-tight text-white transition hover:border-brand-light/55"
+          ><span>{{ phoneDisplay }}</span><i class="fa-solid fa-phone text-brand-light" aria-hidden="true"></i></a
         >
         <a
-          href="https://wa.me/243899450037"
-          class="flex min-w-0 items-center justify-between gap-4 border border-white/10 bg-white/[.04] px-4 py-3 text-sm font-extrabold text-white transition hover:border-brand-light/55"
+          [href]="whatsappHref"
+          class="flex min-w-0 items-center justify-between gap-4 rounded-none border border-white/10 bg-white/[.04] px-4 py-3 text-sm font-extrabold text-white transition hover:border-brand-light/55"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           ><span>WhatsApp direct</span><i class="fa-brands fa-whatsapp text-brand-light" aria-hidden="true"></i></a
         >
         <a

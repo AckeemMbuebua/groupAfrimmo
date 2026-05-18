@@ -9,6 +9,7 @@ import {
 import { RouterLink } from '@angular/router';
 import { RevealDirective } from '../directives/reveal.directive';
 import type { ProjectCard } from '../landing/landing.models';
+import { SITE_PHONE_HREF } from '../content/contact.data';
 import { CTA_LABELS } from '../content/cta-labels';
 
 @Component({
@@ -30,7 +31,7 @@ export class ProjectsGridComponent {
   /** Ex. `'realisations'` pour lier vers `/realisations/:id`. */
   readonly projectDetailParent = input<string>();
 
-  readonly phoneHref = 'tel:+243899450037';
+  readonly phoneHref = SITE_PHONE_HREF;
 
   readonly mailHref = 'mailto:Info@groupeafrimmo.com?subject=Dossier%20r%C3%A9alisation';
 

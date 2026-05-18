@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
+import { SITE_PHONE_HREF } from '../../shared/content/contact.data';
 import { getProjectCards } from '../../shared/content/projects.data';
 import { ProjectsGridComponent } from '../../shared/projects-grid/projects-grid.component';
 
@@ -14,5 +15,5 @@ import { ProjectsGridComponent } from '../../shared/projects-grid/projects-grid.
 export class ProjectsSection {
   protected readonly projects = getProjectCards();
 
-  readonly phoneHref = 'tel:+243899450037';
+  readonly phoneHref = SITE_PHONE_HREF;
 }
