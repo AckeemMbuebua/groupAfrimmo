@@ -5,10 +5,11 @@ import {
   type OnInit,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Meta, Title } from '@angular/platform-browser';
+import { SITE_PHONE_HREF } from '../../shared/content/contact.data';
 import { getProjectCards } from '../../shared/content/projects.data';
 import { ProjectsGridComponent } from '../../shared/projects-grid/projects-grid.component';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
+import { SeoService } from '../../shared/seo/seo.service';
 
 @Component({
   selector: 'app-realisations-hub',
@@ -18,18 +19,16 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RealisationsHub implements OnInit {
-  private readonly title = inject(Title);
-  private readonly meta = inject(Meta);
+  private readonly seo = inject(SeoService);
 
   protected readonly projects = getProjectCards();
 
-  protected readonly phoneHref = 'tel:+243899450037';
+  protected readonly phoneHref = SITE_PHONE_HREF;
 
   ngOnInit(): void {
-    this.title.setTitle('Réalisations | Groupe Afrimmo S.A.');
-    this.meta.updateTag({
-      name: 'description',
-      content:
+    this.seo.update({
+      title: 'Réalisations | Groupe Afrimmo S.A.',
+      description:
         'Références terrain — résidentiel, hôtellerie, industrie, santé — périmètres rappelés sur chaque fiche. Groupe Afrimmo S.A.',
     });
   }

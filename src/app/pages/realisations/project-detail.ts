@@ -7,9 +7,9 @@ import {
   signal,
 } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
-import { Meta, Title } from '@angular/platform-browser';
 import { getProjectCase } from '../../shared/content/projects.data';
 import type { ResolvedProjectCase } from '../../shared/content/content.models';
+import { SeoService } from '../../shared/seo/seo.service';
 
 @Component({
   selector: 'app-project-detail',
@@ -20,8 +20,7 @@ import type { ResolvedProjectCase } from '../../shared/content/content.models';
 })
 export class ProjectDetail {
   private readonly router = inject(Router);
-  private readonly title = inject(Title);
-  private readonly meta = inject(Meta);
+  private readonly seo = inject(SeoService);
 
   /** Lié automatiquement à la route `:id` via `withComponentInputBinding()`. */
   readonly id = input.required<string>();
@@ -55,7 +54,9 @@ export class ProjectDetail {
   }
 
   private applyMeta(row: ResolvedProjectCase): void {
-    this.title.setTitle(`${row.title} · Réalisations | Groupe Afrimmo S.A.`);
-    this.meta.updateTag({ name: 'description', content: row.seoDescription });
+    this.seo.update({
+      title: `${row.title} · Réalisations | Groupe Afrimmo S.A.`,
+      description: row.seoDescription,
+    });
   }
 }

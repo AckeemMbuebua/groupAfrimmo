@@ -18,6 +18,7 @@ export const routes: Routes = [
   },
   {
     path: 'realisations/:id',
+    title: 'Projet · Réalisations | Groupe Afrimmo S.A.',
     loadComponent: () =>
       import('./pages/realisations/project-detail').then(
         (m) => m.ProjectDetail,
@@ -33,6 +34,7 @@ export const routes: Routes = [
   },
   {
     path: 'actualites/:slug',
+    title: 'Article | Groupe Afrimmo S.A.',
     loadComponent: () =>
       import('./pages/actualites/actualite-detail').then(
         (m) => m.ActualiteDetail,
@@ -46,6 +48,7 @@ export const routes: Routes = [
   },
   {
     path: 'mentions-legales',
+    title: 'Mentions légales | Groupe Afrimmo S.A.',
     loadComponent: () =>
       import('./pages/legal/mentions-legales').then(
         (m) => m.MentionsLegales,
@@ -53,6 +56,7 @@ export const routes: Routes = [
   },
   {
     path: 'politique-de-confidentialite',
+    title: 'Politique de confidentialité | Groupe Afrimmo S.A.',
     loadComponent: () =>
       import('./pages/legal/politique-confidentialite').then(
         (m) => m.PolitiqueConfidentialite,

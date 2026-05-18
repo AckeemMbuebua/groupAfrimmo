@@ -7,12 +7,12 @@ import {
   signal,
 } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
-import { Meta, Title } from '@angular/platform-browser';
 import {
   formatArticleDate,
   getArticleBySlug,
 } from '../../shared/content/actualites.data';
 import type { InsightArticle } from '../../shared/content/content.models';
+import { SeoService } from '../../shared/seo/seo.service';
 
 @Component({
   selector: 'app-actualite-detail',
@@ -23,8 +23,7 @@ import type { InsightArticle } from '../../shared/content/content.models';
 })
 export class ActualiteDetail {
   private readonly router = inject(Router);
-  private readonly title = inject(Title);
-  private readonly meta = inject(Meta);
+  private readonly seo = inject(SeoService);
 
   readonly slug = input.required<string>();
 
@@ -62,7 +61,9 @@ export class ActualiteDetail {
   }
 
   private applyMeta(row: InsightArticle): void {
-    this.title.setTitle(`${row.title} | Groupe Afrimmo S.A.`);
-    this.meta.updateTag({ name: 'description', content: row.excerpt });
+    this.seo.update({
+      title: `${row.title} | Groupe Afrimmo S.A.`,
+      description: row.excerpt,
+    });
   }
 }

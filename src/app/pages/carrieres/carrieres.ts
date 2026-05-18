@@ -5,9 +5,9 @@ import {
   type OnInit,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Meta, Title } from '@angular/platform-browser';
 import { JOB_POSTINGS } from '../../shared/content/carrieres.data';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
+import { SeoService } from '../../shared/seo/seo.service';
 
 @Component({
   selector: 'app-carrieres',
@@ -17,8 +17,7 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Carrieres implements OnInit {
-  private readonly title = inject(Title);
-  private readonly meta = inject(Meta);
+  private readonly seo = inject(SeoService);
 
   protected readonly roles = JOB_POSTINGS;
 
@@ -26,10 +25,9 @@ export class Carrieres implements OnInit {
     'mailto:Info@groupeafrimmo.com?subject=Candidature%20spontan%C3%A9e%20%2F%20';
 
   ngOnInit(): void {
-    this.title.setTitle('Carrières | Groupe Afrimmo S.A.');
-    this.meta.updateTag({
-      name: 'description',
-      content:
+    this.seo.update({
+      title: 'Carrières | Groupe Afrimmo S.A.',
+      description:
         'Rejoindre le Groupe Afrimmo S.A. : chantier, logistique, développement et expertises transverses sur des programmes en RDC et en Afrique de l’Est.',
     });
   }
