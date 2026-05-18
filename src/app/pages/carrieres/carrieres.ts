@@ -1,13 +1,15 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
+  effect,
   inject,
-  type OnInit,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { JOB_POSTINGS } from '../../shared/content/carrieres.data';
+import { SITE_EMAIL_HREF } from '../../shared/content/contact.data';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 import { SeoService } from '../../shared/seo/seo.service';
+import { LocaleService } from '../../content/locale.service';
 
 @Component({
   selector: 'app-carrieres',
@@ -16,24 +18,20 @@ import { SeoService } from '../../shared/seo/seo.service';
   templateUrl: './carrieres.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Carrieres implements OnInit {
+export class Carrieres {
   private readonly seo = inject(SeoService);
+  protected readonly locale = inject(LocaleService);
 
-  protected readonly roles = JOB_POSTINGS;
+  protected readonly roles = computed(() => this.locale.site().carrieres.jobs);
 
-  protected readonly mailIntro =
-    'mailto:Info@groupeafrimmo.com?subject=Candidature%20spontan%C3%A9e%20%2F%20';
-
-  ngOnInit(): void {
-    this.seo.update({
-      title: 'Carrières | Groupe Afrimmo S.A.',
-      description:
-        'Rejoindre le Groupe Afrimmo S.A. : chantier, logistique, développement et expertises transverses sur des programmes en RDC et en Afrique de l’Est.',
+  constructor() {
+    effect(() => {
+      this.seo.update(this.locale.site().seo.pages.carrieres);
     });
   }
 
   protected mailForRole(title: string): string {
-    const encoded = encodeURIComponent(title);
-    return `${this.mailIntro}${encoded}`;
+    const subject = `${this.locale.site().pages.carrieres.mailSubjectPrefix}${title}`;
+    return `${SITE_EMAIL_HREF}?subject=${encodeURIComponent(subject)}`;
   }
 }

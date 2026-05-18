@@ -1,11 +1,13 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  effect,
   inject,
-  type OnInit,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { SITE_EMAIL_DISPLAY, SITE_EMAIL_HREF } from '../../shared/content/contact.data';
 import { SeoService } from '../../shared/seo/seo.service';
+import { LocaleService } from '../../content/locale.service';
 
 @Component({
   selector: 'app-politique-confidentialite',
@@ -14,14 +16,16 @@ import { SeoService } from '../../shared/seo/seo.service';
   templateUrl: './politique-confidentialite.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PolitiqueConfidentialite implements OnInit {
+export class PolitiqueConfidentialite {
   private readonly seo = inject(SeoService);
+  protected readonly locale = inject(LocaleService);
 
-  ngOnInit(): void {
-    this.seo.update({
-      title: 'Politique de confidentialité | Groupe Afrimmo S.A.',
-      description:
-        'Politique de confidentialité du site afrimmo.com : données collectées, finalités, durée de conservation et modalités de contact.',
+  protected readonly mailDisplay = SITE_EMAIL_DISPLAY;
+  protected readonly mailHref = SITE_EMAIL_HREF;
+
+  constructor() {
+    effect(() => {
+      this.seo.update(this.locale.site().seo.pages.politiqueConfidentialite);
     });
   }
 }

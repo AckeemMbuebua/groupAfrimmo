@@ -2,17 +2,16 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  computed,
+  effect,
   inject,
-  type OnInit,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import {
-  formatArticleDate,
-  INSIGHT_ARTICLES,
-} from '../../shared/content/actualites.data';
+import { formatArticleDate } from '../../shared/content/actualites.data';
 import type { InsightArticle } from '../../shared/content/content.models';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 import { SeoService } from '../../shared/seo/seo.service';
+import { LocaleService } from '../../content/locale.service';
 
 @Component({
   selector: 'app-actualites-index',
@@ -21,18 +20,27 @@ import { SeoService } from '../../shared/seo/seo.service';
   templateUrl: './actualites-index.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ActualitesIndex implements OnInit {
+export class ActualitesIndex {
   private readonly seo = inject(SeoService);
   private readonly cdr = inject(ChangeDetectorRef);
+  protected readonly locale = inject(LocaleService);
 
   private readonly brokenCovers = new Set<string>();
 
   protected readonly fallbackCover = '/images/fallback-card.jpg';
 
-  protected readonly articles = INSIGHT_ARTICLES;
+  protected readonly articles = computed(
+    () => this.locale.site().actualites.articles,
+  );
+
+  constructor() {
+    effect(() => {
+      this.seo.update(this.locale.site().seo.pages.actualites);
+    });
+  }
 
   protected formatDate(iso: string): string {
-    return formatArticleDate(iso);
+    return formatArticleDate(iso, this.locale.locale());
   }
 
   protected coverSrc(article: InsightArticle): string {
@@ -46,13 +54,5 @@ export class ActualitesIndex implements OnInit {
       this.brokenCovers.add(slug);
       this.cdr.markForCheck();
     }
-  }
-
-  ngOnInit(): void {
-    this.seo.update({
-      title: 'Actualités & analyses | Groupe Afrimmo S.A.',
-      description:
-        'Points de vue et retours d’expérience sur la conduite de programmes construction, logistique et industrie en Afrique centrale et de l’Est — Groupe Afrimmo S.A.',
-    });
   }
 }

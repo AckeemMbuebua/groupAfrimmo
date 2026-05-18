@@ -1,15 +1,16 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
+  effect,
   inject,
-  type OnInit,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SITE_PHONE_HREF } from '../../shared/content/contact.data';
-import { getProjectCards } from '../../shared/content/projects.data';
 import { ProjectsGridComponent } from '../../shared/projects-grid/projects-grid.component';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 import { SeoService } from '../../shared/seo/seo.service';
+import { LocaleService } from '../../content/locale.service';
 
 @Component({
   selector: 'app-realisations-hub',
@@ -18,18 +19,17 @@ import { SeoService } from '../../shared/seo/seo.service';
   templateUrl: './realisations-hub.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RealisationsHub implements OnInit {
+export class RealisationsHub {
   private readonly seo = inject(SeoService);
+  protected readonly locale = inject(LocaleService);
 
-  protected readonly projects = getProjectCards();
+  protected readonly projects = computed(() => this.locale.site().projects.cards);
 
   protected readonly phoneHref = SITE_PHONE_HREF;
 
-  ngOnInit(): void {
-    this.seo.update({
-      title: 'Réalisations | Groupe Afrimmo S.A.',
-      description:
-        'Références terrain — résidentiel, hôtellerie, industrie, santé — périmètres rappelés sur chaque fiche. Groupe Afrimmo S.A.',
+  constructor() {
+    effect(() => {
+      this.seo.update(this.locale.site().seo.pages.realisations);
     });
   }
 }

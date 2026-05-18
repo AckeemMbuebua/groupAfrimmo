@@ -13,6 +13,7 @@ import {
 } from '../../shared/content/actualites.data';
 import type { InsightArticle } from '../../shared/content/content.models';
 import { SeoService } from '../../shared/seo/seo.service';
+import { LocaleService } from '../../content/locale.service';
 
 @Component({
   selector: 'app-actualite-detail',
@@ -24,6 +25,7 @@ import { SeoService } from '../../shared/seo/seo.service';
 export class ActualiteDetail {
   private readonly router = inject(Router);
   private readonly seo = inject(SeoService);
+  protected readonly locale = inject(LocaleService);
 
   readonly slug = input.required<string>();
 
@@ -34,8 +36,9 @@ export class ActualiteDetail {
   constructor() {
     effect(() => {
       const s = this.slug();
+      const activeLocale = this.locale.locale();
       this.coverBroken.set(false);
-      const row = getArticleBySlug(s);
+      const row = getArticleBySlug(s, activeLocale);
       if (!row) {
         void this.router.navigate(['/actualites']);
         return;
@@ -45,11 +48,11 @@ export class ActualiteDetail {
   }
 
   protected resolve(): InsightArticle | undefined {
-    return getArticleBySlug(this.slug());
+    return getArticleBySlug(this.slug(), this.locale.locale());
   }
 
   protected formatDate(iso: string): string {
-    return formatArticleDate(iso);
+    return formatArticleDate(iso, this.locale.locale());
   }
 
   protected coverSrc(article: InsightArticle): string {
@@ -62,7 +65,7 @@ export class ActualiteDetail {
 
   private applyMeta(row: InsightArticle): void {
     this.seo.update({
-      title: `${row.title} | Groupe Afrimmo S.A.`,
+      title: this.locale.site().seo.articleDetailTitle(row.title),
       description: row.excerpt,
     });
   }

@@ -3,18 +3,18 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <nav
         class="mb-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] font-extrabold uppercase tracking-[.2em] text-dark-cmt/40"
-        aria-label="Fil d'Ariane"
+        [attr.aria-label]="locale.site().ui.aria.breadcrumb"
       >
-        <a routerLink="/" class="text-brand transition-colors duration-300 hover:text-dark-cmt">Accueil</a>
+        <a routerLink="/" class="text-brand transition-colors duration-300 hover:text-dark-cmt">{{ locale.site().ui.common.home }}</a>
         <span aria-hidden="true">/</span>
         <a routerLink="/realisations" class="text-brand transition-colors duration-300 hover:text-dark-cmt">
-          Réalisations
+          {{ locale.site().pages.realisations.breadcrumb }}
         </a>
         <span aria-hidden="true">/</span>
         <span class="max-w-[12rem] truncate text-dark-cmt sm:max-w-md">{{ project.title }}</span>
       </nav>
 
-      <div class="relative aspect-[21/10] overflow-hidden rounded-xl bg-dark-cmt md:aspect-[21/9]">
+      <div class="relative aspect-[21/10] overflow-hidden rounded-none bg-dark-cmt md:aspect-[21/9]">
         <img
           [src]="heroImageSrc(project)"
           [alt]="project.imageAlt"
@@ -28,7 +28,7 @@
           class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"
         ></div>
         <div
-          class="absolute bottom-6 left-6 rounded-full bg-black/65 px-3 py-2 text-[10px] font-extrabold uppercase tracking-[.16em] text-white backdrop-blur-sm md:bottom-8 md:left-8"
+          class="absolute bottom-6 left-6 rounded-none bg-black/65 px-3 py-2 text-[10px] font-extrabold uppercase tracking-[.16em] text-white backdrop-blur-sm md:bottom-8 md:left-8"
         >
           {{ project.statusLabel }}
         </div>
@@ -42,16 +42,16 @@
           {{ project.title }}
         </h1>
         <p class="mt-5 max-w-2xl text-sm font-light leading-relaxed text-steel">{{ project.description }}</p>
-        <dl class="mt-6 grid max-w-2xl gap-4 rounded-xl border border-dark-cmt/10 bg-gray-50 p-5 text-sm sm:grid-cols-2">
+        <dl class="mt-6 grid max-w-2xl gap-4 rounded-none border border-dark-cmt/10 bg-gray-50 p-5 text-sm sm:grid-cols-2">
           <div>
             <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/45">
-              Lieu
+              {{ locale.site().pages.realisations.detail.locationLabel }}
             </dt>
             <dd class="mt-1 text-dark-cmt">{{ project.location }}</dd>
           </div>
           <div class="sm:col-span-2">
             <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/45">
-              Périmètre Groupe Afrimmo S.A.
+              {{ locale.site().pages.realisations.detail.scopeLabel }}
             </dt>
             <dd class="mt-1 leading-relaxed text-steel">{{ project.roleScope }}</dd>
           </div>
@@ -61,15 +61,15 @@
             routerLink="/realisations"
             class="inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-widest text-brand hover:text-dark-cmt"
           >
-            Retour aux réalisations
+            {{ locale.site().pages.realisations.detail.backToList }}
             <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
           </a>
           <a
             routerLink="/"
             fragment="contact"
-            class="inline-flex min-h-[48px] items-center gap-2 rounded-full bg-brand px-6 py-3 text-[11px] font-extrabold uppercase tracking-widest text-white transition-colors duration-300 hover:bg-brand-dark"
+            class="inline-flex min-h-[48px] items-center gap-2 rounded-none bg-brand px-6 py-3 text-[11px] font-extrabold uppercase tracking-widest text-white transition-colors duration-300 hover:bg-brand-dark"
           >
-            Parler de votre projet <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            {{ locale.site().shared.cta.primary }} <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
           </a>
         </div>
       </header>
@@ -81,13 +81,13 @@
 
         @if (project.scope && project.scope.length) {
           <h2 class="mt-12 text-xs font-extrabold uppercase tracking-[.22em] text-dark-cmt">
-            Périmètre mobilisé
+            {{ locale.site().pages.realisations.detail.scopeHeading }}
           </h2>
           <ul class="mt-4 list-none space-y-3 pl-0">
             @for (s of project.scope; track $index) {
               <li class="flex gap-3 text-sm leading-7">
                 <span
-                  class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"
+                  class="mt-2 h-1.5 w-1.5 shrink-0 rounded-none bg-brand"
                   aria-hidden="true"
                 ></span>
                 <span>{{ s }}</span>
@@ -98,7 +98,7 @@
 
         @if (project.outcomes && project.outcomes.length) {
           <h2 class="mt-12 text-xs font-extrabold uppercase tracking-[.22em] text-dark-cmt">
-            Suivi et résultats mentionnés
+            {{ locale.site().pages.realisations.detail.outcomesHeading }}
           </h2>
           <ul class="mt-4 list-none space-y-3">
             @for (o of project.outcomes; track $index) {
@@ -112,9 +112,7 @@
 
         @if (!(project.intro.length || project.scope?.length || project.outcomes?.length)) {
           <p class="text-sm text-steel">
-            Le détail complet de cette référence est en cours de mise en ligne —
-            nos équipes peuvent toutefois préparer une présentation adaptée sous NDA lors d’un premier
-            échange métier.
+            {{ locale.site().pages.realisations.detail.fallbackDetail }}
           </p>
         }
       </section>

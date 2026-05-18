@@ -3,43 +3,42 @@
     <nav
       appReveal
       class="mb-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] font-extrabold uppercase tracking-[.2em] text-dark-cmt/40"
-      aria-label="Fil d'Ariane"
+      [attr.aria-label]="locale.site().ui.aria.breadcrumb"
     >
-      <a routerLink="/" class="text-brand transition-colors duration-300 hover:text-dark-cmt">Accueil</a>
+      <a routerLink="/" class="text-brand transition-colors duration-300 hover:text-dark-cmt">{{ locale.site().ui.common.home }}</a>
       <span aria-hidden="true">/</span>
-      <span class="text-dark-cmt">Réalisations</span>
+      <span class="text-dark-cmt">{{ locale.site().pages.realisations.breadcrumb }}</span>
     </nav>
 
     <header appReveal class="mb-14 max-w-3xl border-l-4 border-brand pl-6">
-      <p class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">Réalisations</p>
+      <p class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">{{ locale.site().pages.realisations.eyebrow }}</p>
       <h1 class="mt-3 text-4xl font-extrabold uppercase leading-tight tracking-tight sm:text-5xl">
-        Des réalisations concrètes pour illustrer nos périmètres d’intervention.
+        {{ locale.site().pages.realisations.title }}
       </h1>
       <p class="mt-5 text-sm font-light leading-relaxed text-steel">
-        Fiches synthétiques : contexte, lieu, statut et périmètre d’intervention tel que défini au
-        mandat. Les détails confidentiels restent accessibles sur demande lors d’un échange métier.
+        {{ locale.site().pages.realisations.lead }}
       </p>
       <div class="mt-8 flex flex-wrap gap-4">
         <a
           routerLink="/"
           fragment="contact"
-          class="inline-flex min-h-[48px] items-center gap-2 rounded-full bg-brand px-6 py-3 text-[11px] font-extrabold uppercase tracking-widest text-white transition-colors duration-300 hover:bg-brand-dark"
+          class="inline-flex min-h-[48px] items-center gap-2 rounded-none bg-brand px-6 py-3 text-[11px] font-extrabold uppercase tracking-widest text-white transition-colors duration-300 hover:bg-brand-dark"
         >
-          Parler de votre projet
+          {{ locale.site().shared.cta.primary }}
           <i class="fa-solid fa-paper-plane text-xs" aria-hidden="true"></i>
         </a>
         <a
           [href]="phoneHref"
-          class="inline-flex min-h-[48px] items-center gap-2 rounded-full border border-dark-cmt/20 px-6 py-3 text-[11px] font-extrabold uppercase tracking-widest text-dark-cmt transition-colors duration-300 hover:border-brand hover:text-brand"
+          class="inline-flex min-h-[48px] items-center gap-2 rounded-none border border-dark-cmt/20 px-6 py-3 text-[11px] font-extrabold uppercase tracking-widest text-dark-cmt transition-colors duration-300 hover:border-brand hover:text-brand"
         >
-          Appeler Afrimmo
+          {{ locale.site().shared.cta.call }}
           <i class="fa-solid fa-phone text-xs" aria-hidden="true"></i>
         </a>
       </div>
     </header>
 
     <app-projects-grid
-      [projects]="projects"
+      [projects]="projects()"
       projectDetailParent="realisations"
       [showExpertCta]="true"
     />

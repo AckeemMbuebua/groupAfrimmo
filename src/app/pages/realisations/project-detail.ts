@@ -10,6 +10,7 @@ import { RouterLink, Router } from '@angular/router';
 import { getProjectCase } from '../../shared/content/projects.data';
 import type { ResolvedProjectCase } from '../../shared/content/content.models';
 import { SeoService } from '../../shared/seo/seo.service';
+import { LocaleService } from '../../content/locale.service';
 
 @Component({
   selector: 'app-project-detail',
@@ -21,6 +22,7 @@ import { SeoService } from '../../shared/seo/seo.service';
 export class ProjectDetail {
   private readonly router = inject(Router);
   private readonly seo = inject(SeoService);
+  protected readonly locale = inject(LocaleService);
 
   /** Lié automatiquement à la route `:id` via `withComponentInputBinding()`. */
   readonly id = input.required<string>();
@@ -31,8 +33,9 @@ export class ProjectDetail {
   constructor() {
     effect(() => {
       const slug = this.id();
+      const activeLocale = this.locale.locale();
       this.heroImageBroken.set(false);
-      const row = getProjectCase(slug);
+      const row = getProjectCase(slug, activeLocale);
       if (!row) {
         void this.router.navigate(['/realisations']);
         return;
@@ -42,7 +45,7 @@ export class ProjectDetail {
   }
 
   protected snapshot(): ResolvedProjectCase | undefined {
-    return getProjectCase(this.id());
+    return getProjectCase(this.id(), this.locale.locale());
   }
 
   protected heroImageSrc(project: ResolvedProjectCase): string {
@@ -55,7 +58,7 @@ export class ProjectDetail {
 
   private applyMeta(row: ResolvedProjectCase): void {
     this.seo.update({
-      title: `${row.title} · Réalisations | Groupe Afrimmo S.A.`,
+      title: this.locale.site().seo.projectDetailTitle(row.title),
       description: row.seoDescription,
     });
   }

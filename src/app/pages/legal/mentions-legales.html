@@ -4,66 +4,35 @@
     class="mb-10 inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-widest text-brand transition-colors duration-300 hover:text-dark-cmt"
   >
     <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
-    Retour à l’accueil
+    {{ locale.site().pages.mentionsLegales.backHome }}
   </a>
 
   <h1 class="text-3xl font-extrabold uppercase leading-tight tracking-tight text-dark-cmt md:text-4xl">
-    Mentions légales
+    {{ locale.site().pages.mentionsLegales.title }}
   </h1>
   <p class="mt-4 text-sm font-light leading-relaxed text-dark-cmt/65">
-    Document d’information. Les données d’identification juridiques détaillées (RCCM, Nº
-    d’impôt, capital social, etc.) seront ajoutées ou mises à jour selon vos instructions.
+    {{ locale.site().pages.mentionsLegales.intro }}
   </p>
 
-  <section class="mt-12 space-y-4 text-sm font-light leading-relaxed text-dark-cmt/80">
-    <h2 class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">
-      Éditeur du site
-    </h2>
-    <p>
-      Le site<span class="whitespace-pre"> </span><strong class="text-dark-cmt">afrimmo.com</strong> est présenté
-      sous la responsabilité du
-      <strong class="text-dark-cmt">Groupe Afrimmo S.A.</strong>
-      (ou entité assimilée désignée en interne), dont le siège et les informations
-      légales complètes seront précisées avec les informations officielles de l’entreprise.
-    </p>
-  </section>
-
-  <section class="mt-10 space-y-4 text-sm font-light leading-relaxed text-dark-cmt/80">
-    <h2 class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">
-      Hébergement
-    </h2>
-    <p>
-      L’identité de l’hébergeur (nom, adresse, contact) sera indiquée ici lorsque votre
-      choix technique et contractuel sera figé pour la mise en production.
-    </p>
-  </section>
-
-  <section class="mt-10 space-y-4 text-sm font-light leading-relaxed text-dark-cmt/80">
-    <h2 class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">
-      Propriété intellectuelle
-    </h2>
-    <p>
-      Les éléments constitutifs du site (structure, textes, visuels, marques et logos lorsqu’ils
-      sont utilisés comme tels) relèvent de la législation applicable sauf mentions explicites
-      contraires ou droits tiers. Toute reproduction non autorisée est interdite.
-    </p>
-  </section>
-
-  <section class="mt-10 space-y-4 text-sm font-light leading-relaxed text-dark-cmt/80">
-    <h2 class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">
-      Contact
-    </h2>
-    <p>
-      Pour toute question relative aux présentes mentions :
-      <a class="font-semibold text-brand hover:underline" href="mailto:Info@groupeafrimmo.com"
-        >Info@groupeafrimmo.com</a
-      >
-      ·
-      <a class="font-semibold text-brand hover:underline" href="tel:+243840500200">+243 840 500 200</a>
-    </p>
-  </section>
+  @for (section of locale.site().pages.mentionsLegales.sections; track section.heading) {
+    <section class="mt-10 space-y-4 text-sm font-light leading-relaxed text-dark-cmt/80 first:mt-12">
+      <h2 class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">
+        {{ section.heading }}
+      </h2>
+      <p>
+        {{ section.body }}
+        @if (section.heading === 'Contact') {
+          <a class="font-semibold text-brand hover:underline" [href]="mailHref">
+            {{ mailDisplay }}</a
+          >
+          ·
+          <a class="font-semibold text-brand hover:underline" [href]="phoneHref">{{ phoneDisplay }}</a>
+        }
+      </p>
+    </section>
+  }
 
   <p class="mt-14 text-[10px] font-bold uppercase tracking-widest text-dark-cmt/35">
-    Dernière mise à jour : mai 2026
+    {{ locale.site().pages.mentionsLegales.lastUpdated }}
   </p>
 </article>

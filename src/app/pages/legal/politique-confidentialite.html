@@ -4,80 +4,33 @@
     class="mb-10 inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-widest text-brand transition-colors duration-300 hover:text-dark-cmt"
   >
     <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
-    Retour à l’accueil
+    {{ locale.site().pages.politiqueConfidentialite.backHome }}
   </a>
 
   <h1 class="text-3xl font-extrabold uppercase leading-tight tracking-tight text-dark-cmt md:text-4xl">
-    Politique de confidentialité
+    {{ locale.site().pages.politiqueConfidentialite.title }}
   </h1>
   <p class="mt-4 text-sm font-light leading-relaxed text-dark-cmt/65">
-    Cette présentation résume les principes appliqués au traitement des données relatives au
-    site vitrine du <strong class="text-dark-cmt">Groupe Afrimmo S.A.</strong> Elle pourra être
-    affinée selon vos obligations légales locales et votre politique groupe.
+    {{ locale.site().pages.politiqueConfidentialite.intro }}
   </p>
 
-  <section class="mt-12 space-y-4 text-sm font-light leading-relaxed text-dark-cmt/80">
-    <h2 class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">
-      Données collectées
-    </h2>
-    <p>
-      Lorsque vous utilisez notre formulaire de contact ou nos coordonnées affichées, nous
-      pouvons traiter : nom ou raison sociale, adresse e-mail, numéro de téléphone et contenu du
-      message — dans la mesure strictement nécessaire à votre demande.
-    </p>
-  </section>
-
-  <section class="mt-10 space-y-4 text-sm font-light leading-relaxed text-dark-cmt/80">
-    <h2 class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">
-      Finalités &amp; base légale
-    </h2>
-    <p>
-      Ces données sont utilisées pour répondre à vos sollicitations, préparer ou suivre une
-      relation commerciale précontractuelle ou contractuelle, et assurer une communication de
-      service proportionnée aux finalités poursuivies (intérêt légitime dans le cadre d’un site
-      d’entreprise conforme aux usages).
-    </p>
-  </section>
-
-  <section class="mt-10 space-y-4 text-sm font-light leading-relaxed text-dark-cmt/80">
-    <h2 class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">
-      Conservation et destinataires
-    </h2>
-    <p>
-      Les messages sont traités par les personnes habilitées du Groupe Afrimmo S.A. et, le cas
-      échéant, par des sous-traitants techniques (messagerie, hébergement) situés conformément
-      à vos choix sécurité et vos engagements contractuels. Les durées de conservation suivent vos
-      règles internes métier/archivage.
-    </p>
-  </section>
-
-  <section class="mt-10 space-y-4 text-sm font-light leading-relaxed text-dark-cmt/80">
-    <h2 class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">
-      Vos droits
-    </h2>
-    <p>
-      Selon les textes applicables (notamment en matière de protection des données personnelles),
-      vous pouvez solliciter l’accès, la rectification, la limitation ou la suppression lorsque les
-      conditions sont réunies, ou exercer vos droits auprès de l’autorité compétente. Pour nous
-      contacter :
-      <a class="font-semibold text-brand hover:underline" href="mailto:Info@groupeafrimmo.com"
-        >Info@groupeafrimmo.com</a
-      >.
-    </p>
-  </section>
-
-  <section class="mt-10 space-y-4 text-sm font-light leading-relaxed text-dark-cmt/80">
-    <h2 class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">
-      Cookies
-    </h2>
-    <p>
-      Ce site vise dans sa version publique une utilisation des cookies uniquement lorsque
-      techniquement nécessaire ou après consentement lorsque vous activerez des mesures ou
-      intégrations tierces nécessitant un bandeau.
-    </p>
-  </section>
+  @for (section of locale.site().pages.politiqueConfidentialite.sections; track section.heading) {
+    <section class="mt-10 space-y-4 text-sm font-light leading-relaxed text-dark-cmt/80 first:mt-12">
+      <h2 class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">
+        {{ section.heading }}
+      </h2>
+      <p>
+        {{ section.body }}
+        @if (section.heading === 'Vos droits' || section.heading === 'Your rights') {
+          <a class="font-semibold text-brand hover:underline" [href]="mailHref">
+            {{ mailDisplay }}</a
+          >.
+        }
+      </p>
+    </section>
+  }
 
   <p class="mt-14 text-[10px] font-bold uppercase tracking-widest text-dark-cmt/35">
-    Dernière mise à jour : mai 2026
+    {{ locale.site().pages.politiqueConfidentialite.lastUpdated }}
   </p>
 </article>
