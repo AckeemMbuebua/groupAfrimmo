@@ -1,9 +1,4 @@
-/** Libellés CTA homogènes sur le site vitrine. */
-export const CTA_LABELS = {
-  primary: 'Parler de votre projet',
-  secondary: 'Voir nos réalisations',
-  formSubmit: 'Envoyer ma demande',
-  projectSheet: 'Consulter la fiche projet',
-  call: 'Appeler Afrimmo',
-  whatsapp: 'Écrire sur WhatsApp',
-} as const;
+import { DEFAULT_SITE_CONTENT } from '../../i18n/get-content';
+
+/** @deprecated Import via `DEFAULT_SITE_CONTENT.shared.cta` ou `SITE_CONTENT`. */
+export const CTA_LABELS = DEFAULT_SITE_CONTENT.shared.cta;

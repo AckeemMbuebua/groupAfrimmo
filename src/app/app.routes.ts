@@ -1,16 +1,18 @@
 import { Routes } from '@angular/router';
+import { DEFAULT_SITE_CONTENT } from './i18n/get-content';
+
+const { routeTitles } = DEFAULT_SITE_CONTENT.seo;
 
 export const routes: Routes = [
   {
     path: '',
-    title:
-      'Groupe Afrimmo S.A. | Construction, génie civil, logistique & import-export',
+    title: routeTitles.home,
     loadComponent: () =>
       import('./pages/landing/landing-page').then((m) => m.LandingPage),
   },
   {
     path: 'realisations',
-    title: 'Réalisations · Groupe Afrimmo',
+    title: routeTitles.realisations,
     loadComponent: () =>
       import('./pages/realisations/realisations-hub').then(
         (m) => m.RealisationsHub,
@@ -18,7 +20,7 @@ export const routes: Routes = [
   },
   {
     path: 'realisations/:id',
-    title: 'Projet · Réalisations | Groupe Afrimmo S.A.',
+    title: routeTitles.realisationsProject,
     loadComponent: () =>
       import('./pages/realisations/project-detail').then(
         (m) => m.ProjectDetail,
@@ -26,7 +28,7 @@ export const routes: Routes = [
   },
   {
     path: 'actualites',
-    title: 'Actualités · Groupe Afrimmo',
+    title: routeTitles.actualites,
     loadComponent: () =>
       import('./pages/actualites/actualites-index').then(
         (m) => m.ActualitesIndex,
@@ -34,7 +36,7 @@ export const routes: Routes = [
   },
   {
     path: 'actualites/:slug',
-    title: 'Article | Groupe Afrimmo S.A.',
+    title: routeTitles.actualite,
     loadComponent: () =>
       import('./pages/actualites/actualite-detail').then(
         (m) => m.ActualiteDetail,
@@ -42,13 +44,13 @@ export const routes: Routes = [
   },
   {
     path: 'carrieres',
-    title: 'Carrières · Groupe Afrimmo',
+    title: routeTitles.carrieres,
     loadComponent: () =>
       import('./pages/carrieres/carrieres').then((m) => m.Carrieres),
   },
   {
     path: 'mentions-legales',
-    title: 'Mentions légales | Groupe Afrimmo S.A.',
+    title: routeTitles.mentionsLegales,
     loadComponent: () =>
       import('./pages/legal/mentions-legales').then(
         (m) => m.MentionsLegales,
@@ -56,7 +58,7 @@ export const routes: Routes = [
   },
   {
     path: 'politique-de-confidentialite',
-    title: 'Politique de confidentialité | Groupe Afrimmo S.A.',
+    title: routeTitles.politiqueConfidentialite,
     loadComponent: () =>
       import('./pages/legal/politique-confidentialite').then(
         (m) => m.PolitiqueConfidentialite,

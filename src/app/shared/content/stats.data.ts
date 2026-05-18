@@ -1,57 +1,16 @@
-import type { StatItem } from '../landing/landing.models';
-import { PROJECT_CARD_LIST } from './projects.data';
+import { DEFAULT_SITE_CONTENT } from '../../i18n/get-content';
+import { PROJECT_CARD_LIST } from '../../i18n/fr/projects';
 
-/** En-tête de section — éditorial centralisé. */
-export const STATS_SECTION_TITLE = 'Nos repères terrain';
+const { stats } = DEFAULT_SITE_CONTENT.landing;
 
-export const STATS_SECTION_LEAD =
-  'Quelques indicateurs pour situer l’expérience du groupe et ses capacités d’intervention.';
+export const STATS_SECTION_TITLE = stats.sectionTitle;
 
-/**
- * Nombre de références présentées dans `projects.data.ts`.
- * Modifie la liste des projets plutôt que ce nombre pour rester cohérent.
- */
+export const STATS_SECTION_LEAD = stats.sectionLead;
+
 export const LANDING_REFERENCE_PROJECT_COUNT = PROJECT_CARD_LIST.length;
 
-/** Domaines intégrés mis en avant en card 4 — ajustable sans toucher au template. */
 export const LANDING_INTEGRATED_DOMAINS_COUNT = 4;
 
-export const LANDING_STATS: readonly StatItem[] = [
-  {
-    valuePrefix: '',
-    value: '28',
-    label: 'Unités résidentielles',
-    sublabel: 'Al Saad Apartments, Zanzibar',
-  },
-  {
-    valuePrefix: '',
-    value: '10',
-    label: 'Hôpitaux de district',
-    sublabel: 'Programme de 10 hôpitaux de district (Zanzibar) — contribution technique / lots MEP',
-    transitionDelaySeconds: 0.08,
-  },
-  {
-    valuePrefix: '',
-    value: String(LANDING_REFERENCE_PROJECT_COUNT),
-    label: 'Références projets',
-    sublabel: 'Résidentiel, hôtelier, industriel et institutionnel',
-    transitionDelaySeconds: 0.16,
-  },
-  {
-    valuePrefix: '',
-    value: String(LANDING_INTEGRATED_DOMAINS_COUNT),
-    label: 'Domaines intégrés',
-    sublabel: 'Construction, logistique, import-export, services techniques',
-    transitionDelaySeconds: 0.24,
-  },
-];
+export const LANDING_STATS = stats.items;
 
-/** Ligne secondaire : messages généraux, hors cartes chiffrées. */
-export const STAT_CAPABILITY_LABELS: readonly string[] = [
-  'RDC et international',
-  'Capacité d’intervention selon projet',
-  'Services techniques',
-  'Main-d’œuvre qualifiée',
-  'Logistique et transport',
-  'Import-export et matériaux',
-];
+export const STAT_CAPABILITY_LABELS = stats.capabilityLabels;

@@ -1,12 +1,3 @@
-import type { OfferedServiceLine } from '../landing/landing.models';
+import { DEFAULT_SITE_CONTENT } from '../../i18n/get-content';
 
-export const SERVICES_LINES: readonly OfferedServiceLine[] = [
-  { summary: 'Rénovation, seconde œuvre et finitions de bâtiments' },
-  { summary: 'Construction et réhabilitation d’ouvrages électriques' },
-  {
-    summary:
-      'Approvisionnement en matériaux, matières premières et fournitures techniques',
-  },
-  { summary: 'Services techniques, maintenance et appui industriel' },
-  { summary: 'Mobilisation de main-d’œuvre qualifiée selon les besoins chantier' },
-];
+export const SERVICES_LINES = DEFAULT_SITE_CONTENT.landing.services;
