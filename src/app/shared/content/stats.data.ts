@@ -5,7 +5,7 @@ import { PROJECT_CARD_LIST } from './projects.data';
 export const STATS_SECTION_TITLE = 'Nos repères terrain';
 
 export const STATS_SECTION_LEAD =
-  'Quelques indicateurs pour situer l’expérience et les capacités de Groupe Afrimmo S.A.';
+  'Quelques indicateurs pour situer l’expérience du groupe et ses capacités d’intervention.';
 
 /**
  * Nombre de références présentées dans `projects.data.ts`.
@@ -27,7 +27,7 @@ export const LANDING_STATS: readonly StatItem[] = [
     valuePrefix: '',
     value: '10',
     label: 'Hôpitaux de district',
-    sublabel: 'Contribution technique / lots MEP, Zanzibar',
+    sublabel: 'Programme de 10 hôpitaux de district (Zanzibar) — contribution technique / lots MEP',
     transitionDelaySeconds: 0.08,
   },
   {
@@ -48,10 +48,10 @@ export const LANDING_STATS: readonly StatItem[] = [
 
 /** Ligne secondaire : messages généraux, hors cartes chiffrées. */
 export const STAT_CAPABILITY_LABELS: readonly string[] = [
-  'RDC & international',
+  'RDC et international',
   'Capacité d’intervention selon projet',
   'Services techniques',
   'Main-d’œuvre qualifiée',
-  'Logistique & transport',
-  'Import-export & matériaux',
+  'Logistique et transport',
+  'Import-export et matériaux',
 ];

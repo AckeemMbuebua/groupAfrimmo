@@ -1,7 +1,7 @@
 import type { OfferedServiceLine } from '../landing/landing.models';
 
 export const SERVICES_LINES: readonly OfferedServiceLine[] = [
-  { summary: 'Rénovation, second œuvre et finitions de bâtiments' },
+  { summary: 'Rénovation, seconde œuvre et finitions de bâtiments' },
   { summary: 'Construction et réhabilitation d’ouvrages électriques' },
   {
     summary:

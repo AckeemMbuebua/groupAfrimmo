@@ -4,7 +4,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
   {
     question: 'Sur quels types de projets intervenez-vous ?',
     answer:
-      'Groupe Afrimmo S.A. intervient sur des projets de construction, génie civil, infrastructures, programmes résidentiels, hôteliers, industriels, santé, logistique et approvisionnement, selon le périmètre défini avec le maître d’ouvrage.',
+      'Groupe Afrimmo S.A. intervient sur des projets de construction, de génie civil et d’infrastructures, sur des programmes résidentiels, hôteliers, industriels ou de santé, ainsi que sur la logistique et l’approvisionnement, selon le périmètre défini avec le maître d’ouvrage.',
   },
   {
     question: 'Pouvez-vous fournir les matériaux et gérer l’approvisionnement ?',
@@ -24,7 +24,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
   {
     question: 'Intervenez-vous sur des lots spécialisés ?',
     answer:
-      'Oui. Selon le mandat, Groupe Afrimmo S.A. peut intervenir sur des lots techniques, la rénovation, les finitions, les infrastructures électriques, l’appui industriel, la logistique ou la mobilisation de main-d’œuvre qualifiée.',
+      'Oui. Selon le mandat, Groupe Afrimmo S.A. peut intervenir sur des lots techniques, la rénovation, la seconde œuvre, les finitions, les infrastructures électriques, l’appui industriel, la logistique ou la mobilisation de main-d’œuvre qualifiée.',
   },
   {
     question: 'Travaillez-vous avec des clients publics et privés ?',

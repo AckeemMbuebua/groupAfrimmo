@@ -14,7 +14,7 @@ export const SELECTED_REFERENCES: readonly SelectedReference[] = [
     clientType: 'Programme institutionnel',
     projectType: 'Infrastructures de santé',
     zone: 'Zanzibar',
-    scope: 'Contribution technique / lots MEP',
+    scope: 'Contribution technique et lots MEP — programme public de 10 hôpitaux de district (Zanzibar)',
   },
   {
     id: 'ref-3',

@@ -22,5 +22,5 @@ export class EngagementSection {
   ];
 
   protected readonly responsibilityLead =
-    'L’entreprise veille à intégrer des pratiques responsables dans la conduite de ses opérations : respect des équipes, attention aux communautés, gestion raisonnée des ressources et adaptation aux contraintes environnementales. Les actions communautaires, éducatives ou environnementales peuvent être structurées avec les parties prenantes lorsque le cadre du projet le permet.';
+    'L’entreprise veille à intégrer des pratiques responsables dans la conduite de ses opérations : respect des équipes, attention aux communautés, gestion raisonnée des ressources et adaptation aux contraintes environnementales. Les actions communautaires, éducatives ou environnementales peuvent être structurées avec les parties prenantes, lorsque le mandat et le cadre du projet le permettent.';
 }
