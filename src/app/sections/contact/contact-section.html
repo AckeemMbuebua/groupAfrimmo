@@ -4,16 +4,15 @@
 >
   <div class="absolute inset-y-0 right-0 hidden w-1/3 bg-brand lg:block"></div>
   <div class="relative mx-auto grid w-full max-w-7xl min-w-0 gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-10">
-    <div appReveal class="min-w-0">
-      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-brand">Contact</p>
+    <div appReveal class="reveal-readable min-w-0">
+      <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-brand">{{ home().contact.eyebrow }}</p>
       <h2
         class="text-balance text-3xl font-extrabold uppercase leading-tight tracking-tight sm:text-4xl md:text-5xl"
       >
-        Parlons de votre projet.
+        {{ home().contact.title }}
       </h2>
       <p class="mt-6 max-w-xl text-sm font-light leading-relaxed text-steel">
-        Construction, génie civil, logistique, import-export ou appui technique : envoyez les
-        premières informations et notre équipe revient vers vous avec un cadrage clair.
+        {{ home().contact.lead }}
       </p>
       <div class="mt-8 grid min-w-0 gap-4 text-sm font-bold">
         <a [href]="phoneHref" class="flex min-w-0 items-center gap-4">
@@ -21,7 +20,7 @@
             ><i class="fa-solid fa-phone"></i></span>
           <span class="min-w-0 break-words">
             <span class="block text-xs font-extrabold uppercase tracking-wider text-dark-cmt/50">{{
-              cta.call
+              home().cta.call
             }}</span>
             {{ phoneDisplay }}
           </span>
@@ -31,11 +30,11 @@
           class="flex min-w-0 items-center gap-4"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Écrire sur WhatsApp — Groupe Afrimmo S.A."
+          [attr.aria-label]="home().contact.whatsappAria"
         >
           <span class="grid h-11 w-11 shrink-0 place-items-center rounded-none bg-green-600 text-white sm:h-12 sm:w-12"
             ><i class="fa-brands fa-whatsapp"></i></span>
-          <span class="min-w-0 break-words">{{ cta.whatsapp }}</span>
+          <span class="min-w-0 break-words">{{ home().cta.whatsapp }}</span>
         </a>
         <a [href]="mailHref" class="flex min-w-0 items-center gap-4">
           <span class="grid h-11 w-11 shrink-0 place-items-center rounded-none bg-dark-cmt text-white sm:h-12 sm:w-12"
@@ -46,31 +45,31 @@
           <span class="grid h-11 w-11 shrink-0 place-items-center rounded-none bg-dark-cmt text-white sm:h-12 sm:w-12">
             <i class="fa-solid fa-location-dot"></i>
           </span>
-          <span class="min-w-0 break-words">RDC & International</span>
+          <span class="min-w-0 break-words">{{ site().shared.contact.locationLabel }}</span>
         </span>
       </div>
     </div>
 
     <form
       appReveal
-      class="w-full max-w-full min-w-0 overflow-hidden rounded-none border border-white/15 bg-dark-cmt p-4 text-white sm:p-6 md:p-8 lg:p-10"
+      class="reveal-readable w-full max-w-full min-w-0 overflow-hidden rounded-none border border-white/15 bg-dark-cmt p-4 text-white sm:p-6 md:p-8 lg:p-10"
       novalidate
       (submit)="submitByEmail($event)"
     >
       <div class="grid w-full min-w-0 grid-cols-1 gap-4 md:grid-cols-2">
         <label class="grid min-w-0 gap-2 text-[10px] font-extrabold uppercase tracking-widest text-white/50">
-          Nom complet
+          {{ home().contact.form.nameLabel }}
           <input
             type="text"
             name="name"
             autocomplete="name"
             required
             class="box-border w-full max-w-full min-w-0 rounded-none border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-brand"
-            placeholder="Nom et prénom"
+            [placeholder]="home().contact.form.namePlaceholder"
           />
         </label>
         <label class="grid min-w-0 gap-2 text-[10px] font-extrabold uppercase tracking-widest text-white/50">
-          Téléphone
+          {{ home().contact.form.phoneLabel }}
           <input
             type="tel"
             name="phone"
@@ -78,32 +77,32 @@
             required
             pattern="^\\+?[0-9\\s()-]{7,}$"
             class="box-border w-full max-w-full min-w-0 rounded-none border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-brand"
-            placeholder="+243 ..."
+            [placeholder]="home().contact.form.phonePlaceholder"
           />
         </label>
         <label
           class="grid min-w-0 gap-2 text-[10px] font-extrabold uppercase tracking-widest text-white/50 md:col-span-2"
         >
-          E-mail (optionnel)
+          {{ home().contact.form.emailLabel }}
           <input
             type="email"
             name="email"
             autocomplete="email"
             inputmode="email"
             class="box-border w-full max-w-full min-w-0 rounded-none border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-brand"
-            placeholder="vous@exemple.com"
+            [placeholder]="home().contact.form.emailPlaceholder"
           />
         </label>
         <label
           class="grid min-w-0 gap-2 text-[10px] font-extrabold uppercase tracking-widest text-white/50 md:col-span-2"
         >
-          Type de projet
+          {{ home().contact.form.projectTypeLabel }}
           <select
             name="projectType"
             required
             class="box-border w-full max-w-full min-w-0 appearance-none rounded-none border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-brand"
           >
-            @for (opt of projectOptions; track opt.value) {
+            @for (opt of home().contact.form.projectOptions; track opt.value) {
               <option class="text-dark-cmt" [value]="opt.label">{{ opt.label }}</option>
             }
           </select>
@@ -111,14 +110,14 @@
         <label
           class="grid min-w-0 gap-2 text-[10px] font-extrabold uppercase tracking-widest text-white/50 md:col-span-2"
         >
-          Message
+          {{ home().contact.form.messageLabel }}
           <textarea
             name="message"
             rows="5"
             required
             minlength="20"
             class="box-border w-full max-w-full min-w-0 resize-none rounded-none border border-white/10 bg-white/[.06] px-4 py-4 text-sm text-white outline-none transition focus:border-brand"
-            placeholder="Localisation, délais, budget indicatif, besoin principal..."
+            [placeholder]="home().contact.form.messagePlaceholder"
           ></textarea>
         </label>
       </div>
@@ -126,15 +125,14 @@
         id="contact-form-note"
         class="mt-4 text-[11px] font-light leading-relaxed text-white/55"
       >
-        Le bouton ouvre votre messagerie avec un message prérempli ; aucun envoi automatique n’est
-        effectué depuis le site.
+        {{ home().contact.form.submitNote }}
       </p>
       <button
         type="submit"
         class="mt-4 inline-flex min-h-[56px] w-full max-w-full min-w-0 items-center justify-center gap-3 rounded-none bg-brand px-5 py-4 text-xs font-extrabold uppercase tracking-widest text-white transition-colors duration-300 hover:bg-brand-dark sm:px-6"
         aria-describedby="contact-form-note"
       >
-        {{ cta.formSubmit }}
+        {{ home().cta.formSubmit }}
         <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
       </button>
     </form>

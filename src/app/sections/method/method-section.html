@@ -3,21 +3,20 @@
   class="scroll-mt-28 bg-dark-cmt px-4 py-20 text-white sm:px-6 lg:px-8 lg:py-28"
 >
   <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
-    <div appReveal class="lg:sticky lg:top-28">
+    <div appReveal class="reveal-readable lg:sticky lg:top-28">
       <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-brand-light">
-        Méthode
+        {{ home().method.eyebrow }}
       </p>
       <h2 class="text-4xl font-extrabold uppercase leading-tight sm:text-5xl">
-        Un pilotage lisible à chaque phase.
+        {{ home().method.title }}
       </h2>
       <p class="mt-6 text-sm font-light leading-relaxed text-white/60">
-        Chaque projet est cadré autour des contraintes terrain, des ressources disponibles, des
-        délais, des approvisionnements et des exigences de qualité.
+        {{ home().method.lead }}
       </p>
     </div>
     <div class="grid gap-4">
-      @for (phase of phases; track phase.title) {
-        <div appReveal class="grid gap-4 rounded-none border border-white/10 bg-white/[.04] p-6 sm:grid-cols-[90px_1fr]">
+      @for (phase of home().method.phases; track phase.title) {
+        <div appReveal class="reveal-readable grid gap-4 rounded-none border border-white/10 bg-white/[.04] p-6 sm:grid-cols-[90px_1fr]">
           <span class="text-4xl font-extrabold text-brand-light">{{ phase.numberLabel }}</span>
           <div>
             <h3 class="font-extrabold uppercase">{{ phase.title }}</h3>

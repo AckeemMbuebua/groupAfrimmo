@@ -3,34 +3,34 @@
   class="scroll-mt-28 border-t border-gray-200 bg-white px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
 >
   <div class="mx-auto max-w-7xl">
-    <div appReveal class="mx-auto max-w-3xl text-center">
+    <div appReveal class="reveal-readable mx-auto max-w-3xl text-center">
       <p class="mb-4 text-xs font-extrabold uppercase tracking-[.24em] text-brand">
-        Qualité & responsabilité
+        {{ home().engagement.eyebrow }}
       </p>
       <h2
         class="text-balance text-3xl font-extrabold uppercase leading-tight tracking-tight sm:text-4xl md:text-5xl"
       >
-        Qualité, responsabilité et adaptation terrain.
+        {{ home().engagement.title }}
       </h2>
       <p class="mt-6 text-base font-light leading-relaxed text-steel">
-        {{ partnersLead }}
+        {{ home().engagement.partnersLead }}
       </p>
     </div>
 
     <div class="mt-16 grid gap-10 lg:grid-cols-2 lg:gap-12">
       <article
         appReveal
-        class="flex flex-col rounded-none border border-gray-200 bg-gray-50 p-8 sm:p-10"
+        class="reveal-readable flex flex-col rounded-none border border-gray-200 bg-gray-50 p-8 sm:p-10"
       >
-        <p class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">Qualité d’exécution</p>
+        <p class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">{{ home().engagement.qualityEyebrow }}</p>
         <h3 class="mt-4 text-2xl font-extrabold uppercase leading-tight tracking-tight sm:text-3xl">
-          Méthode, contrôle et livrables.
+          {{ home().engagement.qualityTitle }}
         </h3>
         <p class="mt-6 text-sm leading-7 text-steel">
-          {{ qualityIntro }}
+          {{ home().engagement.qualityIntro }}
         </p>
         <ul class="mt-6 space-y-3 text-sm font-semibold leading-7 text-dark-cmt">
-          @for (item of qualityPillars; track item) {
+          @for (item of home().engagement.qualityPillars; track item) {
             <li class="flex gap-2">
               <span class="text-brand">—</span>
               {{ item }}
@@ -39,15 +39,15 @@
         </ul>
       </article>
 
-      <article appReveal class="flex flex-col rounded-none border border-gray-200 bg-white p-8 sm:p-10">
+      <article appReveal class="reveal-readable flex flex-col rounded-none border border-gray-200 bg-white p-8 sm:p-10">
         <p class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">
-          Responsabilité
+          {{ home().engagement.responsibilityEyebrow }}
         </p>
         <h3 class="mt-4 text-2xl font-extrabold uppercase leading-tight tracking-tight sm:text-3xl">
-          Une conduite responsable adaptée à chaque projet.
+          {{ home().engagement.responsibilityTitle }}
         </h3>
         <p class="mt-6 text-sm leading-7 text-steel">
-          {{ responsibilityLead }}
+          {{ home().engagement.responsibilityLead }}
         </p>
       </article>
     </div>

@@ -1,8 +1,8 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  effect,
   inject,
-  type OnInit,
 } from '@angular/core';
 import { AboutSection } from '../../sections/about/about-section';
 import { HeroSection } from '../../sections/hero/hero-section';
@@ -15,6 +15,7 @@ import { EngagementSection } from '../../sections/engagement/engagement-section'
 import { TestimonialsSection } from '../../sections/testimonials/testimonials-section';
 import { FaqSection } from '../../sections/faq/faq-section';
 import { ContactSection } from '../../sections/contact/contact-section';
+import { injectLocaleContent } from '../../content/inject-locale-content';
 import { SeoService } from '../../shared/seo/seo.service';
 
 @Component({
@@ -35,14 +36,13 @@ import { SeoService } from '../../shared/seo/seo.service';
   templateUrl: './landing-page.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LandingPage implements OnInit {
+export class LandingPage {
   private readonly seo = inject(SeoService);
+  private readonly home = injectLocaleContent().home;
 
-  ngOnInit(): void {
-    this.seo.update({
-      title: 'Groupe Afrimmo S.A. | Construction, génie civil, logistique & import-export',
-      description:
-        'Groupe Afrimmo S.A. accompagne vos projets de construction et de génie civil, infrastructures, logistique, import-export et approvisionnement en RDC, Afrique centrale et international.',
+  constructor() {
+    effect(() => {
+      this.seo.update(this.home().seo);
     });
   }
 }

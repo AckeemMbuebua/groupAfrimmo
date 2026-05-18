@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
+import { injectLocaleContent } from '../../content/inject-locale-content';
 
 @Component({
   selector: 'app-about-section',
@@ -9,10 +10,10 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutSection {
+  protected readonly home = injectLocaleContent().home;
+
   protected readonly mainImageSrc =
     'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=82';
-  protected readonly mainImageAlt =
-    'Chantier — coordination, génie civil et exécution terrain (visuel illustratif)';
 
   private readonly mainImageBroken = signal(false);
   protected readonly fallbackMainImage = '/images/fallback-card.jpg';
@@ -24,11 +25,4 @@ export class AboutSection {
   protected onMainImageError(): void {
     this.mainImageBroken.set(true);
   }
-
-  protected readonly trustPoints: readonly string[] = [
-    'Organisation terrain et hiérarchie de décision claire',
-    'Coordination multi-lots et interfaces techniques',
-    'Réseau de partenaires mobilisé selon le besoin',
-    'Respect des engagements et qualité d’exécution',
-  ];
 }

@@ -67,8 +67,10 @@ export class CounterDirective implements OnDestroy {
     const frame = (now: number): void => {
       const progress = Math.min((now - startTime) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
+      const locale =
+        document.documentElement.lang === 'en' ? 'en-US' : 'fr-FR';
       el.textContent =
-        Math.round(numericTarget * eased).toLocaleString('fr-FR') + suffix;
+        Math.round(numericTarget * eased).toLocaleString(locale) + suffix;
       if (progress < 1) {
         this.rafId = requestAnimationFrame(frame);
       }
@@ -79,6 +81,8 @@ export class CounterDirective implements OnDestroy {
 
   ngOnDestroy(): void {
     this.observer?.disconnect();
-    cancelAnimationFrame(this.rafId);
+    if (this.rafId && typeof cancelAnimationFrame === 'function') {
+      cancelAnimationFrame(this.rafId);
+    }
   }
 }

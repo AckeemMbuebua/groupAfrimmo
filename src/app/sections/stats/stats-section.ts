@@ -1,25 +1,24 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed } from '@angular/core';
+import type { StatItem } from '../../shared/landing/landing.models';
+import { CounterDirective } from '../../shared/directives/counter.directive';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
-import {
-  LANDING_STATS,
-  STAT_CAPABILITY_LABELS,
-  STATS_SECTION_LEAD,
-  STATS_SECTION_TITLE,
-} from '../../shared/content/stats.data';
+import { injectLocaleContent } from '../../content/inject-locale-content';
 
 @Component({
   selector: 'app-stats-section',
   standalone: true,
-  imports: [RevealDirective],
+  imports: [RevealDirective, CounterDirective],
   templateUrl: './stats-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StatsSection {
-  protected readonly stats = LANDING_STATS;
+  private readonly content = injectLocaleContent();
 
-  protected readonly capabilityLabels = STAT_CAPABILITY_LABELS;
+  protected readonly stats = computed(() => this.content.home().stats);
 
-  protected readonly sectionTitle = STATS_SECTION_TITLE;
-
-  protected readonly sectionLead = STATS_SECTION_LEAD;
+  /** Valeur numérique pour l’animation de compteur. */
+  protected statTarget(stat: StatItem): number {
+    const parsed = Number.parseInt(stat.value, 10);
+    return Number.isFinite(parsed) ? parsed : 0;
+  }
 }

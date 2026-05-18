@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
-import type { OfferedServiceLine } from '../../shared/landing/landing.models';
-import { SERVICES_LINES } from '../../shared/content/services.data';
+import { injectLocaleContent } from '../../content/inject-locale-content';
 
 @Component({
   selector: 'app-services-section',
@@ -11,9 +10,9 @@ import { SERVICES_LINES } from '../../shared/content/services.data';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ServicesSection {
-  protected formatOrdinal(index: number): string {
-    return (index + 1).toString().padStart(2, '0');
-  }
+  protected readonly home = injectLocaleContent().home;
 
-  protected readonly services: readonly OfferedServiceLine[] = SERVICES_LINES;
+  protected formatOrdinal(index: number): string {
+    return String(index + 1).padStart(2, '0');
+  }
 }

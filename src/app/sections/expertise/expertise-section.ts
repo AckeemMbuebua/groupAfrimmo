@@ -4,9 +4,9 @@ import {
   Component,
   inject,
 } from '@angular/core';
-import { RevealDirective } from '../../shared/directives/reveal.directive';
 import type { ExpertiseCard } from '../../shared/landing/landing.models';
-import { EXPERTISE_CARDS } from '../../shared/content/expertise.data';
+import { RevealDirective } from '../../shared/directives/reveal.directive';
+import { injectLocaleContent } from '../../content/inject-locale-content';
 
 @Component({
   selector: 'app-expertise-section',
@@ -16,13 +16,13 @@ import { EXPERTISE_CARDS } from '../../shared/content/expertise.data';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExpertiseSection {
+  protected readonly home = injectLocaleContent().home;
+
   private readonly cdr = inject(ChangeDetectorRef);
 
   private readonly brokenImages = new Set<string>();
 
   protected readonly fallbackImage = '/images/fallback-card.jpg';
-
-  protected readonly cards: readonly ExpertiseCard[] = EXPERTISE_CARDS;
 
   protected cardImageSrc(card: ExpertiseCard): string {
     return this.brokenImages.has(card.numberLabel)
@@ -30,9 +30,9 @@ export class ExpertiseSection {
       : card.imageUrl;
   }
 
-  protected onCardImageError(label: string): void {
-    if (!this.brokenImages.has(label)) {
-      this.brokenImages.add(label);
+  protected onCardImageError(numberLabel: string): void {
+    if (!this.brokenImages.has(numberLabel)) {
+      this.brokenImages.add(numberLabel);
       this.cdr.markForCheck();
     }
   }

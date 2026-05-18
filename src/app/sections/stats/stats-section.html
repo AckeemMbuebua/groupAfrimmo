@@ -1,13 +1,13 @@
 <section
   aria-labelledby="stats-heading"
-  class="relative z-20 -mt-5 scroll-mt-28 sm:-mt-6 lg:-mt-8 mb-10 lg:mb-20 xl:-mt-9"
+  class="stats-section relative z-20 -mt-5 scroll-mt-28 sm:-mt-6 lg:-mt-8 mb-10 lg:mb-20 xl:-mt-9"
 >
-  <!-- Bande brand : mêmes codes typo que « Expertises » / « Références » (surtitre + filet) -->
+  <!-- En-tête : sans appReveal pour affichage immédiat sous le hero -->
   <div
     class="bg-brand px-4 pb-24 pt-14 text-center text-white sm:px-6 sm:pb-28 sm:pt-16 lg:px-8 lg:pb-32 lg:pt-20 xl:pb-36"
   >
     <div class="mx-auto max-w-7xl">
-      <div appReveal class="mx-auto flex max-w-3xl flex-col items-center text-center reveal-scale">
+      <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
         <span
           class="mb-4 block h-0.5 w-10 bg-brand-light/90"
           aria-hidden="true"
@@ -15,32 +15,31 @@
         <p
           class="text-xs font-extrabold uppercase tracking-[0.24em] text-brand-light sm:tracking-[.28em]"
         >
-          Indicateurs
+          {{ stats().eyebrow }}
         </p>
         <h2
           id="stats-heading"
           class="mt-4 text-balance text-3xl font-extrabold uppercase leading-tight tracking-tight text-white md:text-4xl lg:text-5xl"
         >
-          {{ sectionTitle }}
+          {{ stats().title }}
         </h2>
         <p
           class="mx-auto mt-5 max-w-2xl text-sm font-light leading-relaxed text-white/85 md:text-base md:leading-8"
         >
-          {{ sectionLead }}
+          {{ stats().lead }}
         </p>
       </div>
     </div>
   </div>
 
-  <!-- Cartes : même vocabulaire que expertise / références (bordure fine, magnetic-card, pas d’ombre « carte bancaire ») -->
   <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div
       class="-mt-16 grid grid-cols-1 gap-5 sm:-mt-20 sm:grid-cols-2 lg:-mt-24 lg:grid-cols-4 lg:gap-5 xl:-mt-28"
     >
-      @for (stat of stats; track stat.label) {
+      @for (stat of stats().items; track stat.label) {
         <div
           appReveal
-          class="group h-full rounded-none border border-gray-200 bg-white p-6 text-left shadow-none transition-colors duration-300 sm:p-7 magnetic-card"
+          class="stats-card reveal-readable group h-full rounded-none border border-gray-200 bg-white p-6 text-left shadow-none transition-colors duration-300 sm:p-7 magnetic-card"
           [style.transition-delay.s]="stat.transitionDelaySeconds ?? undefined"
         >
           <span
@@ -48,33 +47,30 @@
             aria-hidden="true"
           ></span>
           <p
+            appCounter
             class="stat-number font-black tabular-nums leading-none tracking-tight text-dark-cmt text-[clamp(2.25rem,6.5vw,3rem)] sm:text-[clamp(2.5rem,4vw,2.85rem)] lg:text-[2.75rem]"
-          >
-            {{ stat.valuePrefix }}{{ stat.value }}
-          </p>
+            [target]="statTarget(stat)"
+            [suffix]="stat.valuePrefix"
+          ></p>
           <p
             class="mt-4 text-[10px] font-bold uppercase leading-snug tracking-[0.2em] text-dark-cmt sm:text-[11px]"
           >
             {{ stat.label }}
           </p>
-          <p class="mt-3 text-[11px] font-light leading-relaxed text-steel sm:text-xs">
-            {{ stat.sublabel }}
-          </p>
+      
         </div>
       }
     </div>
   </div>
 
-  <!-- <div
-    class=" bg-white px-4 pb-14 pt-12 sm:px-6 sm:pb-16 sm:pt-14 lg:px-8 lg:pb-20"
-  >
+  <!-- <div class="bg-white px-4 pb-14 pt-12 sm:px-6 sm:pb-16 sm:pt-14 lg:px-8 lg:pb-20">
     <div class="mx-auto max-w-7xl">
       <div
         appReveal
-        class="flex flex-wrap items-center justify-center gap-x-1 gap-y-3 pt-2 sm:gap-x-0 sm:gap-y-2"
+        class="reveal-readable flex flex-wrap items-center justify-center gap-x-1 gap-y-3 pt-2 sm:gap-x-0 sm:gap-y-2"
         role="presentation"
       >
-        @for (cap of capabilityLabels; track cap; let i = $index) {
+        @for (cap of stats().capabilityLabels; track cap; let i = $index) {
           @if (i > 0) {
             <span
               class="mx-2 hidden h-3 w-px shrink-0 bg-gray-300 sm:block"

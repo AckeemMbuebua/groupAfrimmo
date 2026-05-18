@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
-import { METHOD_PHASES } from '../../shared/content/method.data';
+import { injectLocaleContent } from '../../content/inject-locale-content';
 
 @Component({
   selector: 'app-method-section',
@@ -10,5 +10,5 @@ import { METHOD_PHASES } from '../../shared/content/method.data';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MethodSection {
-  protected readonly phases = METHOD_PHASES;
+  protected readonly home = injectLocaleContent().home;
 }

@@ -8,7 +8,7 @@
       >
         <article
           appReveal
-          class="project-card group relative h-[340px] overflow-hidden rounded-none bg-dark-cmt lg:h-[360px]"
+          class="project-card reveal-readable group relative h-[340px] overflow-hidden rounded-none bg-dark-cmt lg:h-[360px]"
           [style.transition-delay.s]="project.transitionDelaySeconds ?? undefined"
         >
           <img
@@ -49,7 +49,7 @@
             <p
               class="pointer-events-none mt-4 inline-flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[.2em] text-brand-light"
             >
-              {{ cta.projectSheet }} <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+              {{ site().shared.cta.projectSheet }} <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
             </p>
           </div>
         </article>
@@ -57,7 +57,7 @@
     } @else {
       <article
         appReveal
-        class="project-card group relative h-[340px] overflow-hidden rounded-none bg-dark-cmt lg:h-[360px]"
+        class="project-card reveal-readable group relative h-[340px] overflow-hidden rounded-none bg-dark-cmt lg:h-[360px]"
         [ngClass]="{ 'md:col-span-2': project.wide }"
         [style.transition-delay.s]="project.transitionDelaySeconds ?? undefined"
       >
@@ -108,11 +108,10 @@
     class="mx-auto mt-14 flex max-w-3xl flex-col items-center gap-6 rounded-none border border-dark-cmt/10 bg-neutral-50 px-6 py-8 text-center sm:px-10"
   >
     <p class="text-[10px] font-extrabold uppercase tracking-[.24em] text-brand">
-      Après les fiches projet
+      {{ site().pages.realisations.expertCtaEyebrow }}
     </p>
     <p class="max-w-xl text-sm leading-7 text-steel">
-      Pour cadrer un besoin ou préciser le périmètre sur une référence, indiquez le nom du projet et
-      le contexte dans votre message.
+      {{ site().pages.realisations.expertCtaLead }}
     </p>
     <div class="flex flex-wrap items-center justify-center gap-3">
       <a
@@ -120,14 +119,14 @@
         [fragment]="contactFragment()"
         class="inline-flex min-h-[56px] items-center gap-3 rounded-none bg-brand px-8 py-3 text-[11px] font-extrabold uppercase tracking-widest text-white transition-colors duration-300 hover:bg-brand-dark"
       >
-        {{ cta.primary }} <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+        {{ site().shared.cta.primary }} <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
       </a>
       <a
         class="inline-flex min-h-[56px] items-center gap-3 rounded-none border border-dark-cmt/15 px-8 py-3 text-[11px] font-extrabold uppercase tracking-widest text-dark-cmt transition-colors duration-300 hover:border-brand hover:text-brand"
         [href]="phoneHref"
       >
         <i class="fa-solid fa-phone" aria-hidden="true"></i>
-        {{ cta.call }}
+        {{ site().shared.cta.call }}
       </a>
     </div>
   </div>

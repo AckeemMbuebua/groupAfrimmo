@@ -3,11 +3,11 @@
   class="relative scroll-mt-28 border-t border-gray-200 bg-white px-4 py-20 sm:px-6 lg:px-8 lg:py-24"
 >
   <div class="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-12 lg:gap-y-12">
-    <div appReveal class="lg:col-span-5 reveal-left">
+    <div appReveal class="reveal-readable reveal-left lg:col-span-5">
       <div class="about-image-frame overflow-hidden rounded-none border border-gray-200 bg-gray-50">
         <img
           [src]="mainImageUrl()"
-          [alt]="mainImageAlt"
+          [alt]="home().about.mainImageAlt"
           width="1400"
           height="1050"
           loading="lazy"
@@ -19,41 +19,36 @@
       </div>
     </div>
 
-    <div appReveal class="mt-12 lg:col-span-7 lg:mt-0 reveal-right">
+    <div class="mt-12 lg:col-span-7 lg:mt-0">
       <p class="mb-4 text-xs font-extrabold uppercase tracking-[.28em] text-brand">
-        Qui nous sommes
+        {{ home().about.eyebrow }}
       </p>
       <h2
         class="text-balance text-3xl font-extrabold uppercase leading-tight tracking-tight text-dark-cmt sm:text-4xl md:text-5xl"
       >
-        Une entreprise structurée pour les projets exigeants.
+        {{ home().about.title }}
       </h2>
 
-      <div appReveal class="mt-8 rounded-none border border-gray-200 bg-gray-50 p-7 sm:p-9 reveal-scale" style="transition-delay: 0.08s">
+      <div class="mt-8 rounded-none border border-gray-200 bg-gray-50 p-7 sm:p-9">
         <p class="text-lg font-light leading-relaxed text-dark-cmt sm:text-xl">
-          Basée en République démocratique du Congo, Groupe Afrimmo S.A. intervient dans la
-          construction, le génie civil, les infrastructures, la logistique et l’approvisionnement.
-          L’entreprise accompagne les maîtres d’ouvrage, partenaires privés et acteurs
-          institutionnels avec une organisation orientée terrain, coordination et qualité
-          d’exécution.
+          {{ home().about.intro }}
         </p>
       </div>
 
-      <p appReveal class="mt-8 text-base font-light leading-relaxed text-dark-cmt/85" style="transition-delay: 0.14s">
-        <span class="font-extrabold text-dark-cmt">Notre valeur ajoutée :</span>
-        relier les besoins du projet, les ressources techniques, les approvisionnements et
-        l’exécution terrain dans une même logique de résultat.
+      <p class="mt-8 text-base font-light leading-relaxed text-dark-cmt/85">
+        <span class="font-extrabold text-dark-cmt">{{ home().about.valueAddPrefix }}</span>
+        {{ home().about.valueAddBody }}
       </p>
 
       <p class="mt-10 text-[10px] font-extrabold uppercase tracking-[0.24em] text-dark-cmt/45">
-        Pourquoi nous faire confiance
+        {{ home().about.trustHeading }}
       </p>
       <ul class="mt-4 grid gap-3 sm:grid-cols-2">
-        @for (line of trustPoints; track line; let i = $index) {
+        @for (line of home().about.trustPoints; track line; let i = $index) {
           <li
             appReveal
-            class="flex items-start gap-3 rounded-none border border-gray-200 bg-white px-4 py-3 text-sm font-light leading-relaxed text-dark-cmt/85"
-            [style.transition-delay.s]="0.18 + i * 0.05"
+            class="reveal-readable flex items-start gap-3 rounded-none border border-gray-200 bg-white px-4 py-3 text-sm font-light leading-relaxed text-dark-cmt/85"
+            [style.transition-delay.s]="0.12 + i * 0.05"
           >
             <span
               class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-none bg-brand text-[10px] text-white"
@@ -68,14 +63,15 @@
 
       <div
         appReveal
-        class="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 rounded-none border border-gray-200 bg-white px-5 py-4 text-[11px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/55"
-        style="transition-delay: 0.32s"
+        class="reveal-readable mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 rounded-none border border-gray-200 bg-white px-5 py-4 text-[11px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/55"
+        style="transition-delay: 0.28s"
       >
-        <span class="text-brand">RDC</span>
-        <span class="hidden h-4 w-px bg-gray-200 sm:block" aria-hidden="true"></span>
-        <span>Afrique centrale &amp; Est</span>
-        <span class="hidden h-4 w-px bg-gray-200 sm:block" aria-hidden="true"></span>
-        <span>Missions internationales selon projet</span>
+        @for (zone of home().about.zones; track zone; let last = $last) {
+          <span class="text-brand">{{ zone }}</span>
+          @if (!last) {
+            <span class="hidden h-4 w-px bg-gray-200 sm:block" aria-hidden="true"></span>
+          }
+        }
       </div>
     </div>
   </div>
