@@ -74,10 +74,10 @@
         </div>
       </header>
 
-      @if (project.galleryImageUrls?.length) {
+      @if (galleryImages(project).length) {
         <section class="mt-12">
           <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            @for (imageUrl of project.galleryImageUrls; track imageUrl) {
+            @for (imageUrl of galleryImages(project); track imageUrl) {
               <figure class="aspect-[4/3] overflow-hidden rounded-none bg-gray-100">
                 <img
                   [src]="imageUrl"

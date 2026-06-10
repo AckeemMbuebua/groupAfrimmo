@@ -52,6 +52,10 @@ export class ProjectDetail {
     return this.heroImageBroken() ? '/images/fallback-card.jpg' : project.imageUrl;
   }
 
+  protected galleryImages(project: ResolvedProjectCase): readonly string[] {
+    return [project.imageUrl, ...(project.galleryImageUrls ?? [])];
+  }
+
   protected onHeroImageError(): void {
     this.heroImageBroken.set(true);
   }
