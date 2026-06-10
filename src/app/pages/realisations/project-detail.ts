@@ -11,11 +11,12 @@ import { getProjectCase } from '../../shared/content/projects.data';
 import type { ResolvedProjectCase } from '../../shared/content/content.models';
 import { SeoService } from '../../shared/seo/seo.service';
 import { LocaleService } from '../../content/locale.service';
+import { RevealDirective } from '../../shared/directives/reveal.directive';
 
 @Component({
   selector: 'app-project-detail',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, RevealDirective],
   templateUrl: './project-detail.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
