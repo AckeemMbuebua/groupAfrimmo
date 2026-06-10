@@ -27,7 +27,7 @@ export class ProjectDetail {
   /** Lié automatiquement à la route `:id` via `withComponentInputBinding()`. */
   readonly id = input.required<string>();
 
-  /** Si l’image distante (Unsplash) échoue, affiche le JPG local `public/images/fallback-card.jpg`. */
+  /** Si l’image projet échoue, affiche le JPG local `public/images/fallback-card.jpg`. */
   protected readonly heroImageBroken = signal(false);
 
   constructor() {

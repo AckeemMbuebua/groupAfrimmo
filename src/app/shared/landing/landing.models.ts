@@ -53,6 +53,7 @@ export interface ProjectCard {
   readonly id: string;
   readonly imageUrl: string;
   readonly imageAlt: string;
+  readonly galleryImageUrls?: readonly string[];
   readonly category: string;
   readonly title: string;
   /** Texte court affiché sur la carte. */

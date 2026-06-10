@@ -1,17 +1,17 @@
 import type { ProjectCard } from '../../shared/landing/landing.models';
 import type { ProjectCaseExtended } from '../../shared/content/content.models';
+import { PROJECT_IMAGES } from '../project-images';
 
 /**
- * Images : URLs Unsplash temporaires.
- * Remplacer par `public/images/{futureImageAsset}` quand les visuels projet seront disponibles.
+ * Images locales optimisées depuis le PDF de références projets.
  */
 export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
   {
     id: 'al-saad',
-    imageUrl:
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1400&auto=format&fit=crop',
+    imageUrl: PROJECT_IMAGES['al-saad'].primary,
     imageAlt:
       'Résidence Al Saad Apartments — 28 unités, Chukwani, Zanzibar.',
+    galleryImageUrls: PROJECT_IMAGES['al-saad'].gallery,
     category: 'Résidentiel haut standing',
     title: 'Al Saad Apartments',
     description: 'Résidence de 28 unités à Zanzibar, livrée en 2022.',
@@ -20,14 +20,14 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     location: 'Chukwani, Zanzibar',
     roleScope: 'Intervention / contribution projet (périmètre défini au mandat)',
     tags: ['Résidentiel', 'Zanzibar', '28 unités', 'standing'],
-    futureImageAsset: 'al-saad-apartments.webp',
+    futureImageAsset: 'al-saad-apartments-01.webp',
   },
   {
     id: 'kiwengwa-hotel',
-    imageUrl:
-      'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=900&auto=format&fit=crop',
+    imageUrl: PROJECT_IMAGES['kiwengwa-hotel'].primary,
     imageAlt:
       'Projet hôtelier Kiwengwa — Zanzibar.',
+    galleryImageUrls: PROJECT_IMAGES['kiwengwa-hotel'].gallery,
     category: 'Hôtellerie',
     title: 'Kiwengwa Hotel',
     description: 'Hôtel à Kiwengwa avec unités indépendantes, piscines et restaurant.',
@@ -37,14 +37,14 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     location: 'Kiwengwa, Zanzibar',
     roleScope: 'Intervention / contribution projet (périmètre défini au mandat)',
     tags: ['Hôtel', 'Zanzibar', 'front de mer', '14 unités'],
-    futureImageAsset: 'kiwengwa-hotel.webp',
+    futureImageAsset: 'kiwengwa-hotel-01.webp',
   },
   {
     id: 'kisraa-godowns',
-    imageUrl:
-      'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=900&auto=format&fit=crop',
+    imageUrl: PROJECT_IMAGES['kisraa-godowns'].primary,
     imageAlt:
       'Entrepôts industriels Kisraa — Kisarawe II.',
+    galleryImageUrls: PROJECT_IMAGES['kisraa-godowns'].gallery,
     category: 'Industriel / entrepôts',
     title: 'Kisraa Company Limited — Entrepôts industriels',
     description: 'Première phase de 2 entrepôts industriels, terminée en 2024.',
@@ -54,14 +54,14 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     location: 'Kisarawe II Industrial Area',
     roleScope: 'Intervention / contribution projet (périmètre défini au mandat)',
     tags: ['Industriel', 'entrepôts', 'Kisarawe', '2024'],
-    futureImageAsset: 'kisraa-godowns.webp',
+    futureImageAsset: 'kisraa-godowns-01.webp',
   },
   {
     id: 'mbweni-jkt',
-    imageUrl:
-      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=900&auto=format&fit=crop',
+    imageUrl: PROJECT_IMAGES['mbweni-jkt'].primary,
     imageAlt:
       'Villa Mbweni JKT — conception à la livraison.',
+    galleryImageUrls: PROJECT_IMAGES['mbweni-jkt'].gallery,
     category: 'Villa / résidentiel premium',
     title: 'Mbweni JKT Villa',
     description: 'Villa livrée en 2025 après huit mois de conception et d’exécution, selon le mandat.',
@@ -71,14 +71,14 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     location: 'Mbweni JKT',
     roleScope: 'Intervention / contribution projet (périmètre défini au mandat)',
     tags: ['Villa', 'conception-réalisation', '8 mois', '2025'],
-    futureImageAsset: 'mbweni-jkt-villa.webp',
+    futureImageAsset: 'mbweni-jkt-villa-01.webp',
   },
   {
     id: 'lake-energies',
-    imageUrl:
-      'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=900&auto=format&fit=crop',
+    imageUrl: PROJECT_IMAGES['lake-energies'].primary,
     imageAlt:
       'Lake Energies — image de marque et interventions sur sites.',
+    galleryImageUrls: PROJECT_IMAGES['lake-energies'].gallery,
     category: 'Station-service / supervision',
     title: 'Lake Energies — Image de marque et supervision de sites',
     description:
@@ -89,14 +89,14 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     location: 'Sites Lake Energies',
     roleScope: 'Intervention créative et exécution terrain sur sites (périmètre défini au mandat)',
     tags: ['Image de marque', 'supervision', 'station-service', '2024'],
-    futureImageAsset: 'lake-energies.webp',
+    futureImageAsset: 'lake-energies-01.webp',
   },
   {
     id: 'hospitaux-znz',
-    imageUrl:
-      'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=900&auto=format&fit=crop',
+    imageUrl: PROJECT_IMAGES['hospitaux-znz'].primary,
     imageAlt:
       'Programme de santé à Zanzibar — contribution technique.',
+    galleryImageUrls: PROJECT_IMAGES['hospitaux-znz'].gallery,
     category: 'Infrastructure de santé',
     title: 'Programme de 10 hôpitaux de district à Zanzibar',
     description: 'Contribution technique / lots MEP sur un programme de 10 hôpitaux de district.',
@@ -106,14 +106,14 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     location: 'Zanzibar',
     roleScope: 'Contribution technique / lots MEP — programme public de 10 hôpitaux de district',
     tags: ['Santé', 'MEP', 'hôpitaux', 'Zanzibar', '2025'],
-    futureImageAsset: 'zanzibar-district-hospitals.webp',
+    futureImageAsset: 'zanzibar-district-hospitals-01.webp',
   },
   {
     id: 'palm-complex',
-    imageUrl:
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=900&auto=format&fit=crop',
+    imageUrl: PROJECT_IMAGES['palm-complex'].primary,
     imageAlt:
       'Complexe commercial et résidentiel Palm Complex — Kigamboni.',
+    galleryImageUrls: PROJECT_IMAGES['palm-complex'].gallery,
     category: 'Commercial & résidentiel',
     title: 'Palm Complex — Kigamboni',
     description:
@@ -124,7 +124,7 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     location: 'Kigamboni',
     roleScope: 'Intervention / contribution projet (périmètre défini au mandat)',
     tags: ['Commercial', 'résidentiel', 'Kigamboni', '2025'],
-    futureImageAsset: 'palm-complex-kigamboni.webp',
+    futureImageAsset: 'palm-complex-kigamboni-01.webp',
   },
 ];
 
@@ -195,4 +195,3 @@ export const PROJECT_EXTRA: Record<string, ProjectCaseExtended> = {
     ],
   },
 };
-

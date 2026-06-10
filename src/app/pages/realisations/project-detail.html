@@ -74,6 +74,24 @@
         </div>
       </header>
 
+      @if (project.galleryImageUrls?.length) {
+        <section class="mt-12">
+          <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            @for (imageUrl of project.galleryImageUrls; track imageUrl) {
+              <figure class="aspect-[4/3] overflow-hidden rounded-none bg-gray-100">
+                <img
+                  [src]="imageUrl"
+                  [alt]="project.imageAlt"
+                  class="h-full w-full object-cover transition duration-500 hover:scale-[1.02]"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            }
+          </div>
+        </section>
+      }
+
       <section class="mt-12 space-y-5 text-dark-cmt/85">
         @for (p of project.intro; track $index) {
           <p class="text-sm leading-7">{{ p }}</p>
