@@ -296,7 +296,7 @@ export const HOME_FR: HomeContent = {
       messageLabel: 'Message',
       messagePlaceholder: 'Localisation, délais, budget indicatif, besoin principal...',
       submitNote:
-        'Le bouton ouvre votre messagerie avec un message prérempli ; aucun envoi automatique n’est effectué depuis le site.',
+        'Le bouton ouvre WhatsApp avec votre message prérempli pour un contact direct.',
       projectOptions: [
         { value: 'construction', label: 'Construction et génie civil' },
         { value: 'renovation', label: 'Rénovation, seconde œuvre et finitions' },

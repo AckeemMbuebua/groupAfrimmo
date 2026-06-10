@@ -293,7 +293,7 @@ export const HOME_EN: HomeContent = {
       messageLabel: 'Message',
       messagePlaceholder: 'Location, timeline, indicative budget, main requirement...',
       submitNote:
-        'The button opens your email client with a pre-filled message; nothing is sent automatically from the website.',
+        'The button opens WhatsApp with your pre-filled message for direct contact.',
       projectOptions: [
         { value: 'construction', label: 'Construction and civil engineering' },
         { value: 'renovation', label: 'Renovation, fit-out and finishes' },

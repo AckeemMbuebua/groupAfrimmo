@@ -29,7 +29,7 @@ export class ContactSection {
   protected readonly mailHref = SITE_EMAIL_HREF;
   protected readonly mailDisplay = SITE_EMAIL_DISPLAY;
 
-  protected submitByEmail(event: Event): void {
+  protected submitByWhatsApp(event: Event): void {
     event.preventDefault();
 
     const form = event.currentTarget;
@@ -48,28 +48,26 @@ export class ContactSection {
     const projectType = String(data.get('projectType') ?? '').trim();
     const message = String(data.get('message') ?? '').trim();
 
-    const mailto = this.home().contact.mailto;
-    const subject = `${mailto.subjectPrefix} - ${name || this.site().shared.brand.legalName}`;
+    const copy = this.home().contact.mailto;
     const lines = [
-      mailto.greeting,
+      copy.greeting,
       '',
-      mailto.intro,
+      copy.intro,
       '',
-      `${mailto.nameLine} : ${name}`,
-      `${mailto.phoneLine} : ${phone}`,
+      `${copy.nameLine} : ${name}`,
+      `${copy.phoneLine} : ${phone}`,
     ];
     if (email) {
-      lines.push(`${mailto.emailLine} : ${email}`);
+      lines.push(`${copy.emailLine} : ${email}`);
     }
     lines.push(
-      `${mailto.projectTypeLine} : ${projectType}`,
+      `${copy.projectTypeLine} : ${projectType}`,
       '',
-      `${mailto.messageHeading} :`,
+      `${copy.messageHeading} :`,
       message,
     );
 
-    const body = lines.join('\n');
-    const mailtoUrl = `${this.mailHref}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.open(mailtoUrl, '_self');
+    const whatsappUrl = `${this.whatsappHref}?text=${encodeURIComponent(lines.join('\n'))}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   }
 }
