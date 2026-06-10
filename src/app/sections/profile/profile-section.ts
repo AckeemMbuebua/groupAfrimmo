@@ -15,7 +15,7 @@ export interface ProfileValueIcon {
 })
 export class ProfileSection {
   protected readonly mainImageSrc =
-    'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=82';
+    '/images/projet/optimized/kisraa-godowns-01.webp';
   protected readonly mainImageAlt =
     'Chantier — génie civil, coordination et sécurité opérationnelle';
 

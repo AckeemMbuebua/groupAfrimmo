@@ -95,8 +95,7 @@ export const HOME_FR: HomeContent = {
       `${brand} intervient sur des projets où la construction, la coordination technique, la logistique et l’approvisionnement doivent avancer ensemble.`,
     cards: [
       {
-        imageUrl:
-          'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1000&auto=format&fit=crop',
+        imageUrl: '/images/projet/optimized/mbweni-jkt-villa-04.webp',
         imageAlt: 'Construction et génie civil — visuel illustratif',
         numberLabel: '01',
         title: 'Construction et génie civil',
@@ -104,8 +103,7 @@ export const HOME_FR: HomeContent = {
           'Bâtiments, infrastructures, ouvrages techniques et interventions liées aux projets publics, privés, industriels ou résidentiels.',
       },
       {
-        imageUrl:
-          'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop',
+        imageUrl: '/images/projet/optimized/kisraa-godowns-01.webp',
         imageAlt: 'Logistique et transport — visuel illustratif',
         numberLabel: '02',
         title: 'Logistique et transport',
@@ -114,8 +112,7 @@ export const HOME_FR: HomeContent = {
         transitionDelaySeconds: 0.08,
       },
       {
-        imageUrl:
-          'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1000&auto=format&fit=crop',
+        imageUrl: '/images/projet/optimized/lake-energies-06.webp',
         imageAlt: 'Import-export et matériaux — visuel illustratif',
         numberLabel: '03',
         title: 'Import-export et approvisionnement',

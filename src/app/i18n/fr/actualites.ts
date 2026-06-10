@@ -7,8 +7,7 @@ export const INSIGHT_ARTICLES: readonly InsightArticle[] = [
     dateISO: '2026-04-08',
     excerpt:
       'Quatre principes pragmatiques — gouvernance, interfaces, données terrain et continuité commerciale — pour tenir cadence et qualité lorsque les périmètres s’élargissent.',
-    coverUrl:
-      'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop',
+    coverUrl: '/images/projet/optimized/kiwengwa-hotel-08.webp',
     coverAlt: 'Chantier en cours avec grues et équipements',
     body: [
       'Les chantiers dispersés géographiquement accentuent trois risques systématiques : dérive des interfaces entre lots, dilution du reporting décisionnel, et tension sur la disponibilité des matériaux critiques.',
@@ -23,8 +22,7 @@ export const INSIGHT_ARTICLES: readonly InsightArticle[] = [
     dateISO: '2026-03-12',
     excerpt:
       'Quand le calendrier est serré, la qualité ne se « rattrape » pas en fin de chantier : elle se contracte en amont par des choix de détail et des points de contrôle nommés.',
-    coverUrl:
-      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop',
+    coverUrl: '/images/projet/optimized/al-saad-apartments-08.webp',
     coverAlt: 'Détail architecture et finition intérieure',
     body: [
       'Les projets premium demandent des interfaces maîtrisées entre fournisseurs spécialisés : chaque report de décision sur un détail devient un multiplicateur de délais.',
@@ -38,8 +36,7 @@ export const INSIGHT_ARTICLES: readonly InsightArticle[] = [
     dateISO: '2026-02-20',
     excerpt:
       'Des hangars aux plateformes mixtes, la première livraison fixe la réputation opérationnelle du site : anticiper voirie, stocks et services utilitaires.',
-    coverUrl:
-      'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop',
+    coverUrl: '/images/projet/optimized/kisraa-godowns-01.webp',
     coverAlt: 'Zone industrielle et entrepôts',
     body: [
       'La phase 1 d’un parc logistique définit souvent les contraintes structurelles des phases suivantes : gabarits, aires de manœuvre, et redondance énergétique.',
@@ -48,4 +45,3 @@ export const INSIGHT_ARTICLES: readonly InsightArticle[] = [
     ],
   },
 ];
-

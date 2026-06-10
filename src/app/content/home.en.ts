@@ -95,8 +95,7 @@ export const HOME_EN: HomeContent = {
       `${brand} works on projects where construction, technical coordination, logistics and procurement must progress in parallel.`,
     cards: [
       {
-        imageUrl:
-          'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1000&auto=format&fit=crop',
+        imageUrl: '/images/projet/optimized/mbweni-jkt-villa-04.webp',
         imageAlt: 'Construction and civil engineering — illustrative visual',
         numberLabel: '01',
         title: 'Construction and civil engineering',
@@ -104,8 +103,7 @@ export const HOME_EN: HomeContent = {
           'Buildings, infrastructure, technical works and interventions on public, private, industrial or residential programmes.',
       },
       {
-        imageUrl:
-          'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop',
+        imageUrl: '/images/projet/optimized/kisraa-godowns-01.webp',
         imageAlt: 'Logistics and transport — illustrative visual',
         numberLabel: '02',
         title: 'Logistics and transport',
@@ -114,8 +112,7 @@ export const HOME_EN: HomeContent = {
         transitionDelaySeconds: 0.08,
       },
       {
-        imageUrl:
-          'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1000&auto=format&fit=crop',
+        imageUrl: '/images/projet/optimized/lake-energies-06.webp',
         imageAlt: 'Import-export and materials — illustrative visual',
         numberLabel: '03',
         title: 'Import-export and procurement',
