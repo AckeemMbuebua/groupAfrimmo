@@ -7,9 +7,9 @@ const projectCount = PROJECT_CARD_LIST.length;
 export const HOME_FR: HomeContent = {
   locale: 'fr',
   seo: {
-    title: `${brand} | Construction, génie civil, logistique & import-export`,
+    title: `${brand} RDC | Construction, génie civil & logistique`,
     description:
-      `${brand} accompagne vos projets de construction et de génie civil, infrastructures, logistique, import-export et approvisionnement en RDC, en Afrique centrale et à l’international.`,
+      `${brand} (Afrimmo RDC) accompagne construction, génie civil, infrastructures, logistique, import-export et approvisionnement en RDC, Afrique centrale et à l’international.`,
   },
   cta: {
     primary: 'Parler de votre projet',
@@ -19,9 +19,9 @@ export const HOME_FR: HomeContent = {
     whatsapp: 'Écrire sur WhatsApp',
   },
   hero: {
-    chip: 'Construction • Génie civil • Logistique • Approvisionnement',
-    title: 'Bâtir, coordonner et livrer',
-    titleAccent: 'Avec maîtrise.',
+    chip: 'Afrimmo RDC • Construction • Génie civil • Logistique',
+    title: brand,
+    titleAccent: 'Bâtir avec maîtrise.',
     lead:
       `${brand} accompagne vos projets de construction, d’infrastructures, de logistique et d’approvisionnement en RDC, en Afrique centrale et à l’international.`,
   },

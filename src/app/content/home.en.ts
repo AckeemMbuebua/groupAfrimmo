@@ -7,9 +7,9 @@ const projectCount = EN_PROJECT_CARD_LIST.length;
 export const HOME_EN: HomeContent = {
   locale: 'en',
   seo: {
-    title: `${brand} | Construction, civil engineering, logistics & supply`,
+    title: `${brand} DRC | Construction, civil engineering & logistics`,
     description:
-      `${brand} supports construction and civil engineering projects, infrastructure, logistics, import-export and procurement in the DRC, Central Africa and internationally.`,
+      `${brand} (Afrimmo DRC) supports construction, civil engineering, infrastructure, logistics, import-export and procurement in the DRC, Central Africa and internationally.`,
   },
   cta: {
     primary: 'Discuss your project',
@@ -19,9 +19,9 @@ export const HOME_EN: HomeContent = {
     whatsapp: 'Message on WhatsApp',
   },
   hero: {
-    chip: 'Construction • Civil engineering • Logistics • Procurement',
-    title: 'Build, coordinate and deliver',
-    titleAccent: 'With precision.',
+    chip: 'Afrimmo DRC • Construction • Civil engineering • Logistics',
+    title: brand,
+    titleAccent: 'Build with precision.',
     lead:
       `${brand} supports companies, institutions and private partners across construction, infrastructure, logistics and procurement projects in the DRC, Central Africa and internationally.`,
   },

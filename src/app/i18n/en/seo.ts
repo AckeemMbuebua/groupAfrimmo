@@ -3,7 +3,7 @@ import type { SeoContent } from '../site-content.model';
 import { BRAND } from '../fr/brand';
 
 const brand = BRAND.legalName;
-const suffix = ` | ${brand}`;
+const suffix = ` | ${brand} DRC`;
 
 export const EN_SEO: SeoContent = {
   brandName: brand,
@@ -12,17 +12,17 @@ export const EN_SEO: SeoContent = {
     realisations: {
       title: `Projects${suffix}`,
       description:
-        `Field references — residential, hospitality, industry, healthcare — scope stated on each sheet. ${brand}`,
+        `${brand} (Afrimmo DRC) project references: construction, residential, hospitality, industrial, healthcare and commercial work in Central and East Africa.`,
     },
     actualites: {
       title: `News & insights${suffix}`,
       description:
-        `Perspectives and lessons learned on construction, logistics and industrial programmes in Central and East Africa — ${brand}`,
+        `Afrimmo DRC insights: construction, civil engineering, logistics and industrial programme delivery across the DRC, Central Africa and East Africa.`,
     },
     carrieres: {
       title: `Careers${suffix}`,
       description:
-        `Join ${brand}: site delivery, logistics, business development and cross-functional expertise on programmes in the DRC and East Africa.`,
+        `Careers at ${brand} in the DRC: site delivery, civil engineering, logistics, business development and cross-functional project expertise.`,
     },
     mentionsLegales: {
       title: `Legal notice${suffix}`,
