@@ -257,6 +257,15 @@ h4 {
   }
 }
 
+@keyframes heroEchoInReplay {
+  from {
+    transform: translateY(22px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 .hero-bg-image {
   opacity: 0.9;
   transform: translateZ(0);
@@ -280,6 +289,13 @@ h4 {
 .hero-echo-cta {
   animation: heroEchoIn 0.52s cubic-bezier(0.2, 0.75, 0.25, 1) backwards;
   animation-delay: 0.46s;
+}
+
+.hero-replay-alt .hero-echo-chip,
+.hero-replay-alt .hero-echo-heading,
+.hero-replay-alt .hero-echo-copy,
+.hero-replay-alt .hero-echo-cta {
+  animation-name: heroEchoInReplay;
 }
 
 .marquee-track {

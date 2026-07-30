@@ -35,6 +35,7 @@
                   routerLink="/"
                   [fragment]="item.fragment"
                   class="hover:text-brand-light"
+                  (click)="onHomeFragmentClick(item.fragment)"
                   >{{ item.label }}</a
                 >
               }

@@ -14,6 +14,7 @@ import { injectLocaleContent } from '../../content/inject-locale-content';
 import { LocaleSwitcherComponent } from './locale-switcher.component';
 import { SITE_PHONE_DISPLAY, SITE_PHONE_HREF } from '../../shared/content/contact.data';
 import type { NavMainEntry } from '../../shared/landing/landing.models';
+import { HomeAnimationReplayService } from '../../shared/animations/home-animation-replay.service';
 
 @Component({
   selector: 'app-navbar',
@@ -24,6 +25,7 @@ import type { NavMainEntry } from '../../shared/landing/landing.models';
 })
 export class NavbarComponent {
   private readonly i18n = injectLocaleContent();
+  private readonly homeAnimationReplay = inject(HomeAnimationReplayService);
 
   protected readonly site = this.i18n.site;
 
@@ -119,6 +121,16 @@ export class NavbarComponent {
 
   protected trackMain(_i: number, item: NavMainEntry): string {
     return item.kind === 'fragment' ? `f:${item.fragment}` : `r:${item.path}`;
+  }
+
+  protected scrollToHomeAndReplayAnimations(): void {
+    this.homeAnimationReplay.scrollToHomeAndReplayAnimations();
+  }
+
+  protected onFragmentLinkClick(fragment: string): void {
+    if (fragment === 'home') {
+      this.scrollToHomeAndReplayAnimations();
+    }
   }
 
   private focusFirstMenuItem(): void {

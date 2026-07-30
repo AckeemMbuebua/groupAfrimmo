@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import type { FooterNavLink } from '../../shared/landing/landing.models';
 import { injectLocaleContent } from '../../content/inject-locale-content';
@@ -9,6 +9,7 @@ import {
   SITE_PHONE_HREF,
   SITE_WHATSAPP_HREF,
 } from '../../shared/content/contact.data';
+import { HomeAnimationReplayService } from '../../shared/animations/home-animation-replay.service';
 
 @Component({
   selector: 'app-footer',
@@ -19,6 +20,7 @@ import {
 })
 export class FooterComponent {
   private readonly i18n = injectLocaleContent();
+  private readonly homeAnimationReplay = inject(HomeAnimationReplayService);
 
   protected readonly site = this.i18n.site;
 
@@ -42,5 +44,11 @@ export class FooterComponent {
       return `r:${item.path}`;
     }
     return `e:${item.href}`;
+  }
+
+  protected onHomeFragmentClick(fragment: string): void {
+    if (fragment === 'home') {
+      this.homeAnimationReplay.scrollToHomeAndReplayAnimations();
+    }
   }
 }

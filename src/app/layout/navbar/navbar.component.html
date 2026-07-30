@@ -16,6 +16,7 @@
       fragment="home"
       class="flex shrink-0 items-center"
       [attr.aria-label]="site().ui.aria.homeLink"
+      (click)="scrollToHomeAndReplayAnimations()"
     >
       <img
         src="/images/logo/Logo_white.png"
@@ -33,9 +34,13 @@
       @for (link of site().navigation.main; track trackMain($index, link)) {
         @switch (link.kind) {
           @case ('fragment') {
-            <a routerLink="/" [fragment]="link.fragment" class="nav-link whitespace-nowrap">{{
-              link.label
-            }}</a>
+            <a
+              routerLink="/"
+              [fragment]="link.fragment"
+              class="nav-link whitespace-nowrap"
+              (click)="onFragmentLinkClick(link.fragment)"
+              >{{ link.label }}</a
+            >
           }
           @case ('route') {
             <a [routerLink]="link.path" class="nav-link whitespace-nowrap">{{ link.label }}</a>
@@ -99,7 +104,7 @@
         fragment="home"
         class="flex min-w-0 items-center gap-3 py-1"
         [attr.aria-label]="site().ui.aria.homeLink"
-        (click)="closeMenu(false)"
+        (click)="closeMenu(false); scrollToHomeAndReplayAnimations()"
       >
         <img
           src="/images/logo/Logo_white.png"
@@ -137,7 +142,7 @@
                 routerLink="/"
                 [fragment]="link.fragment"
                 class="mobile-link block rounded-none border border-transparent px-3 py-4 transition-colors duration-300 hover:border-white/15 hover:bg-white/5 active:bg-white/10"
-                (click)="closeMenu(false)"
+                (click)="closeMenu(false); onFragmentLinkClick(link.fragment)"
                 >{{ link.label }}</a
               >
             }
