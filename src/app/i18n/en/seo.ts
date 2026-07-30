@@ -22,12 +22,12 @@ export const EN_SEO: SeoContent = {
     mentionsLegales: {
       title: `Legal notice${suffix}`,
       description:
-        `Legal notice for afrimmo.com — publisher, hosting and contact details for ${brand}.`,
+        `Legal notice for groupeafrimmo.com — publisher, hosting and contact details for ${brand}.`,
     },
     politiqueConfidentialite: {
       title: `Privacy policy${suffix}`,
       description:
-        'Privacy policy for afrimmo.com: data collected, purposes, retention and contact details.',
+        'Privacy policy for groupeafrimmo.com: data collected, purposes, retention and contact details.',
     },
   },
   routeTitles: {

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.afrimmo.com/sitemap.xml
+Sitemap: https://www.groupeafrimmo.com/sitemap.xml

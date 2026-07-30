@@ -40,7 +40,7 @@ export const EN_PAGES: SecondaryPagesContent = {
       {
         heading: 'Website publisher',
         body:
-          `The afrimmo.com website is presented under the responsibility of ${brand}. Additional legal information will be specified using the company’s official documents.`,
+          `The groupeafrimmo.com website is presented under the responsibility of ${brand}. Additional legal information will be specified using the company’s official documents.`,
       },
       {
         heading: 'Hosting',

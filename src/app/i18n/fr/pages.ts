@@ -39,7 +39,7 @@ export const FR_PAGES: SecondaryPagesContent = {
       {
         heading: 'Éditeur du site',
         body:
-          `Le site afrimmo.com est présenté sous la responsabilité du ${BRAND.legalName}. Les informations légales complémentaires seront précisées avec les documents officiels de l’entreprise.`,
+          `Le site groupeafrimmo.com est présenté sous la responsabilité du ${BRAND.legalName}. Les informations légales complémentaires seront précisées avec les documents officiels de l’entreprise.`,
       },
       {
         heading: 'Hébergement',

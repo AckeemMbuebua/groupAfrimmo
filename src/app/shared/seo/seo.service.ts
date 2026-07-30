@@ -12,6 +12,7 @@ export class SeoService {
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
   private readonly doc = inject(DOCUMENT);
+  private readonly siteOrigin = 'https://www.groupeafrimmo.com';
 
   update({ title, description }: SeoPayload): void {
     this.title.setTitle(title);
@@ -27,7 +28,9 @@ export class SeoService {
   }
 
   private currentUrl(): string {
-    return this.doc.defaultView?.location.href ?? this.doc.location?.href ?? 'https://www.afrimmo.com/';
+    const location = this.doc.defaultView?.location ?? this.doc.location;
+    const pathname = location?.pathname && location.pathname !== '/index.html' ? location.pathname : '/';
+    return `${this.siteOrigin}${pathname}${location?.search ?? ''}`;
   }
 
   private ensureCanonical(href: string): void {

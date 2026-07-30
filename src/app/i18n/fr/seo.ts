@@ -25,12 +25,12 @@ export const FR_SEO: SeoContent = {
     mentionsLegales: {
       title: `Mentions légales${suffix}`,
       description:
-        `Mentions légales du site afrimmo.com — éditeur, hébergement et coordonnées de ${brand}.`,
+        `Mentions légales du site groupeafrimmo.com — éditeur, hébergement et coordonnées de ${brand}.`,
     },
     politiqueConfidentialite: {
       title: `Politique de confidentialité${suffix}`,
       description:
-        'Politique de confidentialité du site afrimmo.com : données collectées, finalités, durée de conservation et modalités de contact.',
+        'Politique de confidentialité du site groupeafrimmo.com : données collectées, finalités, durée de conservation et modalités de contact.',
     },
   },
   routeTitles: {
