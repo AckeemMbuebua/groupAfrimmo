@@ -13,9 +13,6 @@ const footer: readonly FooterNavLink[] = [
   { kind: 'homeFragment', label: 'Services', fragment: 'services' },
   { kind: 'homeFragment', label: 'FAQ', fragment: 'faq' },
   { kind: 'route', label: 'News', path: '/actualites' },
-  { kind: 'route', label: 'Careers', path: '/carrieres' },
-  { kind: 'route', label: 'Legal notice', path: '/mentions-legales' },
-  { kind: 'route', label: 'Privacy', path: '/politique-de-confidentialite' },
 ];
 
 export const EN_NAVIGATION: NavigationContent = { main, footer };

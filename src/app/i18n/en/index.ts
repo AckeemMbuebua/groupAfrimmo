@@ -1,7 +1,6 @@
 import { HOME_EN } from '../../content/home.en';
 import type { LandingContent, SiteContent } from '../site-content.model';
 import { EN_INSIGHT_ARTICLES } from './actualites';
-import { EN_CARRIERES } from './carrieres';
 import { EN_NAVIGATION } from './navigation';
 import { EN_PAGES } from './pages';
 import { EN_PROJECT_CARD_LIST, EN_PROJECT_EXTRA } from './projects';
@@ -23,7 +22,6 @@ const EN_LANDING: LandingContent = {
   references: HOME_EN.references.items,
 };
 
-/** Contenu EN — fichiers statiques sans librairie i18n. */
 export const EN_SITE_CONTENT: SiteContent = {
   locale: 'en',
   seo: EN_SEO,
@@ -39,5 +37,4 @@ export const EN_SITE_CONTENT: SiteContent = {
   actualites: {
     articles: EN_INSIGHT_ARTICLES,
   },
-  carrieres: EN_CARRIERES,
 };

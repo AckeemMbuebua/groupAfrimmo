@@ -8,7 +8,6 @@
   --color-brand-light: #dbeafe;
   --color-ink: #0a0a0a;
   --color-surface: #f6f7f8;
-  --color-dark-cmt: #0a0a0a;
   --color-steel: #717985;
   --color-warm: #f4efe7;
 
@@ -58,7 +57,7 @@ h4 {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
 }
 
-/* Navigation header minimal (type Tailark / 21st.dev) : lisibilité sans ligne décorative lourde */
+/* Navigation principale */
 .nav-link {
   position: relative;
   color: rgb(255 255 255 / 0.72);
@@ -171,8 +170,7 @@ h4 {
 }
 
 /**
- * Landing : le contenu reste lisible pendant l’entrée (évite sections « vides » après hydratation).
- * Utiliser avec appReveal : class="reveal-readable …"
+ * Animations d’entrée avec contenu immédiatement lisible.
  */
 .landing-page .reveal-readable.reveal {
   opacity: 1;
@@ -198,7 +196,6 @@ h4 {
   transform: translateY(0) translateX(0) scale(1);
 }
 
-/* Stats : alias historique, même comportement */
 .stats-section .stats-card.reveal {
   opacity: 1;
   transform: translateY(16px);
@@ -249,8 +246,7 @@ h4 {
 }
 
 /**
- * Hero : animation uniquement sur translateY (+ fill backwards).
- * Important : éviter opacity:0 pendant l’anim — avant, un cadre noir pouvait donner hero « vide » ou figé.
+ * Hero : animation légère sur l’axe vertical.
  */
 @keyframes heroEchoIn {
   from {
@@ -301,7 +297,7 @@ h4 {
   filter: grayscale(0);
 }
 
-/* Panneau plein écran : pas d’opacity sur le conteneur (sinon le fond paraît transparent sur mobile). */
+/* Panneau mobile plein écran */
 .mobile-menu {
   visibility: hidden;
   pointer-events: none;
@@ -330,7 +326,7 @@ h4 {
   }
 }
 
-/* Réduction de mouvement : sélecteurs ciblés uniquement — pas de `*` global en !important sur les transitions. */
+/* Réduction de mouvement */
 @media (prefers-reduced-motion: reduce) {
   html.scroll-smooth {
     scroll-behavior: auto !important;

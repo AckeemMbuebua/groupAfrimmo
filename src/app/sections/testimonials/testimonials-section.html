@@ -1,6 +1,6 @@
 <section
   id="references"
-  class="relative scroll-mt-28 overflow-hidden border-y border-dark-cmt/10 bg-surface py-16 sm:py-20 lg:py-28"
+  class="relative scroll-mt-28 overflow-hidden border-y border-ink/10 bg-surface py-16 sm:py-20 lg:py-28"
 >
   <div class="container mx-auto max-w-[1200px] items-center px-4 md:px-6">
     <div appReveal class="reveal-readable mx-auto mb-12 max-w-3xl space-y-4 text-center">
@@ -9,7 +9,7 @@
         {{ home().references.eyebrow }}
       </p>
       <h2
-        class="text-balance text-3xl font-extrabold uppercase leading-tight tracking-tight text-dark-cmt md:text-5xl"
+        class="text-balance text-3xl font-extrabold uppercase leading-tight tracking-tight text-ink md:text-5xl"
       >
         {{ home().references.title }}
       </h2>
@@ -22,32 +22,32 @@
       @for (ref of home().references.items; track ref.id) {
         <article
           appReveal
-          class="reveal-readable group rounded-none border border-dark-cmt/10 bg-white p-6 text-left transition-colors duration-300 hover:border-brand/35 md:p-8"
+          class="reveal-readable group rounded-none border border-ink/10 bg-white p-6 text-left transition-colors duration-300 hover:border-brand/35 md:p-8"
         >
           <span class="mb-6 block h-0.5 w-8 bg-brand/80 transition-[width] duration-300 group-hover:w-12" aria-hidden="true"></span>
           <dl class="space-y-4 text-sm">
             <div>
-              <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/40">
+              <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-ink/40">
                 {{ home().references.fieldLabels.clientType }}
               </dt>
-              <dd class="mt-1 font-extrabold uppercase tracking-wide text-dark-cmt">
+              <dd class="mt-1 font-extrabold uppercase tracking-wide text-ink">
                 {{ ref.clientType }}
               </dd>
             </div>
             <div>
-              <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/40">
+              <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-ink/40">
                 {{ home().references.fieldLabels.projectType }}
               </dt>
-              <dd class="mt-1 font-semibold text-dark-cmt">{{ ref.projectType }}</dd>
+              <dd class="mt-1 font-semibold text-ink">{{ ref.projectType }}</dd>
             </div>
             <div>
-              <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/40">
+              <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-ink/40">
                 {{ home().references.fieldLabels.zone }}
               </dt>
-              <dd class="mt-1 text-dark-cmt/85">{{ ref.zone }}</dd>
+              <dd class="mt-1 text-ink/85">{{ ref.zone }}</dd>
             </div>
             <div>
-              <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/40">
+              <dt class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-ink/40">
                 {{ home().references.fieldLabels.scope }}
               </dt>
               <dd class="mt-1 text-sm leading-relaxed text-steel">{{ ref.scope }}</dd>

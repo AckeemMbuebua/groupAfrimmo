@@ -22,11 +22,6 @@ export const FR_SEO: SeoContent = {
       description:
         `Actualités Afrimmo RDC : retours d’expérience sur construction, génie civil, logistique et programmes industriels en RDC, Afrique centrale et de l’Est.`,
     },
-    carrieres: {
-      title: `Carrières${suffix}`,
-      description:
-        `Carrières ${brand} en RDC : chantier, génie civil, logistique, développement et expertises transverses sur des programmes en Afrique centrale et de l’Est.`,
-    },
     mentionsLegales: {
       title: `Mentions légales${suffix}`,
       description:
@@ -44,7 +39,6 @@ export const FR_SEO: SeoContent = {
     realisationsProject: `Projet · Réalisations${suffix}`,
     actualites: `Actualités${suffix}`,
     actualite: `Article${suffix}`,
-    carrieres: `Carrières${suffix}`,
     mentionsLegales: `Mentions légales${suffix}`,
     politiqueConfidentialite: `Politique de confidentialité${suffix}`,
   },

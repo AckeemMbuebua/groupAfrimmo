@@ -1,4 +1,4 @@
-/** Langues du site vitrine (fichiers statiques, sans lib i18n). */
+/** Langues disponibles sur le site vitrine. */
 export const APP_LOCALES = ['fr', 'en'] as const;
 
 export type AppLocale = (typeof APP_LOCALES)[number];

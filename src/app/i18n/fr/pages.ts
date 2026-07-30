@@ -30,29 +30,6 @@ export const FR_PAGES: SecondaryPagesContent = {
     readArticle: 'Lire l’article',
     backToList: 'Toutes les actualités',
   },
-  carrieres: {
-    breadcrumb: 'Carrières',
-    eyebrow: 'Talents et terrain',
-    title: 'Donner de l’échelle aux grands chantiers du continent',
-    lead:
-      'Nous recherchons des profils capables de lier cadence, conformité technique et présence client. Nos équipes conjuguent maîtrise d’œuvre industrielle et logistique opérationnelle : rejoindre Afrimmo, c’est travailler sur des programmes où chaque décision doit être claire et réactive.',
-    pillars: [
-      'Rigueur HSE et respect des équipes locales',
-      'Autonomie sur site et coordination collective',
-      'Sens commercial et clarté du reporting',
-    ],
-    opportunitiesTitle: 'Opportunités signalées',
-    opportunitiesFlag: 'indicatif',
-    opportunitiesLead:
-      'Ces fiches constituent des postes représentatifs : précisez le code position dans votre prise de contact pour accélérer le tri lorsque vous postulez.',
-    codeLabel: 'Code recrutement',
-    sendCv: 'Envoyer votre CV',
-    closingTextBefore:
-      'Vous n’avez pas encore identifié de poste listé mais disposez de 15 ans d’expertise chantier ou de développement de programmes ? Mentionnez vos références géographiques préférées : nous créons régulièrement des rôles composites pour les dossiers critiques.',
-    closingLink: 'Brief via le formulaire contact',
-    closingTextAfter: 'après un premier échange téléphonique.',
-    mailSubjectPrefix: 'Candidature spontanée / ',
-  },
   mentionsLegales: {
     backHome: 'Retour à l’accueil',
     title: 'Mentions légales',

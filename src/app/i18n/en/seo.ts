@@ -19,11 +19,6 @@ export const EN_SEO: SeoContent = {
       description:
         `Afrimmo DRC insights: construction, civil engineering, logistics and industrial programme delivery across the DRC, Central Africa and East Africa.`,
     },
-    carrieres: {
-      title: `Careers${suffix}`,
-      description:
-        `Careers at ${brand} in the DRC: site delivery, civil engineering, logistics, business development and cross-functional project expertise.`,
-    },
     mentionsLegales: {
       title: `Legal notice${suffix}`,
       description:
@@ -41,7 +36,6 @@ export const EN_SEO: SeoContent = {
     realisationsProject: `Project · Projects${suffix}`,
     actualites: `News${suffix}`,
     actualite: `Article${suffix}`,
-    carrieres: `Careers${suffix}`,
     mentionsLegales: `Legal notice${suffix}`,
     politiqueConfidentialite: `Privacy policy${suffix}`,
   },

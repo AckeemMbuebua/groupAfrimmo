@@ -31,29 +31,6 @@ export const EN_PAGES: SecondaryPagesContent = {
     readArticle: 'Read article',
     backToList: 'All news',
   },
-  carrieres: {
-    breadcrumb: 'Careers',
-    eyebrow: 'Talent and field work',
-    title: 'Scaling major construction programmes across the continent',
-    lead:
-      'We look for profiles able to connect pace, technical compliance and client presence. Our teams combine industrial delivery management and operational logistics: joining Afrimmo means working on programmes where every decision must be clear and responsive.',
-    pillars: [
-      'HSE discipline and respect for local teams',
-      'Field autonomy and collective coordination',
-      'Commercial awareness and clear reporting',
-    ],
-    opportunitiesTitle: 'Highlighted opportunities',
-    opportunitiesFlag: 'indicative',
-    opportunitiesLead:
-      'These sheets are representative positions: mention the position code when you contact us to speed up screening.',
-    codeLabel: 'Recruitment code',
-    sendCv: 'Send your CV',
-    closingTextBefore:
-      'Have not identified a listed role yet, but bring 15 years of site expertise or programme development experience? Mention your preferred geographic references: we regularly build composite roles for critical files.',
-    closingLink: 'Brief us through the contact form',
-    closingTextAfter: 'after an initial phone discussion.',
-    mailSubjectPrefix: 'Open application / ',
-  },
   mentionsLegales: {
     backHome: 'Back to home',
     title: 'Legal notice',

@@ -24,15 +24,6 @@ export class FooterComponent {
 
   protected readonly footerLinks = computed(() => this.site().navigation.footer);
 
-  protected readonly legalLinks = computed(() =>
-    this.footerLinks().filter(
-      (item) =>
-        item.kind === 'route' &&
-        (item.path === '/mentions-legales' ||
-          item.path === '/politique-de-confidentialite'),
-    ),
-  );
-
   protected readonly phoneDisplay = SITE_PHONE_DISPLAY;
 
   protected readonly phoneHref = SITE_PHONE_HREF;

@@ -2,12 +2,12 @@
   <div class="mx-auto max-w-7xl">
     <nav
       appReveal
-      class="mb-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] font-extrabold uppercase tracking-[.2em] text-dark-cmt/40"
+      class="mb-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] font-extrabold uppercase tracking-[.2em] text-ink/40"
       [attr.aria-label]="locale.site().ui.aria.breadcrumb"
     >
-      <a routerLink="/" class="text-brand transition-colors duration-300 hover:text-dark-cmt">{{ locale.site().ui.common.home }}</a>
+      <a routerLink="/" class="text-brand transition-colors duration-300 hover:text-ink">{{ locale.site().ui.common.home }}</a>
       <span aria-hidden="true">/</span>
-      <span class="text-dark-cmt">{{ locale.site().pages.realisations.breadcrumb }}</span>
+      <span class="text-ink">{{ locale.site().pages.realisations.breadcrumb }}</span>
     </nav>
 
     <header appReveal class="mb-14 max-w-3xl border-l-4 border-brand pl-6">
@@ -29,7 +29,7 @@
         </a>
         <a
           [href]="phoneHref"
-          class="inline-flex min-h-[48px] items-center gap-2 rounded-none border border-dark-cmt/20 px-6 py-3 text-[11px] font-extrabold uppercase tracking-widest text-dark-cmt transition-colors duration-300 hover:border-brand hover:text-brand"
+          class="inline-flex min-h-[48px] items-center gap-2 rounded-none border border-ink/20 px-6 py-3 text-[11px] font-extrabold uppercase tracking-widest text-ink transition-colors duration-300 hover:border-brand hover:text-brand"
         >
           {{ locale.site().shared.cta.call }}
           <i class="fa-solid fa-phone text-xs" aria-hidden="true"></i>

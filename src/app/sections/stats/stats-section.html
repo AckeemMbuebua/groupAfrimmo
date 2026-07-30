@@ -48,16 +48,18 @@
           ></span>
           <p
             appCounter
-            class="stat-number font-black tabular-nums leading-none tracking-tight text-dark-cmt text-[clamp(2.25rem,6.5vw,3rem)] sm:text-[clamp(2.5rem,4vw,2.85rem)] lg:text-[2.75rem]"
+            class="stat-number font-black tabular-nums leading-none tracking-tight text-ink text-[clamp(2.25rem,6.5vw,3rem)] sm:text-[clamp(2.5rem,4vw,2.85rem)] lg:text-[2.75rem]"
             [target]="statTarget(stat)"
             [suffix]="stat.valuePrefix"
           ></p>
           <p
-            class="mt-4 text-[10px] font-bold uppercase leading-snug tracking-[0.2em] text-dark-cmt sm:text-[11px]"
+            class="mt-4 text-[10px] font-bold uppercase leading-snug tracking-[0.2em] text-ink sm:text-[11px]"
           >
             {{ stat.label }}
           </p>
-      
+          <p class="mt-2 text-xs leading-5 text-steel">
+            {{ stat.sublabel }}
+          </p>
         </div>
       }
     </div>

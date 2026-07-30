@@ -24,30 +24,30 @@
         {{ home().about.eyebrow }}
       </p>
       <h2
-        class="text-balance text-3xl font-extrabold uppercase leading-tight tracking-tight text-dark-cmt sm:text-4xl md:text-5xl"
+        class="text-balance text-3xl font-extrabold uppercase leading-tight tracking-tight text-ink sm:text-4xl md:text-5xl"
       >
         {{ home().about.title }}
       </h2>
 
       <div class="mt-8 rounded-none border border-gray-200 bg-gray-50 p-7 sm:p-9">
-        <p class="text-lg font-light leading-relaxed text-dark-cmt sm:text-xl">
+        <p class="text-lg font-light leading-relaxed text-ink sm:text-xl">
           {{ home().about.intro }}
         </p>
       </div>
 
-      <p class="mt-8 text-base font-light leading-relaxed text-dark-cmt/85">
-        <span class="font-extrabold text-dark-cmt">{{ home().about.valueAddPrefix }}</span>
+      <p class="mt-8 text-base font-light leading-relaxed text-ink/85">
+        <span class="font-extrabold text-ink">{{ home().about.valueAddPrefix }}</span>
         {{ home().about.valueAddBody }}
       </p>
 
-      <p class="mt-10 text-[10px] font-extrabold uppercase tracking-[0.24em] text-dark-cmt/45">
+      <p class="mt-10 text-[10px] font-extrabold uppercase tracking-[0.24em] text-ink/45">
         {{ home().about.trustHeading }}
       </p>
       <ul class="mt-4 grid gap-3 sm:grid-cols-2">
         @for (line of home().about.trustPoints; track line; let i = $index) {
           <li
             appReveal
-            class="reveal-readable flex items-start gap-3 rounded-none border border-gray-200 bg-white px-4 py-3 text-sm font-light leading-relaxed text-dark-cmt/85"
+            class="reveal-readable flex items-start gap-3 rounded-none border border-gray-200 bg-white px-4 py-3 text-sm font-light leading-relaxed text-ink/85"
             [style.transition-delay.s]="0.12 + i * 0.05"
           >
             <span
@@ -63,7 +63,7 @@
 
       <div
         appReveal
-        class="reveal-readable mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 rounded-none border border-gray-200 bg-white px-5 py-4 text-[11px] font-extrabold uppercase tracking-[0.2em] text-dark-cmt/55"
+        class="reveal-readable mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 rounded-none border border-gray-200 bg-white px-5 py-4 text-[11px] font-extrabold uppercase tracking-[0.2em] text-ink/55"
         style="transition-delay: 0.28s"
       >
         @for (zone of home().about.zones; track zone; let last = $last) {

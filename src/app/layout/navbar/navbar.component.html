@@ -1,5 +1,5 @@
 <header
-  class="fixed inset-x-0 top-0 z-[100] w-full border-b border-white/10 bg-dark-cmt transition-shadow duration-300 ease-out"
+  class="fixed inset-x-0 top-0 z-[100] w-full border-b border-white/10 bg-ink transition-shadow duration-300 ease-out"
   [ngClass]="
     isScrolled()
       ? 'shadow-[0_10px_30px_rgba(0,0,0,0.24)]'
@@ -92,7 +92,7 @@
   aria-labelledby="mobileMenuLabel"
   (keydown)="onMobileMenuKeydown($event)"
 >
-  <div class="mobile-menu-panel flex min-h-[100dvh] min-h-svh w-full flex-col bg-dark-cmt text-white">
+  <div class="mobile-menu-panel flex min-h-[100dvh] min-h-svh w-full flex-col bg-ink text-white">
     <div class="flex shrink-0 items-center justify-between gap-4 border-b border-white/10 px-4 py-3 sm:px-5">
       <a
         routerLink="/"

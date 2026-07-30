@@ -19,12 +19,4 @@ export interface InsightArticle {
   readonly body: readonly string[];
 }
 
-export interface JobPosting {
-  readonly id: string;
-  readonly title: string;
-  readonly contract: string;
-  readonly location: string;
-  readonly snippet: string;
-}
-
 export type ResolvedProjectCase = ProjectCard & ProjectCaseExtended;

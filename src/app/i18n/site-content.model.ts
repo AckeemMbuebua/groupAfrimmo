@@ -11,7 +11,6 @@ import type {
 } from '../shared/landing/landing.models';
 import type {
   InsightArticle,
-  JobPosting,
   ProjectCaseExtended,
 } from '../shared/content/content.models';
 
@@ -27,7 +26,6 @@ export interface SeoRouteTitles {
   readonly realisationsProject: string;
   readonly actualites: string;
   readonly actualite: string;
-  readonly carrieres: string;
   readonly mentionsLegales: string;
   readonly politiqueConfidentialite: string;
 }
@@ -38,7 +36,6 @@ export interface SeoContent {
     readonly home: SeoPageMeta;
     readonly realisations: SeoPageMeta;
     readonly actualites: SeoPageMeta;
-    readonly carrieres: SeoPageMeta;
     readonly mentionsLegales: SeoPageMeta;
     readonly politiqueConfidentialite: SeoPageMeta;
   };
@@ -128,10 +125,6 @@ export interface ActualitesContent {
   readonly articles: readonly InsightArticle[];
 }
 
-export interface CarrieresContent {
-  readonly jobs: readonly JobPosting[];
-}
-
 export interface LegalSectionCopy {
   readonly heading: string;
   readonly body: string;
@@ -170,22 +163,6 @@ export interface SecondaryPagesContent {
     readonly readArticle: string;
     readonly backToList: string;
   };
-  readonly carrieres: {
-    readonly breadcrumb: string;
-    readonly eyebrow: string;
-    readonly title: string;
-    readonly lead: string;
-    readonly pillars: readonly string[];
-    readonly opportunitiesTitle: string;
-    readonly opportunitiesFlag: string;
-    readonly opportunitiesLead: string;
-    readonly codeLabel: string;
-    readonly sendCv: string;
-    readonly closingTextBefore: string;
-    readonly closingLink: string;
-    readonly closingTextAfter: string;
-    readonly mailSubjectPrefix: string;
-  };
   readonly mentionsLegales: LegalPageCopy;
   readonly politiqueConfidentialite: LegalPageCopy;
 }
@@ -200,5 +177,4 @@ export interface SiteContent {
   readonly pages: SecondaryPagesContent;
   readonly projects: ProjectsContent;
   readonly actualites: ActualitesContent;
-  readonly carrieres: CarrieresContent;
 }

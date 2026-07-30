@@ -14,13 +14,12 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     galleryImageUrls: PROJECT_IMAGES['al-saad'].gallery,
     category: 'Résidentiel haut standing',
     title: 'Al Saad Apartments',
-    description: 'Résidence de 28 unités à Zanzibar, livrée en 2022.',
+    description: 'Résidence de luxe de 28 unités à Chukwani, Zanzibar, livrée en 2022.',
     statusLabel: 'Terminé · 2022',
     wide: true,
     location: 'Chukwani, Zanzibar',
-    roleScope: 'Intervention / contribution projet (périmètre défini au mandat)',
+    roleScope: 'Résidence de 28 unités avec whirlpool et terrasse extérieure',
     tags: ['Résidentiel', 'Zanzibar', '28 unités', 'standing'],
-    futureImageAsset: 'al-saad-apartments-01.webp',
   },
   {
     id: 'kiwengwa-hotel',
@@ -30,14 +29,13 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     galleryImageUrls: PROJECT_IMAGES['kiwengwa-hotel'].gallery,
     category: 'Hôtellerie',
     title: 'Kiwengwa Hotel',
-    description: 'Hôtel à Kiwengwa avec unités indépendantes, piscines et restaurant.',
+    description: 'Hôtel cinq étoiles à Kiwengwa, avec 14 unités indépendantes.',
     statusLabel: 'En cours',
     wide: false,
     transitionDelaySeconds: 0.06,
     location: 'Kiwengwa, Zanzibar',
-    roleScope: 'Intervention / contribution projet (périmètre défini au mandat)',
+    roleScope: '14 unités indépendantes, piscines, restaurant et front de mer',
     tags: ['Hôtel', 'Zanzibar', 'front de mer', '14 unités'],
-    futureImageAsset: 'kiwengwa-hotel-01.webp',
   },
   {
     id: 'kisraa-godowns',
@@ -47,14 +45,13 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     galleryImageUrls: PROJECT_IMAGES['kisraa-godowns'].gallery,
     category: 'Industriel / entrepôts',
     title: 'Kisraa Company Limited — Entrepôts industriels',
-    description: 'Première phase de 2 entrepôts industriels, terminée en 2024.',
+    description: 'Première phase de 2 entrepôts industriels à Kisarawe II, achevée en 2024.',
     statusLabel: 'Phase 1 terminée · 2024',
     wide: false,
     transitionDelaySeconds: 0.12,
     location: 'Kisarawe II Industrial Area',
-    roleScope: 'Intervention / contribution projet (périmètre défini au mandat)',
+    roleScope: '2 entrepôts achevés sur un programme prévu de 8',
     tags: ['Industriel', 'entrepôts', 'Kisarawe', '2024'],
-    futureImageAsset: 'kisraa-godowns-01.webp',
   },
   {
     id: 'mbweni-jkt',
@@ -64,14 +61,13 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     galleryImageUrls: PROJECT_IMAGES['mbweni-jkt'].gallery,
     category: 'Villa / résidentiel premium',
     title: 'Mbweni JKT Villa',
-    description: 'Villa livrée en 2025 après huit mois de conception et d’exécution, selon le mandat.',
+    description: 'Villa menée de la conception à la livraison en 8 mois, achevée en 2025.',
     statusLabel: 'Terminé · 2025',
     wide: false,
     transitionDelaySeconds: 0.18,
     location: 'Mbweni JKT',
-    roleScope: 'Intervention / contribution projet (périmètre défini au mandat)',
+    roleScope: 'Conception à livraison en 8 mois',
     tags: ['Villa', 'conception-réalisation', '8 mois', '2025'],
-    futureImageAsset: 'mbweni-jkt-villa-01.webp',
   },
   {
     id: 'lake-energies',
@@ -82,14 +78,13 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     category: 'Station-service / supervision',
     title: 'Lake Energies — Image de marque et supervision de sites',
     description:
-      'Accompagnement de la transition Lake Oil vers Lake Energies : identité, suivi et interventions sur sites pendant neuf mois.',
+      'Rebranding Lake Oil vers Lake Energies, avec supervision et exécution sur sites pendant 9 mois.',
     statusLabel: 'Réalisé · 2024',
     wide: false,
     transitionDelaySeconds: 0.24,
     location: 'Sites Lake Energies',
-    roleScope: 'Intervention créative et exécution terrain sur sites (périmètre défini au mandat)',
+    roleScope: 'Intervention créative, supervision et exécution sur sites',
     tags: ['Image de marque', 'supervision', 'station-service', '2024'],
-    futureImageAsset: 'lake-energies-01.webp',
   },
   {
     id: 'hospitaux-znz',
@@ -98,15 +93,14 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
       'Programme de santé à Zanzibar — contribution technique.',
     galleryImageUrls: PROJECT_IMAGES['hospitaux-znz'].gallery,
     category: 'Infrastructure de santé',
-    title: 'Programme de 10 hôpitaux de district à Zanzibar',
-    description: 'Contribution technique / lots MEP sur un programme de 10 hôpitaux de district.',
+    title: '10 hôpitaux de district',
+    description: 'Contribution technique / lots MEP — Zanzibar, projet achevé en 2025.',
     statusLabel: 'Terminé · 2025',
     wide: false,
     transitionDelaySeconds: 0.3,
     location: 'Zanzibar',
-    roleScope: 'Contribution technique / lots MEP — programme public de 10 hôpitaux de district',
+    roleScope: 'Contribution technique / lots MEP — Zanzibar',
     tags: ['Santé', 'MEP', 'hôpitaux', 'Zanzibar', '2025'],
-    futureImageAsset: 'zanzibar-district-hospitals-01.webp',
   },
   {
     id: 'palm-complex',
@@ -117,81 +111,64 @@ export const PROJECT_CARD_LIST: readonly ProjectCard[] = [
     category: 'Commercial & résidentiel',
     title: 'Palm Complex — Kigamboni',
     description:
-      'Complexe commercial et résidentiel à Kigamboni, livré en 2025 selon le périmètre défini au mandat.',
+      'Projet commercial et résidentiel construit à Kigamboni en 1 an, livré en 2025.',
     statusLabel: 'Terminé · 2025',
     wide: false,
     transitionDelaySeconds: 0.36,
     location: 'Kigamboni',
-    roleScope: 'Intervention / contribution projet (périmètre défini au mandat)',
+    roleScope: 'Projet commercial et résidentiel construit en 1 an',
     tags: ['Commercial', 'résidentiel', 'Kigamboni', '2025'],
-    futureImageAsset: 'palm-complex-kigamboni-01.webp',
   },
 ];
 
 export const PROJECT_EXTRA: Record<string, ProjectCaseExtended> = {
   'al-saad': {
     seoDescription:
-      'Al Saad Apartments — résidence de 28 unités à Chukwani (Zanzibar), livrée en 2022. Référence Groupe Afrimmo S.A.',
+      'Al Saad Apartments — résidence de luxe de 28 unités à Chukwani, Zanzibar, livrée en 2022. Référence Groupe Afrimmo S.A.',
     intro: [
-      'Projet résidentiel de standing situé à Chukwani, Zanzibar, comprenant 28 unités avec espaces de détente, équipement type whirlpool et terrasse extérieure, en proximité des plages de l’océan Indien.',
-      'Le périmètre exact confié au groupe et aux équipes mobilisées est celui défini au mandat ; les formulations ci-dessous restent générales pour préserver la confidentialité contractuelle.',
-    ],
-    scope: [
-      'Coordination et suivi selon le périmètre mandaté',
-      'Interfaces entre corps d’état et jalons de livraison',
-      'Pilotage qualité des livrables sensibles (espaces extérieurs, équipements)',
-    ],
-    outcomes: [
-      'Livraison conforme au calendrier convenu pour les phases suivies',
-      'Mise en œuvre des finitions et équipements attendus pour une résidence de standing',
+      'Résidence de luxe à Chukwani, Zanzibar, composée de 28 unités, avec whirlpool et terrasse extérieure, à proximité des plages de l’océan Indien. Projet livré en 2022.',
     ],
   },
   'kiwengwa-hotel': {
     seoDescription:
-      'Kiwengwa Hotel — projet hôtelier à Kiwengwa, Zanzibar (14 unités indépendantes, piscines, restaurant, front de mer). Référence Groupe Afrimmo S.A.',
+      'Kiwengwa Hotel — hôtel cinq étoiles à Kiwengwa, Zanzibar, avec 14 unités indépendantes, piscines, restaurant et front de mer. Référence Groupe Afrimmo S.A.',
     intro: [
-      'Projet hôtelier situé à Kiwengwa, Zanzibar, composé de 14 unités indépendantes avec piscines individuelles ou communes, restaurant et accès front de mer.',
-      'Chantier en cours : la coordination des lots techniques et des interfaces MEP reste un levier central pour tenir le programme.',
+      'Hôtel cinq étoiles à Kiwengwa, Zanzibar, composé de 14 unités indépendantes avec piscines individuelles ou communes, restaurant et front de mer. Projet en cours.',
     ],
   },
   'kisraa-godowns': {
     seoDescription:
-      'Kisraa Company Limited — première phase d’entrepôts industriels à Kisarawe II (2 entrepôts sur un programme prévu de 8). Référence Groupe Afrimmo S.A.',
+      'Kisraa Company Limited — première phase de 2 entrepôts industriels à Kisarawe II sur un programme prévu de 8. Référence Groupe Afrimmo S.A.',
     intro: [
-      'Première phase d’un programme d’entrepôts industriels pour Kisraa Company Limited, avec 2 entrepôts réalisés sur un total prévu de 8 en zone industrielle Kisarawe II.',
-      'Les enjeux portent sur le génie civil, la voirie interne et l’alignement des livrables avec un programme d’extension ultérieure.',
+      'Première phase d’un programme de 8 entrepôts industriels pour Kisraa Company Limited, situé dans la zone industrielle de Kisarawe II. Deux entrepôts ont été achevés en 2024.',
     ],
   },
   'mbweni-jkt': {
     seoDescription:
-      'Mbweni JKT Villa — projet mené de la conception à la livraison en environ 8 mois. Référence Groupe Afrimmo S.A.',
+      'Mbweni JKT Villa — projet mené de la conception à la livraison en 8 mois, achevé en 2025. Référence Groupe Afrimmo S.A.',
     intro: [
-      'Projet de villa mené de la conception à la réalisation, avec une exécution suivie sur une période d’environ huit mois selon le mandat.',
-      'Les projets très architecturés appellent une gouvernance claire entre bureau technique et chantier pour sécuriser les finitions.',
+      'Villa Mbweni JKT menée de la conception à la livraison en 8 mois. Projet achevé en 2025.',
     ],
   },
   'lake-energies': {
     seoDescription:
-      'Lake Energies — transition depuis Lake Oil : image de marque, supervision et interventions sur sites sur environ neuf mois. Référence Groupe Afrimmo S.A.',
+      'Lake Energies — rebranding depuis Lake Oil en 2024, avec intervention créative, supervision et exécution sur sites pendant 9 mois. Référence Groupe Afrimmo S.A.',
     intro: [
-      'Projet de passage de Lake Oil vers Lake Energies : identité visuelle, suivi de chantier et exécution des interventions sur les sites concernés, sur une durée d’environ neuf mois.',
-      'Ce type de mandat conjugue continuité d’exploitation, signalétique et contraintes réglementaires locales.',
+      'Projet de rebranding Lake Oil vers Lake Energies en 2024, avec intervention créative, supervision et exécution sur sites. Le projet a duré 9 mois.',
     ],
   },
   'hospitaux-znz': {
     seoDescription:
-      'Contribution technique sur un programme public de 10 hôpitaux de district à Zanzibar — implication sur les lots MEP. Référence Groupe Afrimmo S.A.',
+      '10 hôpitaux de district — contribution technique / lots MEP à Zanzibar, projet achevé en 2025. Référence Groupe Afrimmo S.A.',
     intro: [
-      'Contribution technique au programme de 10 hôpitaux de district à Zanzibar, avec implication des équipes sur les lots MEP et la coordination de mise en œuvre associée au projet.',
-      'Le périmètre présenté concerne l’appui technique MEP documenté pour ce programme public.',
+      'Programme lancé en 2024 par le gouvernement de Zanzibar pour 10 hôpitaux de district. Contribution technique / lots MEP — Zanzibar, projet achevé en 2025.',
     ],
   },
   'palm-complex': {
     seoDescription:
-      'Palm Complex — projet mixte commercial et résidentiel à Kigamboni, livré en 2025 selon le périmètre mandaté. Référence Groupe Afrimmo S.A.',
+      'Palm Complex — projet commercial et résidentiel construit à Kigamboni en 1 an, livré en 2025. Référence Groupe Afrimmo S.A.',
     intro: [
-      'Projet commercial et résidentiel à Kigamboni, avec une exécution sur environ un an et une livraison en 2025 selon le périmètre défini contractuellement.',
-      'Les opérations mixtes combinent interfaces commerces / logements et planification des accès ; le pilotage des jalons suit le mandat.',
+      'Projet commercial et résidentiel construit à Kigamboni en 1 an, livré en 2025.',
     ],
   },
 };

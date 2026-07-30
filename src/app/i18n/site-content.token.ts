@@ -12,7 +12,6 @@ export function provideSiteContent(locale: SupportedLocale = DEFAULT_LOCALE): Pr
   };
 }
 
-/** Provider par défaut (fr) — à remplacer par une résolution de locale quand l’i18n sera active. */
 export const provideDefaultSiteContent = (): Provider =>
   provideSiteContent(DEFAULT_LOCALE);
 

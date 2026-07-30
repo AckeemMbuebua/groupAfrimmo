@@ -1,21 +1,21 @@
 <article class="mx-auto max-w-7xl px-4 pb-24 pt-32 sm:px-6 lg:px-8">
   <a
     routerLink="/"
-    class="mb-10 inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-widest text-brand transition-colors duration-300 hover:text-dark-cmt"
+    class="mb-10 inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-widest text-brand transition-colors duration-300 hover:text-ink"
   >
     <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
     {{ locale.site().pages.politiqueConfidentialite.backHome }}
   </a>
 
-  <h1 class="text-3xl font-extrabold uppercase leading-tight tracking-tight text-dark-cmt md:text-4xl">
+  <h1 class="text-3xl font-extrabold uppercase leading-tight tracking-tight text-ink md:text-4xl">
     {{ locale.site().pages.politiqueConfidentialite.title }}
   </h1>
-  <p class="mt-4 text-sm font-light leading-relaxed text-dark-cmt/65">
+  <p class="mt-4 text-sm font-light leading-relaxed text-ink/65">
     {{ locale.site().pages.politiqueConfidentialite.intro }}
   </p>
 
   @for (section of locale.site().pages.politiqueConfidentialite.sections; track section.heading) {
-    <section class="mt-10 space-y-4 text-sm font-light leading-relaxed text-dark-cmt/80 first:mt-12">
+    <section class="mt-10 space-y-4 text-sm font-light leading-relaxed text-ink/80 first:mt-12">
       <h2 class="text-xs font-extrabold uppercase tracking-[.24em] text-brand">
         {{ section.heading }}
       </h2>
@@ -30,7 +30,7 @@
     </section>
   }
 
-  <p class="mt-14 text-[10px] font-bold uppercase tracking-widest text-dark-cmt/35">
+  <p class="mt-14 text-[10px] font-bold uppercase tracking-widest text-ink/35">
     {{ locale.site().pages.politiqueConfidentialite.lastUpdated }}
   </p>
 </article>

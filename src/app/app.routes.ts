@@ -43,12 +43,6 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'carrieres',
-    title: routeTitles.carrieres,
-    loadComponent: () =>
-      import('./pages/carrieres/carrieres').then((m) => m.Carrieres),
-  },
-  {
     path: 'mentions-legales',
     title: routeTitles.mentionsLegales,
     loadComponent: () =>

@@ -1,6 +1,5 @@
 import type { SiteContent } from '../site-content.model';
 import { INSIGHT_ARTICLES } from './actualites';
-import { FR_CARRIERES } from './carrieres';
 import { FR_LANDING } from './landing';
 import { FR_NAVIGATION } from './navigation';
 import { FR_PAGES } from './pages';
@@ -24,5 +23,4 @@ export const FR_SITE_CONTENT: SiteContent = {
   actualites: {
     articles: INSIGHT_ARTICLES,
   },
-  carrieres: FR_CARRIERES,
 };

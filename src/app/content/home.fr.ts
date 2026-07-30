@@ -40,9 +40,8 @@ export const HOME_FR: HomeContent = {
       {
         valuePrefix: '',
         value: '10',
-        label: 'Hôpitaux de district',
-        sublabel:
-          'Programme de 10 hôpitaux de district (Zanzibar) — contribution technique / lots MEP',
+        label: 'hôpitaux de district',
+        sublabel: 'Contribution technique / lots MEP — Zanzibar',
         transitionDelaySeconds: 0.08,
       },
       {
@@ -86,7 +85,7 @@ export const HOME_FR: HomeContent = {
     ],
     zones: ['RDC', 'Afrique centrale & Est', 'Missions internationales selon projet'],
     mainImageAlt:
-      'Chantier — coordination, génie civil et exécution terrain (visuel illustratif)',
+      'Chantier — coordination, génie civil et exécution terrain',
   },
   expertise: {
     eyebrow: 'Expertises',
@@ -96,7 +95,7 @@ export const HOME_FR: HomeContent = {
     cards: [
       {
         imageUrl: '/images/projet/optimized/mbweni-jkt-villa-04.webp',
-        imageAlt: 'Construction et génie civil — visuel illustratif',
+        imageAlt: 'Construction et génie civil',
         numberLabel: '01',
         title: 'Construction et génie civil',
         description:
@@ -104,7 +103,7 @@ export const HOME_FR: HomeContent = {
       },
       {
         imageUrl: '/images/projet/optimized/kisraa-godowns-01.webp',
-        imageAlt: 'Logistique et transport — visuel illustratif',
+        imageAlt: 'Logistique et transport',
         numberLabel: '02',
         title: 'Logistique et transport',
         description:
@@ -113,7 +112,7 @@ export const HOME_FR: HomeContent = {
       },
       {
         imageUrl: '/images/projet/optimized/lake-energies-06.webp',
-        imageAlt: 'Import-export et matériaux — visuel illustratif',
+        imageAlt: 'Import-export et matériaux',
         numberLabel: '03',
         title: 'Import-export et approvisionnement',
         description:
@@ -212,29 +211,28 @@ export const HOME_FR: HomeContent = {
         clientType: 'Maître d’ouvrage privé',
         projectType: 'Projet résidentiel',
         zone: 'Zanzibar',
-        scope: 'Coordination et intervention selon périmètre mandaté',
+        scope: 'Al Saad Apartments — résidence de 28 unités à Chukwani, livrée en 2022',
       },
       {
         id: 'ref-2',
         clientType: 'Programme institutionnel',
         projectType: 'Infrastructures de santé',
         zone: 'Zanzibar',
-        scope:
-          'Contribution technique et lots MEP — programme public de 10 hôpitaux de district (Zanzibar)',
+        scope: '10 hôpitaux de district — contribution technique / lots MEP — Zanzibar, 2025',
       },
       {
         id: 'ref-3',
         clientType: 'Acteur industriel',
         projectType: 'Entrepôts',
         zone: 'Kisarawe II',
-        scope: 'Première phase de livraison — périmètre défini au mandat',
+        scope: 'Kisraa Company Limited — 2 entrepôts achevés en 2024 sur un programme prévu de 8',
       },
       {
         id: 'ref-4',
         clientType: 'Programme mixte',
         projectType: 'Commerce et résidentiel',
         zone: 'Kigamboni',
-        scope: 'Pilotage et livraison sur fenêtre contractuelle',
+        scope: 'Palm Complex — projet commercial et résidentiel construit en 1 an, livré en 2025',
       },
     ],
   },
