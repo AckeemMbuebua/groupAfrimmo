@@ -1,4 +1,3 @@
-
 export default function middleware() {
   const html = `
     <!DOCTYPE html>
@@ -8,6 +7,9 @@ export default function middleware() {
         <meta name="viewport"
           content="width=device-width, initial-scale=1">
         <title>Service indisponible</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
         <style>
           * { box-sizing: border-box; }
           body {
@@ -16,7 +18,7 @@ export default function middleware() {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: Arial, sans-serif;
+            font-family: "Outfit", sans-serif;
             background: #f8fafc;
             color: #0f172a;
             padding: 24px;
@@ -58,8 +60,8 @@ export default function middleware() {
   return new Response(html, {
     status: 503,
     headers: {
-      "Content-Type": "text/html; charset=utf-8",
-      "Cache-Control": "no-store"
-    }
+      'Content-Type': 'text/html; charset=utf-8',
+      'Cache-Control': 'no-store',
+    },
   });
 }
